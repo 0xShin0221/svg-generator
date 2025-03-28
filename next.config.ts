@@ -19,15 +19,6 @@ const nextConfig: NextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-  async rewrites() {
-    return [
-      {
-        source: "/ads.txt",
-        destination: "/ads.txt",
-        locale: false,
-      },
-    ];
-  },
 };
 
 mergeConfig(nextConfig, userConfig);
