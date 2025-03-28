@@ -1,12 +1,10 @@
-let userConfig = undefined
-try {
-  userConfig = await import('./v0-user-next.config')
-} catch (e) {
-  // ignore error
-}
+import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+let userConfig = undefined;
+
+/** @type {NextConfig} */
+const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -21,28 +19,29 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-}
+};
 
-mergeConfig(nextConfig, userConfig)
+mergeConfig(nextConfig, userConfig);
 
-function mergeConfig(nextConfig, userConfig) {
+function mergeConfig(nextConfig: NextConfig, userConfig: any) {
   if (!userConfig) {
-    return
+    return;
   }
 
   for (const key in userConfig) {
     if (
-      typeof nextConfig[key] === 'object' &&
+      typeof nextConfig[key] === "object" &&
       !Array.isArray(nextConfig[key])
     ) {
       nextConfig[key] = {
         ...nextConfig[key],
         ...userConfig[key],
-      }
+      };
     } else {
-      nextConfig[key] = userConfig[key]
+      nextConfig[key] = userConfig[key];
     }
   }
 }
 
-export default nextConfig
+const withNextIntl = createNextIntlPlugin();
+export default withNextIntl(nextConfig);
