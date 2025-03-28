@@ -1,4 +1,215 @@
 {
+  "Footer": {
+    "allRightsReserved": "All rights reserved.",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "commercialTransactionsAct": "Legal Notice"
+  },
+  "Terms": {
+    "title": "Terms of Service",
+    "subtitle": "Please read these terms carefully before using our service.",
+    "sections": {
+      "scope": {
+        "title": "1. Scope of Application",
+        "content": "These Terms of Service (hereinafter referred to as 'Terms') apply to all services (hereinafter referred to as 'Service') provided by us. By using our Service, you agree to be bound by these Terms."
+      },
+      "registration": {
+        "title": "2. User Registration",
+        "content": "Some features of the Service may require user registration. Users must provide accurate, current, and complete information during the registration process and keep their account information updated."
+      },
+      "prohibitedActions": {
+        "title": "3. Prohibited Actions",
+        "items": [
+          "Actions that violate laws, regulations, or public order and morals",
+          "Acts that infringe upon the intellectual property rights, privacy, portrait rights, or other rights of third parties",
+          "Actions that damage or may damage the reputation or credibility of other users or third parties",
+          "Actions that discriminate against or slander other users or third parties",
+          "Distribution of computer viruses or other harmful computer programs",
+          "Any other actions deemed inappropriate by us"
+        ]
+      },
+      "termination": {
+        "title": "4. Termination of Use",
+        "content": "We reserve the right to terminate or suspend your access to the Service immediately, without prior notice or liability, for any reason including, but not limited to, a breach of the Terms."
+      },
+      "disclaimer": {
+        "title": "5. Disclaimer of Warranty",
+        "content": "The Service is provided on an 'AS IS' and 'AS AVAILABLE' basis. We make no warranties of any kind, whether express or implied, regarding the Service, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement."
+      },
+      "changes": {
+        "title": "6. Changes to Terms",
+        "content": "We reserve the right to modify these Terms at any time. We will provide notification of any significant changes through our website or by email. Your continued use of the Service after such modifications constitutes your acceptance of the updated Terms."
+      }
+    },
+    "lastUpdated": "Last Updated",
+    "lastUpdatedDate": "March 28, 2025"
+  },
+  "Privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "This Privacy Policy explains how we collect, use, and protect your personal information.",
+    "sections": {
+      "collection": {
+        "title": "1. Information We Collect",
+        "content": "We may collect personal information such as your name, email address, and other details you provide when using our service. We also collect information automatically through cookies and similar technologies about how you use our website."
+      },
+      "usage": {
+        "title": "2. How We Use Your Information",
+        "content": "We use the information we collect to provide and improve our services, communicate with you, and ensure security. This includes personalizing your experience, processing transactions, and analyzing usage patterns to enhance our service."
+      },
+      "sharing": {
+        "title": "3. Information Sharing",
+        "content": "We do not sell your personal information to third parties. We may share information with service providers who help us operate our business, when required by law, or with your consent."
+      },
+      "cookies": {
+        "title": "4. Cookies and Similar Technologies",
+        "content": "We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content. You can control cookie settings through your browser preferences."
+      },
+      "security": {
+        "title": "5. Data Security",
+        "content": "We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure."
+      },
+      "rights": {
+        "title": "6. Your Rights",
+        "content": "Depending on your location, you may have rights regarding your personal data, including the right to access, correct, delete, or restrict processing of your data. Please contact us to exercise these rights."
+      },
+      "changes": {
+        "title": "7. Changes to This Privacy Policy",
+        "content": "We may update this Privacy Policy periodically to reflect changes in our practices or legal requirements. We will notify you of any significant changes by posting the new policy on our website."
+      },
+      "contact": {
+        "title": "8. Contact Us",
+        "content": "If you have any questions about this Privacy Policy or our data practices, please contact us at support@svg-generator.com"
+      }
+    },
+    "lastUpdated": "Last Updated",
+    "lastUpdatedDate": "March 28, 2025"
+  },
+  "LegalNotice": {
+    "title": "Legal Notice",
+    "subtitle": "Information based on the Act on Specified Commercial Transactions",
+    "sections": {
+      "businessOperator": {
+        "title": "Business Operator Information",
+        "items": {
+          "Company Name": "TechBrothers",
+          "Representative": "Shintaro Nakagawa",
+          "Address": " Yamaguchi-ken, Japan",
+          "Contact Information": "support@svg-generator.com"
+        }
+      }
+    },
+    "lastUpdated": "Last Updated",
+    "lastUpdatedDate": "March 28, 2025"
+  },
+  "GradientSettings": {
+    "enableGradient": "Enable gradient",
+    "gradientType": "Gradient type",
+    "gradientDirection": "Gradient direction",
+    "selectGradientType": "Select gradient type",
+    "selectDirection": "Select direction",
+    "startColor": "Start color",
+    "endColor": "End color",
+    "preview": "Preview",
+    "types": {
+      "linear": "Linear gradient",
+      "radial": "Radial gradient"
+    },
+    "directions": {
+      "toRight": "To right",
+      "toLeft": "To left",
+      "toBottom": "To bottom",
+      "toTop": "To top",
+      "toBottomRight": "To bottom right",
+      "toBottomLeft": "To bottom left",
+      "toTopRight": "To top right",
+      "toTopLeft": "To top left"
+    }
+  },
+  "LogoTemplates": {
+    "searchPlaceholder": "Search templates...",
+    "useTemplate": "Use {name}",
+    "categories": {
+      "all": "All",
+      "business": "Business",
+      "tech": "Technology",
+      "creative": "Creative",
+      "minimal": "Minimal",
+      "colorful": "Colorful",
+      "monochrome": "Monochrome",
+      "industry": "Industry",
+      "animated": "Animated"
+    },
+    "templates": {
+      "professionalCircle": "Professional Circle",
+      "techBlue": "Tech Blue",
+      "mainAndSubtext": "Main & Subtext",
+      "rotatingStar": "Rotating Star",
+      "pulseText": "Pulse Text",
+      "bounceLogo": "Bounce Logo",
+      "fadeAndSlide": "Fade & Slide",
+      "abstractBlob": "Abstract Blob",
+      "networkTech": "Network Tech",
+      "flipLogo": "Flip Logo",
+      "shakeLogo": "Shake Logo",
+      "floatLogo": "Float Logo",
+      "techCircuit": "Tech Circuit",
+      "flowerLogo": "Flower Logo",
+      "artBrush": "Art Brush",
+      "creativeCombo": "Creative Combo",
+      "modernMinimal": "Modern Minimal",
+      "creativeAgency": "Creative Agency",
+      "gradientTech": "Gradient Tech",
+      "designStudio": "Design Studio"
+    },
+    "tags": {
+      "business": "business",
+      "professional": "professional",
+      "simple": "simple",
+      "technology": "technology",
+      "IT": "IT",
+      "digital": "digital",
+      "multipleText": "multiple text",
+      "tagline": "tagline",
+      "brand": "brand",
+      "rotating": "rotating",
+      "animation": "animation",
+      "star": "star",
+      "pulse": "pulse",
+      "text": "text",
+      "bounce": "bounce",
+      "movement": "movement",
+      "fade": "fade",
+      "slide": "slide",
+      "multipleAnimation": "multiple animation",
+      "abstract": "abstract",
+      "organic": "organic",
+      "blob": "blob",
+      "network": "network",
+      "connection": "connection",
+      "flip": "flip",
+      "3D": "3D",
+      "shake": "shake",
+      "vibration": "vibration",
+      "float": "float",
+      "floating": "floating",
+      "circuit": "circuit",
+      "flower": "flower",
+      "nature": "nature",
+      "growth": "growth",
+      "brush": "brush",
+      "art": "art",
+      "creative": "creative",
+      "combined": "combined",
+      "modern": "modern",
+      "minimal": "minimal",
+      "agency": "agency",
+      "refined": "refined",
+      "gradient": "gradient",
+      "design": "design",
+      "studio": "studio",
+      "elegant": "elegant"
+    }
+  },
   "LogoCreator": {
     "manual_creation": "Manual Creation",
     "ai_generation": "AI Generation",

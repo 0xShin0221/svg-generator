@@ -1,4 +1,215 @@
 {
+  "Footer": {
+    "allRightsReserved": "All rights reserved.",
+    "termsOfService": "利用規約",
+    "privacyPolicy": "プライバシーポリシー",
+    "commercialTransactionsAct": "特定商取引法に基づく表記"
+  },
+  "Terms": {
+    "title": "利用規約",
+    "subtitle": "当サービスをご利用になる前に、以下の利用規約をよくお読みください。",
+    "sections": {
+      "scope": {
+        "title": "1. 適用範囲",
+        "content": "この利用規約（以下「本規約」といいます）は、当社が提供するすべてのサービス（以下「本サービス」といいます）に適用されます。本サービスをご利用になることで、本規約に同意したものとみなされます。"
+      },
+      "registration": {
+        "title": "2. ユーザー登録",
+        "content": "本サービスの一部機能はユーザー登録が必要な場合があります。ユーザーは登録時に正確、最新かつ完全な情報を提供し、アカウント情報を最新の状態に保つ必要があります。"
+      },
+      "prohibitedActions": {
+        "title": "3. 禁止事項",
+        "items": [
+          "法令、規則または公序良俗に違反する行為",
+          "第三者の知的財産権、プライバシー、肖像権、その他の権利を侵害する行為",
+          "他のユーザーまたは第三者の名誉や信用を毀損または毀損するおそれのある行為",
+          "他のユーザーまたは第三者を差別または中傷する行為",
+          "コンピュータウイルスその他の有害なコンピュータプログラムを配布する行為",
+          "その他、当社が不適切と判断する行為"
+        ]
+      },
+      "termination": {
+        "title": "4. 利用停止",
+        "content": "当社は、本規約違反を含むいかなる理由であっても、事前の通知や責任を負うことなく、直ちに本サービスへのアクセスを終了または停止する権利を留保します。"
+      },
+      "disclaimer": {
+        "title": "5. 免責事項",
+        "content": "本サービスは「現状有姿」および「提供可能な状態」で提供されます。当社は、商品性、特定目的への適合性、または非侵害性を含むがこれらに限定されない、本サービスに関するいかなる種類の明示または黙示の保証も行いません。"
+      },
+      "changes": {
+        "title": "6. 規約の変更",
+        "content": "当社は、いつでも本規約を変更する権利を留保します。重要な変更がある場合は、ウェブサイトまたはメールを通じて通知します。変更後も本サービスを継続して利用される場合、更新された規約に同意したものとみなされます。"
+      }
+    },
+    "lastUpdated": "最終更新日",
+    "lastUpdatedDate": "2025年3月28日"
+  },
+  "Privacy": {
+    "title": "プライバシーポリシー",
+    "subtitle": "このプライバシーポリシーでは、当社がお客様の個人情報をどのように収集、使用、保護するかについて説明します。",
+    "sections": {
+      "collection": {
+        "title": "1. 収集する情報",
+        "content": "当社は、お名前、メールアドレス、およびサービス利用時に提供されるその他の詳細情報などの個人情報を収集する場合があります。また、クッキーおよび類似技術を通じて、お客様のウェブサイト利用状況に関する情報を自動的に収集しています。"
+      },
+      "usage": {
+        "title": "2. 情報の利用方法",
+        "content": "当社は収集した情報を、サービスの提供および改善、お客様とのコミュニケーション、およびセキュリティの確保のために使用します。これには、体験のパーソナライズ、取引の処理、および使用パターンの分析によるサービス向上が含まれます。"
+      },
+      "sharing": {
+        "title": "3. 情報の共有",
+        "content": "当社はお客様の個人情報を第三者に販売することはありません。当社は、ビジネス運営を支援するサービスプロバイダとの情報共有、法律で要求される場合、またはお客様の同意がある場合に情報を共有することがあります。"
+      },
+      "cookies": {
+        "title": "4. クッキーおよび類似技術",
+        "content": "当社は、閲覧体験の向上、サイトトラフィックの分析、コンテンツのパーソナライズを目的として、クッキーおよび類似技術を使用しています。ブラウザの設定を通じて、クッキーの設定を制御することができます。"
+      },
+      "security": {
+        "title": "5. データセキュリティ",
+        "content": "当社は、お客様の個人情報を不正アクセス、改ざん、開示、または破壊から保護するために適切なセキュリティ対策を実施しています。ただし、インターネットを介した転送や電子ストレージのいかなる方法も100%安全ではありません。"
+      },
+      "rights": {
+        "title": "6. お客様の権利",
+        "content": "お住まいの地域によっては、お客様のデータへのアクセス、修正、削除、または処理の制限を含む、個人データに関する権利を有する場合があります。これらの権利を行使するには、当社までご連絡ください。"
+      },
+      "changes": {
+        "title": "7. プライバシーポリシーの変更",
+        "content": "当社は、実務や法的要件の変更を反映するために、このプライバシーポリシーを定期的に更新することがあります。重要な変更がある場合は、新しいポリシーをウェブサイトに掲載することでお知らせします。"
+      },
+      "contact": {
+        "title": "8. お問い合わせ",
+        "content": "このプライバシーポリシーまたは当社のデータ取り扱いについてご質問がある場合は、support@svg-generator.comまでご連絡ください。"
+      }
+    },
+    "lastUpdated": "最終更新日",
+    "lastUpdatedDate": "2025年3月28日"
+  },
+  "LegalNotice": {
+    "title": "特定商取引法に基づく表記",
+    "subtitle": "特定商取引に関する法律に基づく情報提供",
+    "sections": {
+      "businessOperator": {
+        "title": "事業者情報",
+        "items": {
+          "事業者名": "TechBrothers",
+          "代表者": "Shintaro Nakagawa",
+          "所在地": "Yamaguchi-ken, Japan",
+          "連絡先": "support@svg-generator.com"
+        }
+      }
+    },
+    "lastUpdated": "最終更新日",
+    "lastUpdatedDate": "2025年3月28日"
+  },
+  "GradientSettings": {
+    "enableGradient": "グラデーションを有効にする",
+    "gradientType": "グラデーションタイプ",
+    "gradientDirection": "グラデーション方向",
+    "selectGradientType": "グラデーションタイプを選択",
+    "selectDirection": "方向を選択",
+    "startColor": "開始色",
+    "endColor": "終了色",
+    "preview": "プレビュー",
+    "types": {
+      "linear": "線形グラデーション",
+      "radial": "放射状グラデーション"
+    },
+    "directions": {
+      "toRight": "右へ",
+      "toLeft": "左へ",
+      "toBottom": "下へ",
+      "toTop": "上へ",
+      "toBottomRight": "右下へ",
+      "toBottomLeft": "左下へ",
+      "toTopRight": "右上へ",
+      "toTopLeft": "左上へ"
+    }
+  },
+  "LogoTemplates": {
+    "searchPlaceholder": "テンプレートを検索...",
+    "useTemplate": "{name}を使用",
+    "categories": {
+      "all": "すべて",
+      "business": "ビジネス",
+      "tech": "テクノロジー",
+      "creative": "クリエイティブ",
+      "minimal": "ミニマル",
+      "colorful": "カラフル",
+      "monochrome": "モノクローム",
+      "industry": "業種別",
+      "animated": "アニメーション"
+    },
+    "templates": {
+      "professionalCircle": "プロフェッショナルサークル",
+      "techBlue": "テックブルー",
+      "mainAndSubtext": "メイン＆サブテキスト",
+      "rotatingStar": "回転スター",
+      "pulseText": "パルステキスト",
+      "bounceLogo": "バウンスロゴ",
+      "fadeAndSlide": "フェード＆スライド",
+      "abstractBlob": "抽象ブロブ",
+      "networkTech": "ネットワークテック",
+      "flipLogo": "フリップロゴ",
+      "shakeLogo": "シェイクロゴ",
+      "floatLogo": "フロートロゴ",
+      "techCircuit": "テックサーキット",
+      "flowerLogo": "フラワーロゴ",
+      "artBrush": "アートブラシ",
+      "creativeCombo": "クリエイティブコンボ",
+      "modernMinimal": "モダンミニマル",
+      "creativeAgency": "クリエイティブエージェンシー",
+      "gradientTech": "グラデーションテック",
+      "designStudio": "デザインスタジオ"
+    },
+    "tags": {
+      "business": "企業",
+      "professional": "プロフェッショナル",
+      "simple": "シンプル",
+      "technology": "テクノロジー",
+      "IT": "IT",
+      "digital": "デジタル",
+      "multipleText": "複数テキスト",
+      "tagline": "タグライン",
+      "brand": "ブランド",
+      "rotating": "回転",
+      "animation": "アニメーション",
+      "star": "星",
+      "pulse": "パルス",
+      "text": "テキスト",
+      "bounce": "バウンス",
+      "movement": "動き",
+      "fade": "フェード",
+      "slide": "スライド",
+      "multipleAnimation": "複数アニメーション",
+      "abstract": "抽象",
+      "organic": "有機的",
+      "blob": "ブロブ",
+      "network": "ネットワーク",
+      "connection": "接続",
+      "flip": "フリップ",
+      "3D": "3D",
+      "shake": "シェイク",
+      "vibration": "振動",
+      "float": "フロート",
+      "floating": "浮遊",
+      "circuit": "回路",
+      "flower": "花",
+      "nature": "自然",
+      "growth": "成長",
+      "brush": "ブラシ",
+      "art": "アート",
+      "creative": "クリエイティブ",
+      "combined": "複合",
+      "modern": "モダン",
+      "minimal": "ミニマル",
+      "agency": "エージェンシー",
+      "refined": "洗練",
+      "gradient": "グラデーション",
+      "design": "デザイン",
+      "studio": "スタジオ",
+      "elegant": "エレガント"
+    }
+  },
   "LogoCreator": {
     "manual_creation": "手動作成",
     "ai_generation": "AI生成",

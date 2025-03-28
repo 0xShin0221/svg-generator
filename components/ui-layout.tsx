@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Footer } from "./footer";
 
 interface UILayoutProps {
   children: ReactNode;
@@ -63,16 +64,7 @@ export function UILayout({
           {children}
         </motion.div>
       </main>
-
-      {/* フッター */}
-      <footer className="mt-20 border-t border-white/5 py-6">
-        <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
-          <p>
-            © {new Date().getFullYear()} SVG Logo Creator. All rights reserved.
-          </p>
-        </div>
-      </footer>
-
+      <Footer />
       {/* 装飾要素 */}
       <div className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full filter blur-3xl" />
