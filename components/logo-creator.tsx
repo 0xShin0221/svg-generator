@@ -673,11 +673,11 @@ export default function LogoCreator() {
 
       {/* クイックアクションボタン - 手動モードの場合のみ表示 */}
       {creationMode === "manual" && (
-        <div className="flex justify-center gap-4">
+        <div className="flex justify-center gap-4 my-4">
           <Button
             onClick={() => setCreationMode("template")}
             variant="outline"
-            className="gap-2 bg-gradient-to-r from-pink-500/10 to-purple-500/10 border-white/10 hover:border-pink-500/50 text-white"
+            className="gap-2 bg-gray-800/60 hover:bg-pink-900/40 text-gray-300 hover:text-pink-200 border-gray-700 hover:border-pink-800/50"
             size="lg"
           >
             <Sparkles className="h-5 w-5" />
@@ -686,7 +686,7 @@ export default function LogoCreator() {
           <Button
             onClick={() => setCreationMode("ai")}
             variant="outline"
-            className="gap-2 bg-gradient-to-r from-purple-500/10 to-blue-500/10 border-white/10 hover:border-purple-500/50 text-white"
+            className="gap-2 bg-gray-800/60 hover:bg-purple-900/40 text-gray-300 hover:text-purple-200 border-gray-700 hover:border-purple-800/50"
             size="lg"
           >
             <Wand2 className="h-5 w-5" />
@@ -695,7 +695,7 @@ export default function LogoCreator() {
           <Button
             onClick={openSaveLoadDialog}
             variant="outline"
-            className="gap-2 bg-gradient-to-r from-blue-500/10 to-green-500/10 border-white/10 hover:border-blue-500/50 text-white"
+            className="gap-2 bg-gray-800/60 hover:bg-blue-900/40 text-gray-300 hover:text-blue-200 border-gray-700 hover:border-blue-800/50"
             size="lg"
           >
             <Save className="h-5 w-5" />
@@ -703,7 +703,6 @@ export default function LogoCreator() {
           </Button>
         </div>
       )}
-
       {/* メインエディタ - 手動モードの場合のみ表示 */}
       {creationMode === "manual" && (
         <div className="grid gap-8 lg:grid-cols-2">
@@ -1081,9 +1080,9 @@ export default function LogoCreator() {
                       <Button
                         onClick={() => setShowAdvancedShapesModal(true)}
                         variant="outline"
-                        className="w-full gap-2 border-white/10 bg-gradient-to-r from-blue-500/10 to-purple-500/10 hover:bg-blue-500/20 text-white"
+                        className="w-full gap-2 border-gray-600 bg-gray-800/60 hover:bg-gray-700 hover:border-gray-500 text-gray-200 transition-colors duration-200"
                       >
-                        <Layers className="h-4 w-4" />
+                        <Layers className="h-4 w-4 text-blue-400" />
                         高度なシェイプギャラリーを開く
                       </Button>
                     </div>
