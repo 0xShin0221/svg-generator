@@ -1,6 +1,6 @@
-import { UILayout } from "@/components/ui-layout"
-import LogoCreator from "@/components/logo-creator"
-import ErrorBoundary from "@/components/error-boundary"
+import { UILayout } from "@/components/ui-layout";
+import LogoCreator from "@/components/logo-creator";
+import ErrorBoundary from "@/components/error-boundary";
 
 export default function Home() {
   return (
@@ -13,6 +13,5 @@ export default function Home() {
         <LogoCreator />
       </ErrorBoundary>
     </UILayout>
-  )
+  );
 }
-

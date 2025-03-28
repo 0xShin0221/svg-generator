@@ -6,9 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "i18next-extract": "babel 'app/**/*.{js,jsx,ts,tsx}' --config-file ./babel.config.cjs --extensions '.js,.jsx,.ts,.tsx' --out-file /dev/null"
   },
   "dependencies": {
+    "@babel/cli": "^7.25.9",
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-syntax-jsx": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@babel/preset-typescript": "^7.26.0",
     "@emotion/is-prop-valid": "latest",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.2",
@@ -66,6 +73,8 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "babel-plugin-i18next-extract": "^1.0.0",
+    "esbuild": "^0.25.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
