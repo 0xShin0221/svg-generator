@@ -1,5 +1,5 @@
 "use client";
-
+import { useTranslations } from "next-intl";
 import { useState, useRef, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -46,6 +46,7 @@ import {
   Plus,
   Trash2,
 } from "lucide-react";
+import LogoPreview from "./logo-preview";
 
 // シェイプギャラリーのアイテム
 const shapeGalleryItems = [
@@ -125,6 +126,7 @@ export default function LogoCreator() {
     { name: string; url: string }[]
   >([]);
 
+  const t = useTranslations("LogoCreator");
   // fontOptionsを更新して、カスタムフォントを含める
   const allFontOptions = [
     ...fontOptions,
@@ -473,9 +475,8 @@ export default function LogoCreator() {
         return prev.map((font) =>
           font.name === fontFamily ? { name: fontFamily, url: fontUrl } : font
         );
-      } else {
-        return [...prev, { name: fontFamily, url: fontUrl }];
       }
+      return [...prev, { name: fontFamily, url: fontUrl }];
     });
   };
 
@@ -496,21 +497,21 @@ export default function LogoCreator() {
             className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500/20 data-[state=active]:to-blue-500/10 data-[state=active]:text-blue-400 rounded-sm"
           >
             <Layers className="h-4 w-4 mr-2" />
-            手動作成
+            {t("manual_creation")}
           </TabsTrigger>
           <TabsTrigger
             value="ai"
             className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500/20 data-[state=active]:to-purple-500/10 data-[state=active]:text-purple-400 rounded-sm"
           >
             <Wand2 className="h-4 w-4 mr-2" />
-            AI生成
+            {t("ai_generation")}
           </TabsTrigger>
           <TabsTrigger
             value="template"
             className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500/20 data-[state=active]:to-pink-500/10 data-[state=active]:text-pink-400 rounded-sm"
           >
             <Sparkles className="h-4 w-4 mr-2" />
-            テンプレート
+            {t("template")}
           </TabsTrigger>
         </TabsList>
 
@@ -530,7 +531,7 @@ export default function LogoCreator() {
                 <div className="flex items-center gap-2">
                   <Sparkles className="h-5 w-5 text-pink-400" />
                   <h2 className="text-xl font-semibold text-white">
-                    テンプレートギャラリー
+                    {t("template_gallery")}
                   </h2>
                 </div>
                 <LogoTemplates
@@ -564,14 +565,14 @@ export default function LogoCreator() {
                 <CardContent className="p-6">
                   <div className="flex justify-between items-center mb-6">
                     <h2 className="text-2xl font-bold text-white">
-                      テンプレートギャラリー
+                      {t("template_gallery")}
                     </h2>
                     <Button
                       variant="ghost"
                       onClick={() => setShowTemplates(false)}
                       className="text-gray-300 hover:text-white"
                     >
-                      閉じる
+                      {t("close")}
                     </Button>
                   </div>
                   <LogoTemplates onSelectTemplate={selectTemplate} />
@@ -600,14 +601,14 @@ export default function LogoCreator() {
                 <CardContent className="p-6">
                   <div className="flex justify-between items-center mb-6">
                     <h2 className="text-2xl font-bold text-white">
-                      高度なシェイプギャラリー
+                      {t("advanced_shape_gallery")}
                     </h2>
                     <Button
                       variant="ghost"
                       onClick={() => setShowAdvancedShapes(false)}
                       className="text-gray-300 hover:text-white"
                     >
-                      閉じる
+                      {t("close")}
                     </Button>
                   </div>
                   <AdvancedShapes onSelectShape={selectAdvancedShape} />
@@ -636,14 +637,14 @@ export default function LogoCreator() {
                 <div className="flex justify-between items-center p-4 border-b border-white/10">
                   <h2 className="text-xl font-bold text-white flex items-center gap-2">
                     <Layers className="h-5 w-5 text-blue-400" />
-                    高度なシェイプギャラリー
+                    {t("advanced_shape_gallery")}
                   </h2>
                   <Button
                     variant="ghost"
                     onClick={() => setShowAdvancedShapesModal(false)}
                     className="text-gray-300 hover:text-white"
                   >
-                    閉じる
+                    {t("close")}
                   </Button>
                 </div>
                 <div className="flex-1 overflow-hidden">
@@ -681,7 +682,7 @@ export default function LogoCreator() {
             size="lg"
           >
             <Sparkles className="h-5 w-5" />
-            テンプレートから選ぶ
+            {t("choose_from_template")}
           </Button>
           <Button
             onClick={() => setCreationMode("ai")}
@@ -690,7 +691,7 @@ export default function LogoCreator() {
             size="lg"
           >
             <Wand2 className="h-5 w-5" />
-            AIで生成
+            {t("generate_with_ai")}
           </Button>
           <Button
             onClick={openSaveLoadDialog}
@@ -699,7 +700,7 @@ export default function LogoCreator() {
             size="lg"
           >
             <Save className="h-5 w-5" />
-            保存/読み込み
+            {t("save_load")}
           </Button>
         </div>
       )}
@@ -719,31 +720,33 @@ export default function LogoCreator() {
                       value="text"
                       className="data-[state=active]:bg-blue-500/20 data-[state=active]:text-blue-400"
                     >
-                      テキスト
+                      {t("text")}
                     </TabsTrigger>
                     <TabsTrigger
                       value="colors"
                       className="data-[state=active]:bg-purple-500/20 data-[state=active]:text-purple-400"
                     >
-                      カラー
+                      {t("colors")}
                     </TabsTrigger>
                     <TabsTrigger
                       value="shape"
                       className="data-[state=active]:bg-pink-500/20 data-[state=active]:text-pink-400"
                     >
-                      シェイプ
+                      {t("shape")}
                     </TabsTrigger>
                     <TabsTrigger
                       value="animation"
                       className="data-[state=active]:bg-cyan-500/20 data-[state=active]:text-cyan-400"
                     >
-                      アニメーション
+                      {t("animation")}
                     </TabsTrigger>
                   </TabsList>
 
                   <TabsContent value="text" className="space-y-4">
                     <div className="flex items-center justify-between mb-4">
-                      <Label className="text-gray-300">テキスト要素</Label>
+                      <Label className="text-gray-300">
+                        {t("text_elements")}
+                      </Label>
                       <Button
                         variant="outline"
                         size="sm"
@@ -751,7 +754,7 @@ export default function LogoCreator() {
                         disabled={settings.texts.length >= 3}
                         className="border-gray-700 bg-gray-800 hover:bg-gray-700 text-gray-300"
                       >
-                        <Plus className="h-4 w-4 mr-1" /> テキスト追加
+                        <Plus className="h-4 w-4 mr-1" /> {t("add_text")}
                       </Button>
                     </div>
 
@@ -792,7 +795,7 @@ export default function LogoCreator() {
 
                     <div className="space-y-2">
                       <Label htmlFor="logo-text" className="text-gray-300">
-                        テキスト
+                        {t("text")}
                       </Label>
                       <Input
                         id="logo-text"
@@ -800,7 +803,7 @@ export default function LogoCreator() {
                         onChange={(e) =>
                           handleTextChange("text", e.target.value)
                         }
-                        placeholder="テキストを入力"
+                        placeholder={t("enter_text")}
                         className="bg-gray-900/50 border-gray-700 text-white"
                       />
                     </div>
@@ -809,13 +812,13 @@ export default function LogoCreator() {
                     <Tabs defaultValue="basic" className="mt-4">
                       <TabsList className="bg-gray-900/70 w-full">
                         <TabsTrigger value="basic" className="flex-1">
-                          基本設定
+                          {t("basic_settings")}
                         </TabsTrigger>
                         <TabsTrigger value="layout" className="flex-1">
-                          レイアウト
+                          {t("layout")}
                         </TabsTrigger>
                         <TabsTrigger value="font" className="flex-1">
-                          フォント
+                          {t("font")}
                         </TabsTrigger>
                       </TabsList>
 
@@ -826,7 +829,7 @@ export default function LogoCreator() {
                             htmlFor="font-family"
                             className="text-gray-300"
                           >
-                            フォント
+                            {t("font")}
                           </Label>
                           <select
                             id="font-family"
@@ -836,7 +839,7 @@ export default function LogoCreator() {
                             }
                             className="w-full rounded-md border border-gray-700 bg-gray-900/50 px-3 py-2 text-white"
                           >
-                            <optgroup label="標準フォント">
+                            <optgroup label={t("standard_fonts")}>
                               {fontOptions.map((font) => (
                                 <option key={font} value={font}>
                                   {font}
@@ -844,7 +847,7 @@ export default function LogoCreator() {
                               ))}
                             </optgroup>
                             {customFonts.length > 0 && (
-                              <optgroup label="カスタムフォント">
+                              <optgroup label={t("custom_fonts")}>
                                 {customFonts.map((font) => (
                                   <option key={font.name} value={font.name}>
                                     {font.name}
@@ -857,7 +860,7 @@ export default function LogoCreator() {
 
                         <div className="space-y-2">
                           <Label htmlFor="font-size" className="text-gray-300">
-                            フォントサイズ: {activeText.fontSize}px
+                            {t("font_size")}: {activeText.fontSize}px
                           </Label>
                           <Slider
                             id="font-size"
@@ -877,7 +880,7 @@ export default function LogoCreator() {
                             htmlFor="text-offset"
                             className="text-gray-300"
                           >
-                            垂直位置: {activeText.offsetY}px
+                            {t("vertical_position")}: {activeText.offsetY}px
                           </Label>
                           <Slider
                             id="text-offset"
@@ -913,7 +916,7 @@ export default function LogoCreator() {
                         {/* カスタムフォントアップローダーを追加 */}
                         <div className="mt-6 border-t border-gray-700 pt-4">
                           <h3 className="text-sm font-medium text-gray-300 mb-3">
-                            カスタムフォントをアップロード
+                            {t("upload_custom_font")}
                           </h3>
                           <FontUploader onFontUpload={handleFontUpload} />
                         </div>
@@ -924,7 +927,7 @@ export default function LogoCreator() {
                   <TabsContent value="colors" className="space-y-4">
                     <div className="space-y-2">
                       <Label htmlFor="text-color" className="text-gray-300">
-                        テキストカラー
+                        {t("text_color")}
                       </Label>
                       <div className="flex items-center gap-2">
                         <Input
@@ -951,7 +954,7 @@ export default function LogoCreator() {
                         htmlFor="background-color"
                         className="text-gray-300"
                       >
-                        背景カラー
+                        {t("background_color")}
                       </Label>
                       <div className="flex items-center gap-2">
                         <Input
@@ -974,7 +977,7 @@ export default function LogoCreator() {
                     </div>
 
                     <div className="space-y-2 mt-4">
-                      <Label className="text-gray-300">グラデーション</Label>
+                      <Label className="text-gray-300">{t("gradient")}</Label>
                       <GradientSettingsComponent
                         gradient={
                           settings.gradient || {
@@ -1000,7 +1003,9 @@ export default function LogoCreator() {
                     </div>
 
                     <div className="space-y-2">
-                      <Label className="text-gray-300">カラープリセット</Label>
+                      <Label className="text-gray-300">
+                        {t("color_presets")}
+                      </Label>
                       <div className="grid grid-cols-4 gap-2">
                         {colorPresets.map((preset, index) => (
                           <Button
@@ -1019,7 +1024,7 @@ export default function LogoCreator() {
                                   : "",
                             }}
                           >
-                            {preset.name}
+                            {t(preset.name.toLowerCase())}
                           </Button>
                         ))}
                       </div>
@@ -1028,7 +1033,7 @@ export default function LogoCreator() {
 
                   <TabsContent value="shape" className="space-y-4">
                     <div className="space-y-2">
-                      <Label className="text-gray-300">シェイプ</Label>
+                      <Label className="text-gray-300">{t("shape")}</Label>
                       <RadioGroup
                         value={settings.shape}
                         onValueChange={(value) =>
@@ -1056,7 +1061,7 @@ export default function LogoCreator() {
                                   __html: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">${shape.svg}</svg>`,
                                 }}
                               />
-                              {shape.name}
+                              {t(shape.name)}
                             </Label>
                           </div>
                         ))}
@@ -1070,7 +1075,7 @@ export default function LogoCreator() {
                             htmlFor="shape-none"
                             className="text-gray-300 cursor-pointer"
                           >
-                            シェイプなし
+                            {t("no_shape")}
                           </Label>
                         </div>
                       </RadioGroup>
@@ -1083,13 +1088,13 @@ export default function LogoCreator() {
                         className="w-full gap-2 border-gray-600 bg-gray-800/60 hover:bg-gray-700 hover:border-gray-500 text-gray-200 transition-colors duration-200"
                       >
                         <Layers className="h-4 w-4 text-blue-400" />
-                        高度なシェイプギャラリーを開く
+                        {t("open_advanced_shape_gallery")}
                       </Button>
                     </div>
 
                     <div className="space-y-2">
                       <Label htmlFor="padding" className="text-gray-300">
-                        パディング: {settings.padding}px
+                        {t("padding")}: {settings.padding}px
                       </Label>
                       <Slider
                         id="padding"
@@ -1207,7 +1212,7 @@ export default function LogoCreator() {
             <div className="w-full aspect-square flex items-center justify-center bg-gradient-to-br from-gray-900 to-black rounded-lg overflow-hidden border border-white/10 shadow-xl">
               <div className="relative w-full h-full flex items-center justify-center">
                 {/* 背景グリッド */}
-                <div className="absolute inset-0 bg-[#111] opacity-50"></div>
+                <div className="absolute inset-0 bg-[#111] opacity-50" />
 
                 {/* プレビュー */}
                 <LogoPreview
@@ -1225,7 +1230,7 @@ export default function LogoCreator() {
                 size="lg"
               >
                 <Download className="h-5 w-5" />
-                エクスポート
+                {t("export")}
               </Button>
               <Button
                 onClick={copySvgCode}
@@ -1238,7 +1243,7 @@ export default function LogoCreator() {
                 ) : (
                   <Copy className="h-5 w-5" />
                 )}
-                {copied ? "コピー完了" : "SVGコードをコピー"}
+                {copied ? t("copy_completed") : t("copy_svg_code")}
               </Button>
             </div>
           </motion.div>
@@ -1246,463 +1251,4 @@ export default function LogoCreator() {
       )}
     </div>
   );
-}
-
-// LogoPreview コンポーネント
-function LogoPreview({
-  settings,
-  isPlaying,
-  customFonts = [],
-}: {
-  settings: LogoSettings;
-  isPlaying: boolean;
-  customFonts?: { name: string; url: string }[];
-}) {
-  const {
-    texts,
-    backgroundColor,
-    shape,
-    padding,
-    animation,
-    advancedShapeId,
-    gradient,
-  } = settings;
-
-  // サイズ計算
-  const mainText = texts[0] || { text: "", fontSize: 48 };
-  const baseSize = Math.max(
-    200,
-    mainText.fontSize * 1.5 * Math.max(1, mainText.text.length / 2)
-  );
-  const size = baseSize + (shape !== "none" ? padding * 2 : 0);
-
-  // アニメーションスタイルを生成
-  let animationStyles = "";
-
-  // シェイプアニメーション
-  if (animation && animation.type !== "none" && isPlaying) {
-    animationStyles += getAnimationStyle(animation, "shape");
-  }
-
-  // テキストアニメーション
-  texts.forEach((text, index) => {
-    if (text.animation && text.animation.type !== "none" && isPlaying) {
-      animationStyles += getAnimationStyle(text.animation, `text-${index}`);
-    }
-  });
-
-  // シェイプ要素を生成
-  let shapeElement = null;
-
-  if (shape === "circle") {
-    shapeElement = (
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={size / 2}
-        fill={
-          gradient && gradient.type !== "none"
-            ? "url(#gradient)"
-            : backgroundColor
-        }
-        className={
-          animation && animation.type !== "none" && isPlaying
-            ? "shape-animation"
-            : ""
-        }
-      />
-    );
-  } else if (shape === "square") {
-    shapeElement = (
-      <rect
-        x="0"
-        y="0"
-        width={size}
-        height={size}
-        fill={
-          gradient && gradient.type !== "none"
-            ? "url(#gradient)"
-            : backgroundColor
-        }
-        className={
-          animation && animation.type !== "none" && isPlaying
-            ? "shape-animation"
-            : ""
-        }
-      />
-    );
-  } else if (shape === "rounded-square") {
-    shapeElement = (
-      <rect
-        x="0"
-        y="0"
-        width={size}
-        height={size}
-        rx={size / 10}
-        ry={size / 10}
-        fill={
-          gradient && gradient.type !== "none"
-            ? "url(#gradient)"
-            : backgroundColor
-        }
-        className={
-          animation && animation.type !== "none" && isPlaying
-            ? "shape-animation"
-            : ""
-        }
-      />
-    );
-  } else if (shape === "hexagon") {
-    const points = `${size / 2},0 ${size},${size / 4} ${size},${
-      (3 * size) / 4
-    } ${size / 2},${size} 0,${(3 * size) / 4} 0,${size / 4}`;
-    shapeElement = (
-      <polygon
-        points={points}
-        fill={
-          gradient && gradient.type !== "none"
-            ? "url(#gradient)"
-            : backgroundColor
-        }
-        className={
-          animation && animation.type !== "none" && isPlaying
-            ? "shape-animation"
-            : ""
-        }
-      />
-    );
-  } else if (shape === "triangle") {
-    shapeElement = (
-      <polygon
-        points={`${size / 2},0 ${size},${size} 0,${size}`}
-        fill={
-          gradient && gradient.type !== "none"
-            ? "url(#gradient)"
-            : backgroundColor
-        }
-        className={
-          animation && animation.type !== "none" && isPlaying
-            ? "shape-animation"
-            : ""
-        }
-      />
-    );
-  } else if (shape === "star") {
-    // 星形の頂点を計算
-    const center = size / 2;
-    const outerRadius = size / 2;
-    const innerRadius = size / 4;
-    let points = "";
-
-    for (let i = 0; i < 10; i++) {
-      const radius = i % 2 === 0 ? outerRadius : innerRadius;
-      const angle = ((i * 36 - 90) * Math.PI) / 180;
-      const x = center + radius * Math.cos(angle);
-      const y = center + radius * Math.sin(angle);
-      points += `${x},${y} `;
-    }
-
-    shapeElement = (
-      <polygon
-        points={points.trim()}
-        fill={
-          gradient && gradient.type !== "none"
-            ? "url(#gradient)"
-            : backgroundColor
-        }
-        className={
-          animation && animation.type !== "none" && isPlaying
-            ? "shape-animation"
-            : ""
-        }
-      />
-    );
-  } else if (shape === "shield") {
-    shapeElement = (
-      <path
-        d={`M${size / 2},0 L${size},${size / 5} L${size},${
-          (3 * size) / 5
-        } C${size},${(4 * size) / 5} ${(3 * size) / 4},${size} ${
-          size / 2
-        },${size} C${size / 4},${size} 0,${(4 * size) / 5} 0,${
-          (3 * size) / 5
-        } L0,${size / 5} Z`}
-        fill={
-          gradient && gradient.type !== "none"
-            ? "url(#gradient)"
-            : backgroundColor
-        }
-        className={
-          animation && animation.type !== "none" && isPlaying
-            ? "shape-animation"
-            : ""
-        }
-      />
-    );
-  } else if (shape === "advanced" && advancedShapeId) {
-    // 高度なシェイプの場合は、AdvancedShapesコンポーネントから対応するSVGを取得
-    const advancedShape = getAdvancedShapeById(advancedShapeId);
-    if (advancedShape) {
-      // 実際のSVGパスを使用
-      shapeElement = (
-        <g
-          dangerouslySetInnerHTML={{
-            __html: advancedShape.svg.replace(
-              /currentColor/g,
-              gradient && gradient.type !== "none"
-                ? "url(#gradient)"
-                : backgroundColor
-            ),
-          }}
-          className={
-            animation && animation.type !== "none" && isPlaying
-              ? "shape-animation"
-              : ""
-          }
-        />
-      );
-    }
-  }
-
-  // グラデーション方向を角度に変換
-  const getGradientRotation = (direction: GradientDirection): number => {
-    switch (direction) {
-      case "to-right":
-        return 90;
-      case "to-left":
-        return 270;
-      case "to-bottom":
-        return 180;
-      case "to-top":
-        return 0;
-      case "to-bottom-right":
-        return 135;
-      case "to-bottom-left":
-        return 225;
-      case "to-top-right":
-        return 45;
-      case "to-top-left":
-        return 315;
-      default:
-        return 90;
-    }
-  };
-
-  // SVG内にスタイルタグを追加してカスタムフォントを定義
-  const fontFaceStyles = customFonts
-    .map(
-      (font) => `
-    @font-face {
-      font-family: "${font.name}";
-      src: url("${font.url}") format("woff2");
-      font-weight: normal;
-      font-style: normal;
-    }
-  `
-    )
-    .join("\n");
-
-  return (
-    <svg
-      id="logo-preview"
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
-      xmlns="http://www.w3.org/2000/svg"
-      className={cn(
-        "max-w-full max-h-full drop-shadow-lg",
-        shape === "none" && "border border-dashed border-gray-600"
-      )}
-    >
-      {/* グラデーション定義 */}
-      {gradient && gradient.type !== "none" && (
-        <defs>
-          {gradient.type === "linear" ? (
-            <linearGradient
-              id="gradient"
-              gradientTransform={`rotate(${getGradientRotation(
-                gradient.direction
-              )})`}
-            >
-              <stop offset="0%" stopColor={gradient.startColor} />
-              <stop offset="100%" stopColor={gradient.endColor} />
-            </linearGradient>
-          ) : (
-            <radialGradient id="gradient">
-              <stop offset="0%" stopColor={gradient.startColor} />
-              <stop offset="100%" stopColor={gradient.endColor} />
-            </radialGradient>
-          )}
-        </defs>
-      )}
-      <style>
-        {fontFaceStyles}
-        {animationStyles}
-      </style>
-
-      {shape !== "none" && shapeElement}
-
-      {texts.map((textItem, index) => {
-        // テキストのレイアウト設定を取得
-        const layout = textItem.layout || {
-          alignment: "center",
-          rotation: 0,
-          letterSpacing: 0,
-          lineHeight: 1.2,
-        };
-
-        // テキストアンカーの設定
-        let textAnchor = "middle";
-        if (layout.alignment === "left") textAnchor = "start";
-        if (layout.alignment === "right") textAnchor = "end";
-
-        return (
-          <text
-            key={textItem.id}
-            x={
-              layout.alignment === "left"
-                ? "10%"
-                : layout.alignment === "right"
-                ? "90%"
-                : "50%"
-            }
-            y={`${50 + textItem.offsetY}%`}
-            dominantBaseline="middle"
-            textAnchor={textAnchor}
-            fill={textItem.color}
-            fontFamily={`${textItem.fontFamily}, sans-serif`}
-            fontWeight="bold"
-            fontSize={textItem.fontSize}
-            style={{
-              letterSpacing: `${layout.letterSpacing}px`,
-              lineHeight: layout.lineHeight,
-              transform: layout.rotation
-                ? `rotate(${layout.rotation}deg)`
-                : undefined,
-              transformOrigin: "center",
-            }}
-            className={
-              textItem.animation &&
-              textItem.animation.type !== "none" &&
-              isPlaying
-                ? `text-${index}-animation`
-                : ""
-            }
-          >
-            {textItem.animation?.type === "typewriter" && isPlaying ? (
-              <tspan className="typewriter">{textItem.text}</tspan>
-            ) : (
-              textItem.text
-            )}
-          </text>
-        );
-      })}
-    </svg>
-  );
-}
-
-// アニメーションスタイルを生成する関数
-function getAnimationStyle(
-  animSettings: AnimationSettings,
-  className: string
-): string {
-  if (animSettings.type === "none") return "";
-
-  // アニメーションのキーフレーム定義
-  const keyframes: Record<string, string> = {
-    rotate:
-      "@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }",
-    pulse:
-      "@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }",
-    bounce:
-      "@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }",
-    fade: "@keyframes fade { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }",
-    slide:
-      "@keyframes slide { 0% { transform: translateX(-20px); } 100% { transform: translateX(20px); } }",
-    flip: "@keyframes flip { 0% { transform: perspective(400px) rotateY(0); } 100% { transform: perspective(400px) rotateY(360deg); } }",
-    shake:
-      "@keyframes shake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); } 20%, 40%, 60%, 80% { transform: translateX(5px); } }",
-    "spin-pulse":
-      "@keyframes spin-pulse { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(180deg) scale(1.2); } 100% { transform: rotate(360deg) scale(1); } }",
-    float:
-      "@keyframes float { 0%, 100% { transform: translateY(0) rotate(0deg); } 25% { transform: translateY(-10px) rotate(-5deg); } 50% { transform: translateY(0) rotate(0deg); } 75% { transform: translateY(10px) rotate(5deg); } }",
-    glitch:
-      "@keyframes glitch { 0%, 100% { transform: translate(0); } 20% { transform: translate(-5px, 5px); } 40% { transform: translate(-5px, -5px); } 60% { transform: translate(5px, 5px); } 80% { transform: translate(5px, -5px); } }",
-    wave: "@keyframes wave { 0%, 100% { transform: skewX(0deg); } 25% { transform: skewX(10deg); } 50% { transform: skewX(0deg); } 75% { transform: skewX(-10deg); } }",
-    morph:
-      "@keyframes morph { 0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; } 50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; } }",
-    draw: "@keyframes draw { 0% { stroke-dashoffset: 1000; } 100% { stroke-dashoffset: 0; } }",
-    blur: "@keyframes blur { 0%, 100% { filter: blur(0px); } 50% { filter: blur(4px); } }",
-    zoom: "@keyframes zoom { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.5); } }",
-    swing:
-      "@keyframes swing { 0%, 100% { transform: rotate(0deg); } 20% { transform: rotate(15deg); } 40% { transform: rotate(-10deg); } 60% { transform: rotate(5deg); } 80% { transform: rotate(-5deg); } }",
-    vibrate:
-      "@keyframes vibrate { 0%, 100% { transform: translate(0); } 20% { transform: translate(-2px, 2px); } 40% { transform: translate(-2px, -2px); } 60% { transform: translate(2px, 2px); } 80% { transform: translate(2px, -2px); } }",
-    typewriter:
-      "@keyframes typewriter { from { width: 0; } to { width: 100%; } }",
-    spotlight:
-      "@keyframes spotlight { 0%, 100% { filter: drop-shadow(0 0 10px rgba(255,255,255,0.8)); } 50% { filter: drop-shadow(0 0 20px rgba(255,255,255,0.4)); } }",
-  };
-
-  // イージング関数のマッピング
-  const easingMap: Record<string, string> = {
-    linear: "linear",
-    ease: "ease",
-    "ease-in": "ease-in",
-    "ease-out": "ease-out",
-    "ease-in-out": "ease-in-out",
-    elastic: "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
-    bounce: "cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-    back: "cubic-bezier(0.68, -0.6, 0.32, 1.6)",
-  };
-
-  // アニメーション方向のマッピング
-  const directionMap: Record<string, string> = {
-    normal: "normal",
-    reverse: "reverse",
-    alternate: "alternate",
-    "alternate-reverse": "alternate-reverse",
-  };
-
-  // 特殊なアニメーションのスタイル
-  let specialStyles = "";
-  if (animSettings.type === "typewriter") {
-    specialStyles = `
-    .typewriter {
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 3px solid;
-      width: 0;
-      animation: typewriter ${animSettings.duration}s ${
-      easingMap[animSettings.easing]
-    } ${animSettings.delay}s 1 forwards,
-                 blink-caret 0.75s step-end infinite;
-    }
-    @keyframes blink-caret {
-      from, to { border-color: transparent; }
-      50% { border-color: white; }
-    }
-  `;
-  }
-
-  // アニメーションプロパティを構築
-  const iterations =
-    animSettings.iterations === "infinite"
-      ? "infinite"
-      : animSettings.iterations;
-  const animationProps = `${animSettings.type} ${animSettings.duration}s ${
-    easingMap[animSettings.easing]
-  } ${animSettings.delay}s ${iterations} ${
-    directionMap[animSettings.direction]
-  }`;
-
-  return `
-  ${keyframes[animSettings.type]}
-  ${specialStyles}
-  .${className}-animation {
-    animation: ${animationProps};
-    transform-origin: center;
-  }
-`;
 }
