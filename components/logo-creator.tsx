@@ -1570,7 +1570,7 @@ function LogoPreview({
             dominantBaseline="middle"
             textAnchor={textAnchor}
             fill={textItem.color}
-            fontFamily={textItem.fontFamily + ", sans-serif"}
+            fontFamily={`${textItem.fontFamily}, sans-serif`}
             fontWeight="bold"
             fontSize={textItem.fontSize}
             style={{
