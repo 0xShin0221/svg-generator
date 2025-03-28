@@ -27,7 +27,7 @@ module.exports = {
     [
       "i18next-extract",
       {
-        locales: LANGUAGES.map((l) => l.code),
+        locales: LANGUAGES.map((l: string) => l),
         keyAsDefaultValue: LANGUAGES[0],
         outputPath: "./messages/{{locale}}/{{ns}}.json",
         defaultNS: "home",

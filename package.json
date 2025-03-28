@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "i18next-extract": "babel 'app/**/*.{js,jsx,ts,tsx}' --config-file ./babel.config.cjs --extensions '.js,.jsx,.ts,.tsx' --out-file /dev/null"
+    "i18next-extract": "babel 'app/**/*.{js,jsx,ts,tsx}' --config-file ./babel.config.cts --extensions '.js,.jsx,.ts,.tsx' --out-file /dev/null"
   },
   "dependencies": {
     "@babel/cli": "^7.25.9",
