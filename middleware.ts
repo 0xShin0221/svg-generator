@@ -1,11 +1,17 @@
 import createMiddleware from "next-intl/middleware";
+import { type NextRequest, NextResponse } from "next/server";
 import { routing } from "./i18n/routing";
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware(routing);
+
+export default function middleware(request: NextRequest) {
+  if (request.nextUrl.pathname === "/ads.txt") {
+    return NextResponse.next(); // ミドルウェア処理をスキップ
+  }
+
+  return intlMiddleware(request);
+}
 
 export const config = {
-  // Match all pathnames except for
-  // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-  // - … the ones containing a dot (e.g. `favicon.ico`)
-  matcher: "/((?!api|trpc|_next|_vercel|.*\\..*|ads\\.txt).*)",
+  matcher: ["/((?!api|trpc|_next|_vercel|_static|favicon.ico).*)"],
 };
