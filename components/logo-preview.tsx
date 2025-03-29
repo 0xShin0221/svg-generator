@@ -7,6 +7,7 @@ import type {
   LogoSettings,
 } from "@/types";
 import { useTranslations } from "next-intl";
+import { getAdvancedShapeById } from "./advanced-shapes";
 function getAnimationStyle(
   animSettings: AnimationSettings,
   className: string

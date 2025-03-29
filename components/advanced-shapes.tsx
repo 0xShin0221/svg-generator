@@ -803,7 +803,7 @@ export function AdvancedShapes({ onSelectShape }: { onSelectShape: (shapeId: str
                 </TabsTrigger>
               ))}
             </TabsList>
-            <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-black/80 to-transparent pointer-events-none"></div>
+            <div className="absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-black/80 to-transparent pointer-events-none" />
           </div>
         </Tabs>
       </div>
