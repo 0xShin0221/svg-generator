@@ -1,4 +1,20 @@
 {
+  "ExportDialog": {
+    "title": "ロゴをエクスポート",
+    "description": "ロゴを様々な形式でエクスポートできます",
+    "svgDescription": "SVG形式はベクター画像で、任意のサイズに拡大縮小しても品質が劣化しません。ウェブサイトやデジタルメディアに最適です。",
+    "pngDescription": "PNG形式は透明背景をサポートするラスター画像です。ウェブやデジタルメディアに適しています。",
+    "jpgDescription": "JPG形式は写真やグラデーションに適したラスター画像です。透明背景はサポートしていません。",
+    "quality": "品質",
+    "scale": "スケール",
+    "backgroundColor": "背景色",
+    "preview": "プレビュー",
+    "previewAlt": "プレビュー",
+    "cancel": "キャンセル",
+    "downloadAs": "{format}でダウンロード",
+    "downloadError": "ダウンロードエラー:",
+    "downloadCompleted": "ダウンロードが完了しました"
+  },
   "Footer": {
     "allRightsReserved": "All rights reserved.",
     "termsOfService": "利用規約",

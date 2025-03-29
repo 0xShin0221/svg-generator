@@ -1,4 +1,20 @@
 {
+  "ExportDialog": {
+    "title": "Export Logo",
+    "description": "Export your logo in various formats",
+    "svgDescription": "SVG format is a vector image that won't lose quality when resized. Ideal for websites and digital media.",
+    "pngDescription": "PNG format is a raster image that supports transparent backgrounds. Suitable for web and digital media.",
+    "jpgDescription": "JPG format is a raster image ideal for photos and gradients. Transparent backgrounds are not supported.",
+    "quality": "Quality",
+    "scale": "Scale",
+    "backgroundColor": "Background Color",
+    "preview": "Preview",
+    "previewAlt": "Preview",
+    "cancel": "Cancel",
+    "downloadAs": "{format} Download",
+    "downloadError": "Download error:",
+    "downloadCompleted": "Download completed"
+  },
   "Footer": {
     "allRightsReserved": "All rights reserved.",
     "termsOfService": "Terms of Service",

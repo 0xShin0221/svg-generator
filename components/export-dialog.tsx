@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { Download, Image, FileType, Check } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface ExportDialogProps {
   open: boolean;
@@ -30,6 +31,8 @@ export function ExportDialog({
   logoPreviewId,
   logoName,
 }: ExportDialogProps) {
+  const t = useTranslations("ExportDialog");
+
   const [svgElement, setSvgElement] = useState<SVGSVGElement | null>(null);
   const [format, setFormat] = useState<"svg" | "png" | "jpg">("svg");
   const [quality, setQuality] = useState(90);
@@ -39,6 +42,16 @@ export function ExportDialog({
   const [success, setSuccess] = useState(false);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  // Get SVG element when dialog opens
+  useEffect(() => {
+    if (open && logoPreviewId) {
+      const svg = document.getElementById(logoPreviewId) as SVGSVGElement;
+      if (svg) {
+        setSvgElement(svg);
+      }
+    }
+  }, [open, logoPreviewId]);
 
   // SVGをデータURLに変換 (useCallbackでメモ化)
   const svgToDataURL = useCallback((svg: SVGSVGElement): string => {
@@ -96,7 +109,7 @@ export function ExportDialog({
     };
 
     generatePreview();
-  }, [open, svgElement, format, quality, scale, background]);
+  }, [open, svgElement, format, quality, scale, background, svgToDataURL]);
 
   // ダウンロード処理
   const handleDownload = async () => {
@@ -139,7 +152,7 @@ export function ExportDialog({
       setSuccess(true);
       setTimeout(() => setSuccess(false), 2000);
     } catch (error) {
-      console.error("ダウンロードエラー:", error);
+      console.error(t("downloadError"), error);
     } finally {
       setDownloading(false);
     }
@@ -150,10 +163,10 @@ export function ExportDialog({
       <DialogContent className="sm:max-w-[500px] bg-gray-800/90 backdrop-blur-md border border-gray-700 text-white">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold text-white">
-            ロゴをエクスポート
+            {t("title")}
           </DialogTitle>
           <DialogDescription className="text-gray-400">
-            ロゴを様々な形式でエクスポートできます
+            {t("description")}
           </DialogDescription>
         </DialogHeader>
 
@@ -188,22 +201,18 @@ export function ExportDialog({
             </TabsList>
 
             <TabsContent value="svg" className="space-y-4 mt-4">
-              <div className="text-sm text-gray-400">
-                SVG形式はベクター画像で、任意のサイズに拡大縮小しても品質が劣化しません。
-                ウェブサイトやデジタルメディアに最適です。
-              </div>
+              <div className="text-sm text-gray-400">{t("svgDescription")}</div>
             </TabsContent>
 
             <TabsContent value="png" className="space-y-4 mt-4">
               <div className="space-y-4">
                 <div className="text-sm text-gray-400">
-                  PNG形式は透明背景をサポートするラスター画像です。
-                  ウェブやデジタルメディアに適しています。
+                  {t("pngDescription")}
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="scale" className="text-gray-300">
-                    スケール: {scale}x
+                    {t("scale")}: {scale}x
                   </Label>
                   <Slider
                     id="scale"
@@ -218,7 +227,7 @@ export function ExportDialog({
 
                 <div className="space-y-2">
                   <Label htmlFor="background" className="text-gray-300">
-                    背景色
+                    {t("backgroundColor")}
                   </Label>
                   <div className="flex items-center gap-2">
                     <Input
@@ -241,13 +250,12 @@ export function ExportDialog({
             <TabsContent value="jpg" className="space-y-4 mt-4">
               <div className="space-y-4">
                 <div className="text-sm text-gray-400">
-                  JPG形式は写真やグラデーションに適したラスター画像です。
-                  透明背景はサポートしていません。
+                  {t("jpgDescription")}
                 </div>
 
                 <div className="space-y-2">
                   <Label htmlFor="quality" className="text-gray-300">
-                    品質: {quality}%
+                    {t("quality")}: {quality}%
                   </Label>
                   <Slider
                     id="quality"
@@ -262,7 +270,7 @@ export function ExportDialog({
 
                 <div className="space-y-2">
                   <Label htmlFor="scale-jpg" className="text-gray-300">
-                    スケール: {scale}x
+                    {t("scale")}: {scale}x
                   </Label>
                   <Slider
                     id="scale-jpg"
@@ -277,7 +285,7 @@ export function ExportDialog({
 
                 <div className="space-y-2">
                   <Label htmlFor="background-jpg" className="text-gray-300">
-                    背景色
+                    {t("backgroundColor")}
                   </Label>
                   <div className="flex items-center gap-2">
                     <Input
@@ -300,12 +308,12 @@ export function ExportDialog({
 
           {/* プレビュー */}
           <div className="border border-gray-700 rounded-md p-4 bg-gray-900/50">
-            <Label className="text-gray-300 block mb-2">プレビュー</Label>
+            <Label className="text-gray-300 block mb-2">{t("preview")}</Label>
             <div className="flex items-center justify-center bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImNoZWNrZXJib2FyZCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiMyMjIiLz48cmVjdCB4PSIxMCIgeT0iMCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMzMzIi8+PHJlY3QgeD0iMCIgeT0iMTAiIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgZmlsbD0iIzMzMyIvPjxyZWN0IHg9IjEwIiB5PSIxMCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMjIyIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2NoZWNrZXJib2FyZCkiLz48L3N2Zz4=')] rounded-md overflow-hidden h-48">
               {previewUrl && (
                 <img
                   src={previewUrl || "/placeholder.svg"}
-                  alt="プレビュー"
+                  alt={t("previewAlt")}
                   className="max-w-full max-h-full object-contain"
                   style={{
                     backgroundColor:
@@ -326,7 +334,7 @@ export function ExportDialog({
             onClick={() => onOpenChange(false)}
             className="border-gray-700 bg-gray-800/50 hover:bg-gray-700/50 text-gray-300"
           >
-            キャンセル
+            {t("cancel")}
           </Button>
           <Button
             onClick={handleDownload}
@@ -348,7 +356,7 @@ export function ExportDialog({
             ) : (
               <>
                 <Download className="h-5 w-5 mr-2" />
-                {format.toUpperCase()}でダウンロード
+                {t("downloadAs", { format: format.toUpperCase() })}
               </>
             )}
           </Button>
