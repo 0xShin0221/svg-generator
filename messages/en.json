@@ -1,4 +1,8 @@
 {
+  "Home": {
+    "title": "SVG Generator",
+    "subtitle": "Free SVG logo and Icon generator"
+  },
   "ExportDialog": {
     "title": "Export Logo",
     "description": "Export your logo in various formats",

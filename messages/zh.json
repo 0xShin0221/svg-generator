@@ -1,4 +1,8 @@
 {
+  "Home": {
+    "title": "SVG生成器",
+    "subtitle": "免费SVG标志和图标生成器"
+  },
   "LogoCreator": {
     "manual_creation": "手动创建",
     "ai_generation": "AI生成",

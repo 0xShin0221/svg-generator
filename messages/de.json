@@ -1,4 +1,8 @@
 {
+  "Home": {
+    "title": "SVG-Generator",
+    "subtitle": "Kostenloser SVG-Logo- und Icon-Generator"
+  },
   "LogoCreator": {
     "manual_creation": "Manuelle Erstellung",
     "ai_generation": "KI-Generierung",
