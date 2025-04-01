@@ -1,8 +1,7 @@
 import { UILayout } from "@/components/ui-layout";
 import LogoCreator from "@/components/logo-creator";
 import ErrorBoundary from "@/components/error-boundary";
-import { setRequestLocale } from "next-intl/server";
-import { texts } from "@/i18n/texts";
+import { useTranslations } from "next-intl";
 
 import AnimatedCard from "@/components/animated-card";
 import {
@@ -21,18 +20,15 @@ import FAQSection from "@/components/lp/faq-section";
 import CTASection from "@/components/lp/cta-section";
 import AdBanner from "@/components/google-adsense";
 
-export default async function Home({ params }: { params: { locale: string } }) {
-  const resolvedParams = await params;
-  const locale = resolvedParams.locale as keyof typeof texts;
-  setRequestLocale(locale);
-
-  const homeMessages = texts[locale].Home;
+export default function Home() {
+  // Use useTranslations hook instead of directly accessing texts
+  const t = useTranslations("Home");
 
   return (
     <>
       <UILayout
-        title={homeMessages.title}
-        subtitle={homeMessages.subtitle}
+        title={t("title")}
+        subtitle={t("subtitle")}
         className="max-w-[1400px]"
       >
         {/* ロゴエディタ */}
@@ -93,8 +89,4 @@ export default async function Home({ params }: { params: { locale: string } }) {
       </UILayout>
     </>
   );
-}
-
-export function generateStaticParams() {
-  return Object.keys(texts).map((locale) => ({ locale }));
 }
