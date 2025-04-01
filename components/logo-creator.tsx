@@ -47,50 +47,7 @@ import {
   Trash2,
 } from "lucide-react";
 import LogoPreview from "./logo-preview";
-
-// シェイプギャラリーのアイテム
-const shapeGalleryItems = [
-  {
-    id: "circle",
-    name: "円",
-    svg: `<circle cx="50" cy="50" r="50" fill="currentColor" />`,
-  },
-  {
-    id: "square",
-    name: "正方形",
-    svg: `<rect x="0" y="0" width="100" height="100" fill="currentColor" />`,
-  },
-  {
-    id: "rounded-square",
-    name: "角丸正方形",
-    svg: `<rect x="0" y="0" width="100" height="100" rx="15" ry="15" fill="currentColor" />`,
-  },
-  {
-    id: "hexagon",
-    name: "六角形",
-    svg: `<polygon points="50,0 100,25 100,75 50,100 0,75 0,25" fill="currentColor" />`,
-  },
-  {
-    id: "triangle",
-    name: "三角形",
-    svg: `<polygon points="50,0 100,100 0,100" fill="currentColor" />`,
-  },
-  {
-    id: "star",
-    name: "星",
-    svg: `<polygon points="50,0 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35" fill="currentColor" />`,
-  },
-  {
-    id: "shield",
-    name: "シールド",
-    svg: `<path d="M50,0 L100,20 L100,60 C100,80 75,100 50,100 C25,100 0,80 0,60 L0,20 L50,0 Z" fill="currentColor" />`,
-  },
-  {
-    id: "advanced",
-    name: "高度なシェイプ",
-    svg: `<path d="M50,0 C60,40 100,50 70,80 C90,100 60,100 50,80 C40,100 10,100 30,80 C0,50 40,40 50,0 Z" fill="currentColor" />`,
-  },
-];
+import { shapeGalleryItems } from "./shapes/galleryItems";
 
 // デフォルトのアニメーション設定
 const defaultAnimationSettings: AnimationSettings = {
@@ -102,12 +59,19 @@ const defaultAnimationSettings: AnimationSettings = {
   iterations: "infinite",
 };
 
-export default function LogoCreator() {
-  // LogoCreator関数内の先頭に追加
-  const [creationMode, setCreationMode] = useState<
-    "manual" | "ai" | "template"
-  >("manual");
-  // LogoCreator関数内で、creationModeステートの後に追加
+// props型定義を追加
+interface LogoCreatorProps {
+  creationMode: "manual" | "ai" | "template";
+  settings?: LogoSettings | null;
+  onSelectLogo?: (settings: LogoSettings) => void;
+}
+
+export default function LogoCreator({
+  creationMode = "manual",
+  settings: propSettings = null,
+  onSelectLogo,
+}: LogoCreatorProps) {
+  // LogoCreator関数内で、showAdvancedShapesModalステートの定義
   const [showAdvancedShapesModal, setShowAdvancedShapesModal] = useState(false);
   // フォントオプション
   const fontOptions = [
@@ -145,37 +109,46 @@ export default function LogoCreator() {
     { bg: "#6366f1", text: "#ffffff", name: "Indigo" },
   ];
 
-  // 状態管理
-  const [settings, setSettings] = useState<LogoSettings>({
-    texts: [
-      {
-        id: "main",
-        text: "LOGO",
-        color: "#ffffff",
-        fontSize: 48,
-        fontFamily: "Arial",
-        offsetY: 0,
-        animation: { ...defaultAnimationSettings },
-        layout: {
-          alignment: "center",
-          rotation: 0,
-          letterSpacing: 0,
-          lineHeight: 1.2,
+  // 状態管理 - propsから初期値を設定
+  const [settings, setSettings] = useState<LogoSettings>(
+    propSettings || {
+      texts: [
+        {
+          id: "main",
+          text: "LOGO",
+          color: "#ffffff",
+          fontSize: 48,
+          fontFamily: "Arial",
+          offsetY: 0,
+          animation: { ...defaultAnimationSettings },
+          layout: {
+            alignment: "center",
+            rotation: 0,
+            letterSpacing: 0,
+            lineHeight: 1.2,
+          },
         },
+      ],
+      backgroundColor: "#3b82f6",
+      shape: "circle",
+      padding: 20,
+      animation: { ...defaultAnimationSettings },
+      advancedShapeId: undefined,
+      gradient: {
+        type: "none",
+        direction: "to-right",
+        startColor: "#3b82f6",
+        endColor: "#8b5cf6",
       },
-    ],
-    backgroundColor: "#3b82f6",
-    shape: "circle",
-    padding: 20,
-    animation: { ...defaultAnimationSettings },
-    advancedShapeId: undefined,
-    gradient: {
-      type: "none",
-      direction: "to-right",
-      startColor: "#3b82f6",
-      endColor: "#8b5cf6",
-    },
-  });
+    }
+  );
+
+  // propSettingsが変更されたら内部のstateを更新
+  useEffect(() => {
+    if (propSettings) {
+      setSettings(propSettings);
+    }
+  }, [propSettings]);
 
   const [copied, setCopied] = useState(false);
   const [showTemplates, setShowTemplates] = useState(false);
@@ -242,6 +215,11 @@ export default function LogoCreator() {
     if (updatedSettings.texts.length > 0) {
       setActiveTextId(updatedSettings.texts[0].id);
     }
+
+    // 親コンポーネントに選択されたロゴ設定を通知
+    if (onSelectLogo) {
+      onSelectLogo(updatedSettings);
+    }
   };
 
   // 高度なシェイプ選択ハンドラー
@@ -259,6 +237,11 @@ export default function LogoCreator() {
 
       setSettings(updatedSettings);
       console.log("Advanced shape selected:", shapeId, selectedShape.name);
+
+      // 親コンポーネントに更新を通知
+      if (onSelectLogo) {
+        onSelectLogo(updatedSettings);
+      }
     } else {
       console.error("Advanced shape not found:", shapeId);
     }
@@ -274,11 +257,18 @@ export default function LogoCreator() {
         t.id === activeTextId ? { ...t, color: text } : t
       );
 
-      return {
+      const updatedSettings = {
         ...prev,
         backgroundColor: bg,
         texts: updatedTexts,
       };
+
+      // 親コンポーネントに更新を通知
+      if (onSelectLogo) {
+        onSelectLogo(updatedSettings);
+      }
+
+      return updatedSettings;
     });
   };
 
@@ -292,19 +282,35 @@ export default function LogoCreator() {
         t.id === activeTextId ? { ...t, [key]: value } : t
       );
 
-      return {
+      const updatedSettings = {
         ...prev,
         texts: updatedTexts,
       };
+
+      // 親コンポーネントに更新を通知
+      if (onSelectLogo) {
+        onSelectLogo(updatedSettings);
+      }
+
+      return updatedSettings;
     });
   };
 
   // アニメーション設定変更ハンドラー
   const handleAnimationChange = (animation: AnimationSettings) => {
-    setSettings((prev) => ({
-      ...prev,
-      animation,
-    }));
+    setSettings((prev) => {
+      const updatedSettings = {
+        ...prev,
+        animation,
+      };
+
+      // 親コンポーネントに更新を通知
+      if (onSelectLogo) {
+        onSelectLogo(updatedSettings);
+      }
+
+      return updatedSettings;
+    });
   };
 
   // テキストアニメーション設定変更ハンドラー
@@ -318,11 +324,21 @@ export default function LogoCreator() {
     value: LogoSettings[K]
   ) => {
     setSettings((prev) => {
+      let updatedSettings: LogoSettings;
+
       // シェイプが変更され、新しいシェイプが「advanced」でない場合は、advancedShapeIdをリセット
       if (key === "shape" && value !== "advanced") {
-        return { ...prev, [key]: value, advancedShapeId: undefined };
+        updatedSettings = { ...prev, [key]: value, advancedShapeId: undefined };
+      } else {
+        updatedSettings = { ...prev, [key]: value };
       }
-      return { ...prev, [key]: value };
+
+      // 親コンポーネントに更新を通知
+      if (onSelectLogo) {
+        onSelectLogo(updatedSettings);
+      }
+
+      return updatedSettings;
     });
   };
 
@@ -339,15 +355,22 @@ export default function LogoCreator() {
       animation: { ...defaultAnimationSettings },
     };
 
-    setSettings((prev) => ({
-      ...prev,
-      texts: [...prev.texts, newText],
-    }));
+    setSettings((prev) => {
+      const updatedSettings = {
+        ...prev,
+        texts: [...prev.texts, newText],
+      };
+
+      // 親コンポーネントに更新を通知
+      if (onSelectLogo) {
+        onSelectLogo(updatedSettings);
+      }
+
+      return updatedSettings;
+    });
 
     setActiveTextId(newId);
   };
-
-  // テキスト要素を追加
 
   // テキスト要素を削除
   const removeTextElement = (id: string) => {
@@ -360,10 +383,17 @@ export default function LogoCreator() {
         setActiveTextId(updatedTexts[0].id);
       }
 
-      return {
+      const updatedSettings = {
         ...prev,
         texts: updatedTexts,
       };
+
+      // 親コンポーネントに更新を通知
+      if (onSelectLogo) {
+        onSelectLogo(updatedSettings);
+      }
+
+      return updatedSettings;
     });
   };
 
@@ -434,6 +464,11 @@ export default function LogoCreator() {
     if (updatedSettings.texts.length > 0) {
       setActiveTextId(updatedSettings.texts[0].id);
     }
+
+    // 親コンポーネントに更新を通知
+    if (onSelectLogo) {
+      onSelectLogo(updatedSettings);
+    }
   };
 
   // テキストレイアウト設定変更ハンドラー
@@ -459,10 +494,17 @@ export default function LogoCreator() {
         return t;
       });
 
-      return {
+      const updatedSettings = {
         ...prev,
         texts: updatedTexts,
       };
+
+      // 親コンポーネントに更新を通知
+      if (onSelectLogo) {
+        onSelectLogo(updatedSettings);
+      }
+
+      return updatedSettings;
     });
   };
 
@@ -483,69 +525,6 @@ export default function LogoCreator() {
   // LogoCreator関数のreturn部分を更新
   return (
     <div className="space-y-8">
-      {/* モード選択タブ */}
-      <Tabs
-        value={creationMode}
-        onValueChange={(value) =>
-          setCreationMode(value as "manual" | "ai" | "template")
-        }
-        className="w-full max-w-3xl mx-auto"
-      >
-        <TabsList className="grid grid-cols-3 bg-black/50 border border-white/10 p-1">
-          <TabsTrigger
-            value="manual"
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500/20 data-[state=active]:to-blue-500/10 data-[state=active]:text-blue-400 rounded-sm"
-          >
-            <Layers className="h-4 w-4 mr-2" />
-            {t("manual_creation")}
-          </TabsTrigger>
-          <TabsTrigger
-            value="ai"
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500/20 data-[state=active]:to-purple-500/10 data-[state=active]:text-purple-400 rounded-sm"
-          >
-            <Wand2 className="h-4 w-4 mr-2" />
-            {t("ai_generation")}
-          </TabsTrigger>
-          <TabsTrigger
-            value="template"
-            className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500/20 data-[state=active]:to-pink-500/10 data-[state=active]:text-pink-400 rounded-sm"
-          >
-            <Sparkles className="h-4 w-4 mr-2" />
-            {t("template")}
-          </TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="ai" className="mt-6">
-          <AILogoGenerator
-            onSelectLogo={(logoSettings) => {
-              setSettings(logoSettings);
-              setCreationMode("manual");
-            }}
-          />
-        </TabsContent>
-
-        <TabsContent value="template" className="mt-6">
-          <Card className="border border-white/10 bg-black/40 backdrop-blur-sm">
-            <CardContent className="p-6">
-              <div className="space-y-6">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="h-5 w-5 text-pink-400" />
-                  <h2 className="text-xl font-semibold text-white">
-                    {t("template_gallery")}
-                  </h2>
-                </div>
-                <LogoTemplates
-                  onSelectTemplate={(templateSettings) => {
-                    selectTemplate(templateSettings);
-                    setCreationMode("manual");
-                  }}
-                />
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
-      </Tabs>
-
       {/* 既存のダイアログ */}
       <AnimatePresence>
         {showTemplates && (
@@ -672,38 +651,6 @@ export default function LogoCreator() {
         onLoad={loadSavedLogo}
       />
 
-      {/* クイックアクションボタン - 手動モードの場合のみ表示 */}
-      {creationMode === "manual" && (
-        <div className="flex justify-center gap-4 my-4">
-          <Button
-            onClick={() => setCreationMode("template")}
-            variant="outline"
-            className="gap-2 bg-gray-800/60 hover:bg-pink-900/40 text-gray-300 hover:text-pink-200 border-gray-700 hover:border-pink-800/50"
-            size="lg"
-          >
-            <Sparkles className="h-5 w-5" />
-            {t("choose_from_template")}
-          </Button>
-          <Button
-            onClick={() => setCreationMode("ai")}
-            variant="outline"
-            className="gap-2 bg-gray-800/60 hover:bg-purple-900/40 text-gray-300 hover:text-purple-200 border-gray-700 hover:border-purple-800/50"
-            size="lg"
-          >
-            <Wand2 className="h-5 w-5" />
-            {t("generate_with_ai")}
-          </Button>
-          <Button
-            onClick={openSaveLoadDialog}
-            variant="outline"
-            className="gap-2 bg-gray-800/60 hover:bg-blue-900/40 text-gray-300 hover:text-blue-200 border-gray-700 hover:border-blue-800/50"
-            size="lg"
-          >
-            <Save className="h-5 w-5" />
-            {t("save_load")}
-          </Button>
-        </div>
-      )}
       {/* メインエディタ - 手動モードの場合のみ表示 */}
       {creationMode === "manual" && (
         <div className="grid gap-8 lg:grid-cols-2">
@@ -1157,7 +1104,7 @@ export default function LogoCreator() {
                       }}
                     />
 
-                    <div className="border-t border-gray-700 my-4"></div>
+                    <div className="border-t border-gray-700 my-4" />
 
                     {/* シェイプアニメーション設定 */}
                     <AnimationSettingsComponent
@@ -1169,7 +1116,7 @@ export default function LogoCreator() {
                       elementType="shape"
                     />
 
-                    <div className="border-t border-gray-700 my-4"></div>
+                    <div className="border-t border-gray-700 my-4" />
 
                     {/* テキストアニメーション設定 */}
                     {settings.texts.map((textItem, index) => (
@@ -1206,7 +1153,12 @@ export default function LogoCreator() {
             <div className="flex justify-end mb-4">
               <HistoryManager
                 currentSettings={settings}
-                onApplySettings={setSettings}
+                onApplySettings={(newSettings) => {
+                  setSettings(newSettings);
+                  if (onSelectLogo) {
+                    onSelectLogo(newSettings);
+                  }
+                }}
               />
             </div>
             <div className="w-full aspect-square flex items-center justify-center bg-gradient-to-br from-gray-900 to-black rounded-lg overflow-hidden border border-white/10 shadow-xl">
@@ -1248,6 +1200,38 @@ export default function LogoCreator() {
             </div>
           </motion.div>
         </div>
+      )}
+
+      {/* AIモードの場合はAILogoGeneratorを表示 */}
+      {creationMode === "ai" && (
+        <AILogoGenerator
+          onSelectLogo={(logoSettings) => {
+            if (onSelectLogo) {
+              onSelectLogo(logoSettings);
+            }
+          }}
+        />
+      )}
+
+      {/* テンプレートモードの場合はLogoTemplatesを表示 */}
+      {creationMode === "template" && (
+        <Card className="border border-white/10 bg-black/40 backdrop-blur-sm">
+          <CardContent className="p-6">
+            <div className="space-y-6">
+              <div className="flex items-center gap-2">
+                <Sparkles className="h-5 w-5 text-pink-400" />
+                <h2 className="text-xl font-semibold text-white">
+                  {t("template_gallery")}
+                </h2>
+              </div>
+              <LogoTemplates
+                onSelectTemplate={(templateSettings) => {
+                  selectTemplate(templateSettings);
+                }}
+              />
+            </div>
+          </CardContent>
+        </Card>
       )}
     </div>
   );
