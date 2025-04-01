@@ -19,6 +19,7 @@ import PricingSection from "@/components/lp/pricing-section";
 import TestimonialsSection from "@/components/lp/testimonials-section";
 import FAQSection from "@/components/lp/faq-section";
 import CTASection from "@/components/lp/cta-section";
+import AdBanner from "@/components/google-adsense";
 
 export default async function Home({ params }: { params: { locale: string } }) {
   const resolvedParams = await params;
@@ -35,7 +36,7 @@ export default async function Home({ params }: { params: { locale: string } }) {
         className="max-w-[1400px]"
       >
         {/* ロゴエディタ */}
-        <section className="mb-24">
+        <section className="mb-12">
           <div className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 rounded-xl p-6 border border-blue-500/20">
             <h2 className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-8">
               プロフェッショナルなロゴエディタ
@@ -52,7 +53,11 @@ export default async function Home({ params }: { params: { locale: string } }) {
             </div>
           </div>
         </section>
+        <section className="mb-12">
+          <AdBanner />
+        </section>
 
+        {/* ヒーローセクション */}
         {/* 特徴セクション */}
         <section className="mb-24">
           <h2 className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-12">
