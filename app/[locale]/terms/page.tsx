@@ -1,19 +1,13 @@
 import { UILayout } from "@/components/ui-layout";
-import { Footer } from "@/components/footer";
-import { useTranslations } from "next-intl";
 
-import { texts } from "@/i18n/texts";
+import { useTranslations } from "next-intl";
 
 export default function TermsPage({ params }: { params: { locale: string } }) {
   const t = useTranslations("Terms");
 
   return (
     <>
-      <UILayout
-        title={t("title")}
-        subtitle={t("subtitle")}
-        className="max-w-[1000px]"
-      >
+      <UILayout>
         <div className="prose prose-invert max-w-none">
           <h2>{t("sections.scope.title")}</h2>
           <p>{t("sections.scope.content")}</p>
@@ -46,8 +40,4 @@ export default function TermsPage({ params }: { params: { locale: string } }) {
       </UILayout>
     </>
   );
-}
-
-export function generateStaticParams() {
-  return Object.keys(texts).map((locale) => ({ locale }));
 }

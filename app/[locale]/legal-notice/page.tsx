@@ -2,8 +2,6 @@ import { UILayout } from "@/components/ui-layout";
 import { Footer } from "@/components/footer";
 import { useTranslations } from "next-intl";
 
-import { texts } from "@/i18n/texts";
-
 export default function LegalNoticePage({
   params,
 }: {
@@ -13,11 +11,7 @@ export default function LegalNoticePage({
 
   return (
     <>
-      <UILayout
-        title={t("title")}
-        subtitle={t("subtitle")}
-        className="max-w-[1000px]"
-      >
+      <UILayout>
         <div className="prose prose-invert max-w-none">
           <section>
             <h2>{t("sections.businessOperator.title")}</h2>
@@ -44,8 +38,4 @@ export default function LegalNoticePage({
       </UILayout>
     </>
   );
-}
-
-export function generateStaticParams() {
-  return Object.keys(texts).map((locale) => ({ locale }));
 }

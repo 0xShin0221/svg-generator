@@ -1,8 +1,6 @@
 import { UILayout } from "@/components/ui-layout";
-import { Footer } from "@/components/footer";
-import { useTranslations } from "next-intl";
 
-import { texts } from "@/i18n/texts";
+import { useTranslations } from "next-intl";
 
 export default function PrivacyPage({
   params,
@@ -13,11 +11,7 @@ export default function PrivacyPage({
 
   return (
     <>
-      <UILayout
-        title={t("title")}
-        subtitle={t("subtitle")}
-        className="max-w-[1000px]"
-      >
+      <UILayout>
         <div className="prose prose-invert max-w-none">
           <h2>{t("sections.collection.title")}</h2>
           <p>{t("sections.collection.content")}</p>
@@ -50,8 +44,4 @@ export default function PrivacyPage({
       </UILayout>
     </>
   );
-}
-
-export function generateStaticParams() {
-  return Object.keys(texts).map((locale) => ({ locale }));
 }
