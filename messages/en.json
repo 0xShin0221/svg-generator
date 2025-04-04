@@ -1,7 +1,14 @@
 {
   "Home": {
-    "title": "SVG Generator",
-    "subtitle": "Free SVG logo and Icon generator"
+    "title": "Professional Logo Creator",
+    "subtitle": "Create beautiful logos in minutes without design skills. Customize shapes, text, colors, and animations.",
+    "features": "Features",
+    "steps": "How to Use",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "faq": "FAQ",
+    "getStarted": "Get Started",
+    "viewFeatures": "View Features"
   },
   "ExportDialog": {
     "title": "Export Logo",
@@ -18,6 +25,16 @@
     "downloadAs": "{format} Download",
     "downloadError": "Download error:",
     "downloadCompleted": "Download completed"
+  },
+  "Navigation": {
+    "features": "Features",
+    "steps": "How to Use",
+    "pricing": "Pricing",
+    "testimonials": "Testimonials",
+    "faq": "FAQ",
+    "createLogo": "Create Logo",
+    "getStarted": "Get Started",
+    "viewFeatures": "View Features"
   },
   "Footer": {
     "allRightsReserved": "All rights reserved.",

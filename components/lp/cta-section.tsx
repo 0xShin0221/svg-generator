@@ -5,6 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const CTASection = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 100;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <section className="mb-24">
       <Card className="border-2 border-blue-400 bg-gradient-to-br from-blue-950 to-purple-950 shadow-xl shadow-blue-900/30">
@@ -20,15 +33,9 @@ const CTASection = () => {
             <Button
               size="lg"
               className="bg-gradient-to-r from-blue-400 to-purple-400 hover:from-blue-300 hover:to-purple-300 text-blue-950 font-semibold border-0 shadow-lg shadow-blue-500/40 transition-all duration-300"
+              onClick={() => scrollToSection("start")}
             >
               無料でロゴを作成 <Sparkles className="ml-2 h-5 w-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-2 border-blue-400 bg-blue-950/60 text-blue-200 hover:bg-blue-900 hover:text-white font-medium transition-all duration-300"
-            >
-              テンプレートを見る <Layers className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </CardContent>

@@ -1,7 +1,24 @@
 {
   "Home": {
-    "title": "SVGジェネレーター",
-    "subtitle": "登録不要・完全無料で、プロフェッショナルなSVGロゴを数分で作成。ビジネス、ウェブサイト、SNSなど、あらゆる用途に最適なロゴを簡単にデザインできます。"
+    "title": "Free SVG Generator",
+    "subtitle": "SVGのロゴやアイコンを無料で作成。シェイプ、テキスト、色、アニメーションなどをカスタマイズできます。",
+    "features": "主な機能",
+    "steps": "使い方",
+    "pricing": "料金プラン",
+    "testimonials": "ユーザーの声",
+    "faq": "よくある質問",
+    "getStarted": "無料で始める",
+    "viewFeatures": "機能を見る"
+  },
+  "Navigation": {
+    "features": "主な機能",
+    "steps": "使い方",
+    "pricing": "料金プラン",
+    "testimonials": "ユーザーの声",
+    "faq": "よくある質問",
+    "createLogo": "ロゴを作成",
+    "getStarted": "無料で始める",
+    "viewFeatures": "機能を見る"
   },
   "ExportDialog": {
     "title": "ロゴをエクスポート",

@@ -25,12 +25,8 @@ export default function Home() {
 
   return (
     <>
-      <UILayout
-        title={t("title")}
-        subtitle={t("subtitle")}
-        className="max-w-[1400px]"
-      >
-        <section className="mb-24">
+      <UILayout>
+        <section id="start" className="mb-24">
           <EditorHero />
         </section>
 
@@ -39,7 +35,7 @@ export default function Home() {
         </section>
 
         {/* 特徴セクション */}
-        <section className="mb-24">
+        <section id="features" className="mb-24">
           <h2 className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-12">
             主な機能
           </h2>
@@ -53,23 +49,33 @@ export default function Home() {
         </section>
 
         {/* 使い方ステップ */}
-        <StepsSection steps={steps} />
+        <section id="steps">
+          <StepsSection steps={steps} />
+        </section>
 
         {/* 料金プラン */}
-        <PricingSection
-          freePlanFeatures={freePlanFeatures}
-          proPlanFeatures1={proPlanFeatures1}
-          proPlanFeatures2={proPlanFeatures2}
-        />
+        <section id="pricing">
+          <PricingSection
+            freePlanFeatures={freePlanFeatures}
+            proPlanFeatures1={proPlanFeatures1}
+            proPlanFeatures2={proPlanFeatures2}
+          />
+        </section>
 
         {/* ユーザーの声 */}
-        <TestimonialsSection testimonials={testimonials} />
+        <section id="testimonials">
+          <TestimonialsSection testimonials={testimonials} />
+        </section>
 
         {/* よくある質問 */}
-        <FAQSection faqs={faqs} />
+        <section id="faq">
+          <FAQSection faqs={faqs} />
+        </section>
 
         {/* CTA */}
-        <CTASection />
+        <section id="cta">
+          <CTASection />
+        </section>
       </UILayout>
     </>
   );

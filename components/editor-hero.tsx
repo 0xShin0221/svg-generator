@@ -30,14 +30,6 @@ export default function EditorHero() {
 
   return (
     <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
-      <h2 className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-8">
-        プロフェッショナルなロゴエディタ
-      </h2>
-      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-8">
-        直感的なインターフェースで、デザインの知識がなくても美しいロゴを作成できます。
-        シェイプ、テキスト、色、アニメーションなど、あらゆる要素をカスタマイズ可能です。
-      </p>
-
       {/* モード選択タブ */}
       <div className="w-full max-w-3xl mx-auto mb-8">
         <div className="flex gap-2 p-1 bg-slate-800/80 border border-slate-600 rounded-md">
