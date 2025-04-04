@@ -7,9 +7,12 @@ import { LogoTemplates } from "@/components/logo-templates";
 import { AILogoGenerator } from "@/components/ai-logo-generator";
 import LogoCreator from "@/components/logo-creator";
 import ErrorBoundary from "@/components/error-boundary";
+import { useTranslations } from "next-intl";
 import type { LogoSettings } from "@/types";
 
 export default function EditorHero() {
+  const t = useTranslations("EditorHero");
+
   const [creationMode, setCreationMode] = useState<
     "manual" | "ai" | "template"
   >("manual");
@@ -43,7 +46,7 @@ export default function EditorHero() {
             onClick={() => setCreationMode("manual")}
           >
             <Layers className="h-4 w-4 mr-2" />
-            手動作成
+            {t("modes.manual")}
           </Button>
           <Button
             variant={creationMode === "ai" ? "default" : "ghost"}
@@ -55,7 +58,7 @@ export default function EditorHero() {
             onClick={() => setCreationMode("ai")}
           >
             <Wand2 className="h-4 w-4 mr-2" />
-            AI生成
+            {t("modes.ai")}
           </Button>
           <Button
             variant={creationMode === "template" ? "default" : "ghost"}
@@ -67,7 +70,7 @@ export default function EditorHero() {
             onClick={() => setCreationMode("template")}
           >
             <Sparkles className="h-4 w-4 mr-2" />
-            テンプレート
+            {t("modes.template")}
           </Button>
         </div>
       </div>
@@ -80,7 +83,7 @@ export default function EditorHero() {
           className="gap-2 bg-slate-700 hover:bg-slate-600 text-white border-slate-500"
         >
           <Save className="h-4 w-4" />
-          保存/読み込み
+          {t("actions.saveLoad")}
         </Button>
       </div>
 

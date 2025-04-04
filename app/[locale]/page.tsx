@@ -1,7 +1,5 @@
 "use client";
 import { UILayout } from "@/components/ui-layout";
-import { useTranslations } from "next-intl";
-import AnimatedCard from "@/components/animated-card";
 import EditorHero from "@/components/editor-hero";
 import {
   featuresData,
@@ -18,11 +16,9 @@ import TestimonialsSection from "@/components/lp/testimonials-section";
 import FAQSection from "@/components/lp/faq-section";
 import CTASection from "@/components/lp/cta-section";
 import AdBanner from "@/components/google-adsense";
+import FeaturesSection from "@/components/lp/feature-section";
 
 export default function Home() {
-  // Use useTranslations hook instead of directly accessing texts
-  const t = useTranslations("Home");
-
   return (
     <>
       <UILayout>
@@ -36,16 +32,7 @@ export default function Home() {
 
         {/* 特徴セクション */}
         <section id="features" className="mb-24">
-          <h2 className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-12">
-            主な機能
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Render feature cards using the client component */}
-            {featuresData.map((feature) => (
-              <AnimatedCard key={feature.title} {...feature} />
-            ))}
-          </div>
+          <FeaturesSection featuresData={featuresData} />
         </section>
 
         {/* 使い方ステップ */}

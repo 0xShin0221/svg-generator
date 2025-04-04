@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 
 interface Testimonial {
   name: string;
@@ -17,15 +18,17 @@ interface TestimonialsSectionProps {
 }
 
 const TestimonialsSection = ({ testimonials }: TestimonialsSectionProps) => {
+  const t = useTranslations("Testimonials");
+
   return (
     <section className="mb-24">
       <h2 className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-12">
-        ユーザーの声
+        {t("title")}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {testimonials.map((testimonial, index) => (
           <motion.div
-            key={index}
+            key={testimonial.name}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -36,7 +39,7 @@ const TestimonialsSection = ({ testimonials }: TestimonialsSectionProps) => {
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
                       <Star
-                        key={i}
+                        key={`${testimonial.name}-star-${i}`}
                         className={`h-5 w-5 ${
                           i < testimonial.rating
                             ? "text-yellow-400 fill-yellow-400"

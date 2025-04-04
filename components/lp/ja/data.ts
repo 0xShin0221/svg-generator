@@ -6,7 +6,7 @@ interface Feature {
   description: string;
 }
 
-interface FeatureData {
+export interface FeatureData {
   iconName: "PenTool" | "Wand2" | "Zap" | "Download" | "Share2" | "Monitor";
   iconColor: string;
   borderColor: string;

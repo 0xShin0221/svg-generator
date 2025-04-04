@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 interface FAQ {
   question: string;
@@ -15,10 +16,12 @@ interface FAQSectionProps {
 }
 
 const FAQSection = ({ faqs }: FAQSectionProps) => {
+  const t = useTranslations("FAQ");
+
   return (
     <section className="mb-24">
       <h2 className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-12">
-        よくある質問
+        {t("title")}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
         {faqs.map((faq, index) => (
@@ -44,7 +47,7 @@ const FAQSection = ({ faqs }: FAQSectionProps) => {
           href="/faq"
           className="text-blue-400 hover:text-blue-300 inline-flex items-center"
         >
-          すべての質問を見る <ArrowRight className="ml-2 h-4 w-4" />
+          {t("viewAllButton")} <ArrowRight className="ml-2 h-4 w-4" />
         </Link>
       </div>
     </section>

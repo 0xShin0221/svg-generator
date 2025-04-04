@@ -10,6 +10,58 @@
     "getStarted": "Get Started",
     "viewFeatures": "View Features"
   },
+  "Steps": {
+    "title": "Create Your Logo in 3 Easy Steps"
+  },
+  "Features": {
+    "title": "Key Features"
+  },
+  "EditorHero": {
+    "modes": {
+      "manual": "Manual Creation",
+      "ai": "AI Generation",
+      "template": "Templates"
+    },
+    "actions": {
+      "saveLoad": "Save/Load"
+    },
+    "errors": {
+      "loadingFailed": "Failed to load editor"
+    }
+  },
+  "Pricing": {
+    "title": "Simple Pricing",
+    "subtitle": "Only pay for what you need, when you need it. No subscriptions or hidden fees.",
+    "freePlan": {
+      "badge": "Free Plan",
+      "name": "Free",
+      "price": "$0",
+      "period": "/ forever",
+      "ctaButton": "Get Started"
+    },
+    "proPlan": {
+      "comingSoon": "Coming Soon",
+      "badge": "Premium Plan",
+      "name": "Pro",
+      "price": "$19.99",
+      "period": "/ month",
+      "featuresTitle1": "Everything in Free, plus:",
+      "featuresTitle2": "Additionally:",
+      "ctaButton": "Notify Me on Release"
+    }
+  },
+  "Testimonials": {
+    "title": "Testimonials"
+  },
+  "FAQ": {
+    "title": "Frequently Asked Questions",
+    "viewAllButton": "View All Questions"
+  },
+  "CTA": {
+    "title": "Create Your Logo Now",
+    "description": "No registration required, completely free, create a professional logo in minutes. Design the perfect logo for your brand right now.",
+    "buttonText": "Create Free Logo"
+  },
   "ExportDialog": {
     "title": "Export Logo",
     "description": "Export your logo in various formats",

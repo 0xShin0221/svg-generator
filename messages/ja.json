@@ -10,6 +10,58 @@
     "getStarted": "無料で始める",
     "viewFeatures": "機能を見る"
   },
+  "Features": {
+    "title": "主な機能"
+  },
+  "Steps": {
+    "title": "簡単3ステップでロゴを作成"
+  },
+  "EditorHero": {
+    "modes": {
+      "manual": "手動作成",
+      "ai": "AI生成",
+      "template": "テンプレート"
+    },
+    "actions": {
+      "saveLoad": "保存/読み込み"
+    },
+    "errors": {
+      "loadingFailed": "エディターの読み込みに失敗しました"
+    }
+  },
+  "Pricing": {
+    "title": "シンプルな料金プラン",
+    "subtitle": "必要な機能だけを、必要なときに。サブスクリプションや隠れた料金は一切ありません。",
+    "freePlan": {
+      "badge": "無料プラン",
+      "name": "Free",
+      "price": "¥0",
+      "period": "/ 永久無料",
+      "ctaButton": "今すぐ始める"
+    },
+    "proPlan": {
+      "comingSoon": "近日公開",
+      "badge": "プレミアムプラン",
+      "name": "Pro",
+      "price": "¥1,980",
+      "period": "/ 月",
+      "featuresTitle1": "すべての無料機能に加えて:",
+      "featuresTitle2": "さらに:",
+      "ctaButton": "リリース時にお知らせ"
+    }
+  },
+  "Testimonials": {
+    "title": "ユーザーの評価"
+  },
+  "FAQ": {
+    "title": "よくある質問",
+    "viewAllButton": "すべての質問を見る"
+  },
+  "CTA": {
+    "title": "今すぐロゴを作成しましょう",
+    "description": "登録不要、完全無料で、プロフェッショナルなロゴを数分で作成できます。あなたのブランドにぴったりのロゴを、今すぐデザインしましょう。",
+    "buttonText": "無料でロゴを作成"
+  },
   "Navigation": {
     "features": "主な機能",
     "steps": "使い方",

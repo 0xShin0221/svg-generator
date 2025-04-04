@@ -2,13 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MousePointer, Palette, Download } from "lucide-react";
-
-// Define step data interface
-interface Step {
-  title: string;
-  description: string;
-  iconName: string; // Changed from icon to iconName
-}
+import { useTranslations } from "next-intl";
 
 interface StepsSectionProps {
   steps: {
@@ -19,6 +13,8 @@ interface StepsSectionProps {
 }
 
 const StepsSection = ({ steps }: StepsSectionProps) => {
+  const t = useTranslations("Steps");
+
   // Function to get the icon component based on iconName
   const getIcon = (iconName: string) => {
     switch (iconName) {
@@ -36,7 +32,7 @@ const StepsSection = ({ steps }: StepsSectionProps) => {
   return (
     <section className="mb-24">
       <h2 className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-12">
-        簡単3ステップでロゴを作成
+        {t("title")}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {steps.map((step, index) => {
