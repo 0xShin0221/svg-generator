@@ -64,12 +64,16 @@ interface LogoCreatorProps {
   creationMode: "manual" | "ai" | "template";
   settings?: LogoSettings | null;
   onSelectLogo?: (settings: LogoSettings) => void;
+  showSaveLoadDialog?: boolean;
+  onSaveLoadDialogChange?: (open: boolean) => void;
 }
 
 export default function LogoCreator({
   creationMode = "manual",
   settings: propSettings = null,
   onSelectLogo,
+  showSaveLoadDialog = false,
+  onSaveLoadDialogChange,
 }: LogoCreatorProps) {
   // LogoCreator関数内で、showAdvancedShapesModalステートの定義
   const [showAdvancedShapesModal, setShowAdvancedShapesModal] = useState(false);
@@ -155,10 +159,20 @@ export default function LogoCreator({
   const [showAdvancedShapes, setShowAdvancedShapes] = useState(false);
   const [activeTextId, setActiveTextId] = useState("main");
   const [showExportDialog, setShowExportDialog] = useState(false);
-  const [showSaveLoadDialog, setShowSaveLoadDialog] = useState(false);
+  const [internalShowSaveLoadDialog, setInternalShowSaveLoadDialog] =
+    useState(false);
   const [isPreviewPlaying, setIsPreviewPlaying] = useState(false);
   const previewTimerRef = useRef<NodeJS.Timeout | null>(null);
-
+  const isDialogOpen = onSaveLoadDialogChange
+    ? showSaveLoadDialog
+    : internalShowSaveLoadDialog;
+  const setDialogOpen = (open: boolean) => {
+    if (onSaveLoadDialogChange) {
+      onSaveLoadDialogChange(open);
+    } else {
+      setInternalShowSaveLoadDialog(open);
+    }
+  };
   // アクティブなテキスト要素
   const activeText =
     settings.texts.find((t) => t.id === activeTextId) || settings.texts[0];
@@ -444,9 +458,8 @@ export default function LogoCreator({
 
   // 保存/読み込みダイアログを開く
   const openSaveLoadDialog = () => {
-    setShowSaveLoadDialog(true);
+    setDialogOpen(true);
   };
-
   // 保存されたロゴを読み込む
   const loadSavedLogo = (savedSettings: LogoSettings) => {
     // アニメーション設定がない場合はデフォルト設定を追加
@@ -645,8 +658,8 @@ export default function LogoCreator({
 
       {/* 保存/読み込みダイアログ */}
       <SaveLoadDialog
-        open={showSaveLoadDialog}
-        onOpenChange={setShowSaveLoadDialog}
+        open={isDialogOpen}
+        onOpenChange={setDialogOpen}
         currentSettings={settings}
         onLoad={loadSavedLogo}
       />

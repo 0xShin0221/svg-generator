@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Layers, Save, Sparkles, Wand2 } from "lucide-react";
 import { LogoTemplates } from "@/components/logo-templates";
 import { AILogoGenerator } from "@/components/ai-logo-generator";
@@ -10,13 +9,59 @@ import ErrorBoundary from "@/components/error-boundary";
 import { useTranslations } from "next-intl";
 import type { LogoSettings } from "@/types";
 
+// デフォルトのロゴ設定
+const defaultLogoSettings: LogoSettings = {
+  texts: [
+    {
+      id: "main",
+      text: "LOGO",
+      color: "#ffffff",
+      fontSize: 48,
+      fontFamily: "Arial",
+      offsetY: 0,
+      animation: {
+        type: "none",
+        duration: 2,
+        delay: 0,
+        easing: "ease",
+        direction: "normal",
+        iterations: "infinite",
+      },
+      layout: {
+        alignment: "center",
+        rotation: 0,
+        letterSpacing: 0,
+        lineHeight: 1.2,
+      },
+    },
+  ],
+  backgroundColor: "#3b82f6",
+  shape: "circle",
+  padding: 20,
+  animation: {
+    type: "none",
+    duration: 2,
+    delay: 0,
+    easing: "ease",
+    direction: "normal",
+    iterations: "infinite",
+  },
+  gradient: {
+    type: "none",
+    direction: "to-right",
+    startColor: "#3b82f6",
+    endColor: "#8b5cf6",
+  },
+};
+
 export default function EditorHero() {
   const t = useTranslations("EditorHero");
 
   const [creationMode, setCreationMode] = useState<
     "manual" | "ai" | "template"
   >("manual");
-  const [settings, setSettings] = useState<LogoSettings | null>(null);
+  const [settings, setSettings] = useState<LogoSettings>(defaultLogoSettings);
+  const [showSaveLoadDialog, setShowSaveLoadDialog] = useState(false);
 
   // テンプレート選択ハンドラー
   const selectTemplate = (templateSettings: LogoSettings) => {
@@ -26,9 +71,8 @@ export default function EditorHero() {
 
   // 保存/読み込みダイアログを開く
   const openSaveLoadDialog = () => {
-    console.log("Open save/load dialog");
-    // 実際の実装では、LogoCreatorコンポーネントへの参照または
-    // グローバル状態管理を使用して制御
+    console.log("Opening save/load dialog");
+    setShowSaveLoadDialog(true);
   };
 
   return (
@@ -95,6 +139,8 @@ export default function EditorHero() {
             creationMode={creationMode}
             settings={settings}
             onSelectLogo={setSettings}
+            showSaveLoadDialog={showSaveLoadDialog} 
+            onSaveLoadDialogChange={setShowSaveLoadDialog}
           />
         </ErrorBoundary>
       </div>
