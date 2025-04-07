@@ -44,12 +44,28 @@ export function ExportDialog({
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   // Get SVG element when dialog opens
+  // エラーハンドリングを追加
   useEffect(() => {
     if (open && logoPreviewId) {
-      const svg = document.getElementById(logoPreviewId) as SVGSVGElement;
-      if (svg) {
-        setSvgElement(svg);
-      }
+      console.log(
+        "ExportDialog opened, looking for SVG with ID:",
+        logoPreviewId
+      );
+
+      // タイミングの問題を回避するために少し遅延させる
+      const timer = setTimeout(() => {
+        const svg = document.getElementById(
+          logoPreviewId
+        ) as unknown as SVGSVGElement;
+        if (svg) {
+          console.log("SVG element found successfully");
+          setSvgElement(svg);
+        } else {
+          console.error("SVG element not found with ID:", logoPreviewId);
+        }
+      }, 100);
+
+      return () => clearTimeout(timer);
     }
   }, [open, logoPreviewId]);
 

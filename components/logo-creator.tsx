@@ -154,7 +154,6 @@ export default function LogoCreator({
     }
   }, [propSettings]);
 
-  const [copied, setCopied] = useState(false);
   const [showTemplates, setShowTemplates] = useState(false);
   const [showAdvancedShapes, setShowAdvancedShapes] = useState(false);
   const [activeTextId, setActiveTextId] = useState("main");
@@ -411,55 +410,6 @@ export default function LogoCreator({
     });
   };
 
-  // SVGダウンロード
-  const downloadSvg = () => {
-    const svgElement = document.getElementById("logo-preview");
-    if (!svgElement) return;
-
-    try {
-      const svgData = new XMLSerializer().serializeToString(svgElement);
-      const blob = new Blob([svgData], { type: "image/svg+xml" });
-      const url = URL.createObjectURL(blob);
-
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = `${settings.texts[0].text
-        .toLowerCase()
-        .replace(/\s+/g, "-")}-logo.svg`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("SVGダウンロードエラー:", error);
-    }
-  };
-
-  // SVGコードをクリップボードにコピー
-  const copySvgCode = () => {
-    const svgElement = document.getElementById("logo-preview");
-    if (!svgElement) return;
-
-    try {
-      const svgData = new XMLSerializer().serializeToString(svgElement);
-      navigator.clipboard.writeText(svgData).then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      });
-    } catch (error) {
-      console.error("SVGコピーエラー:", error);
-    }
-  };
-
-  // エクスポートダイアログを開く
-  const openExportDialog = () => {
-    setShowExportDialog(true);
-  };
-
-  // 保存/読み込みダイアログを開く
-  const openSaveLoadDialog = () => {
-    setDialogOpen(true);
-  };
   // 保存されたロゴを読み込む
   const loadSavedLogo = (savedSettings: LogoSettings) => {
     // アニメーション設定がない場合はデフォルト設定を追加
@@ -1186,30 +1136,6 @@ export default function LogoCreator({
                   customFonts={customFonts}
                 />
               </div>
-            </div>
-
-            <div className="flex gap-4 w-full">
-              <Button
-                onClick={openExportDialog}
-                className="flex-1 gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0"
-                size="lg"
-              >
-                <Download className="h-5 w-5" />
-                {t("export")}
-              </Button>
-              <Button
-                onClick={copySvgCode}
-                variant="outline"
-                className="flex-1 gap-2 border-white/10 bg-black/40 hover:bg-white/5 text-gray-300"
-                size="lg"
-              >
-                {copied ? (
-                  <Check className="h-5 w-5" />
-                ) : (
-                  <Copy className="h-5 w-5" />
-                )}
-                {copied ? t("copy_completed") : t("copy_svg_code")}
-              </Button>
             </div>
           </motion.div>
         </div>

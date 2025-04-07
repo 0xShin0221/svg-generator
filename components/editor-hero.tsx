@@ -1,13 +1,21 @@
 "use client";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Layers, Save, Sparkles, Wand2 } from "lucide-react";
-import { LogoTemplates } from "@/components/logo-templates";
-import { AILogoGenerator } from "@/components/ai-logo-generator";
+import {
+  Layers,
+  Save,
+  Sparkles,
+  Wand2,
+  Download,
+  Copy,
+  Check,
+} from "lucide-react";
 import LogoCreator from "@/components/logo-creator";
 import ErrorBoundary from "@/components/error-boundary";
 import { useTranslations } from "next-intl";
 import type { LogoSettings } from "@/types";
+import { SaveLoadDialog } from "@/components/save-load-dialog";
+import { ExportDialog } from "@/components/export-dialog";
 
 // デフォルトのロゴ設定
 const defaultLogoSettings: LogoSettings = {
@@ -62,6 +70,8 @@ export default function EditorHero() {
   >("manual");
   const [settings, setSettings] = useState<LogoSettings>(defaultLogoSettings);
   const [showSaveLoadDialog, setShowSaveLoadDialog] = useState(false);
+  const [showExportDialog, setShowExportDialog] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   // テンプレート選択ハンドラー
   const selectTemplate = (templateSettings: LogoSettings) => {
@@ -73,6 +83,32 @@ export default function EditorHero() {
   const openSaveLoadDialog = () => {
     console.log("Opening save/load dialog");
     setShowSaveLoadDialog(true);
+  };
+
+  // エクスポートダイアログを開く
+  const openExportDialog = () => {
+    console.log("Opening export dialog");
+    setShowExportDialog(true);
+  };
+
+  // SVGコードをクリップボードにコピー
+  const copySvgCode = () => {
+    console.log("Copying SVG code");
+    const svgElement = document.querySelector("svg#logo-preview");
+    if (!svgElement) {
+      console.error("SVG element not found");
+      return;
+    }
+
+    try {
+      const svgData = new XMLSerializer().serializeToString(svgElement);
+      navigator.clipboard.writeText(svgData).then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      });
+    } catch (error) {
+      console.error("Error copying SVG:", error);
+    }
   };
 
   return (
@@ -119,31 +155,76 @@ export default function EditorHero() {
         </div>
       </div>
 
-      {/* 保存/読み込みボタン - 常に表示 */}
-      <div className="w-full max-w-3xl mx-auto flex justify-end mt-4 mb-8">
-        <Button
-          onClick={openSaveLoadDialog}
-          variant="secondary"
-          className="gap-2 bg-slate-700 hover:bg-slate-600 text-white border-slate-500"
-        >
-          <Save className="h-4 w-4" />
-          {t("actions.saveLoad")}
-        </Button>
-      </div>
-
       {/* エディタコンテナ */}
-      <div className="relative rounded-lg overflow-hidden border border-slate-600 shadow-xl shadow-blue-500/5">
+      <div className="relative rounded-lg overflow-hidden border border-slate-600 shadow-xl shadow-blue-500/5 mb-8">
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 via-transparent to-purple-500/5" />
         <ErrorBoundary>
           <LogoCreator
             creationMode={creationMode}
             settings={settings}
             onSelectLogo={setSettings}
-            showSaveLoadDialog={showSaveLoadDialog} 
+            showSaveLoadDialog={showSaveLoadDialog}
             onSaveLoadDialogChange={setShowSaveLoadDialog}
           />
         </ErrorBoundary>
       </div>
+
+      {/* メインアクションボタン - 下部に目立つように配置 */}
+      <div className="w-full max-w-3xl mx-auto px-4 mt-6">
+        <div className="flex gap-4 w-full mb-2">
+          {/* エクスポートボタン - メインCTA */}
+          <Button
+            onClick={openExportDialog}
+            className="flex-1 gap-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-lg"
+            size="lg"
+          >
+            <Download className="h-5 w-5" />
+            {t("actions.export")}
+          </Button>
+
+          {/* SVGコピーボタン */}
+          <Button
+            onClick={copySvgCode}
+            variant="outline"
+            className="flex-1 gap-2 border-white/10 bg-black/40 hover:bg-white/5 text-gray-300"
+            size="lg"
+          >
+            {copied ? (
+              <Check className="h-5 w-5" />
+            ) : (
+              <Copy className="h-5 w-5" />
+            )}
+            {copied ? t("actions.copyComplete") : t("actions.copySvg")}
+          </Button>
+        </div>
+
+        {/* 保存/読み込みボタン - 下部に配置 */}
+        <Button
+          onClick={openSaveLoadDialog}
+          variant="ghost"
+          className="w-full gap-2 text-slate-300 hover:bg-white/5 border-white/10"
+          size="default"
+        >
+          <Save className="h-4 w-4" />
+          {t("actions.saveLoad")}
+        </Button>
+      </div>
+
+      {/* エクスポートダイアログ */}
+      <ExportDialog
+        open={showExportDialog}
+        onOpenChange={setShowExportDialog}
+        logoPreviewId="logo-preview"
+        logoName={settings.texts[0]?.text || "logo"}
+      />
+
+      {/* SaveLoadDialog コンポーネント */}
+      <SaveLoadDialog
+        open={showSaveLoadDialog}
+        onOpenChange={setShowSaveLoadDialog}
+        currentSettings={settings}
+        onLoad={(savedSettings) => setSettings(savedSettings)}
+      />
     </div>
   );
 }

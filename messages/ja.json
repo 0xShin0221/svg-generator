@@ -23,7 +23,10 @@
       "template": "テンプレート"
     },
     "actions": {
-      "saveLoad": "保存/読み込み"
+      "saveLoad": "保存/読込",
+      "export": "エクスポート",
+      "copySvg": "SVGコピー",
+      "copyComplete": "コピー完了"
     },
     "errors": {
       "loadingFailed": "エディターの読み込みに失敗しました"
@@ -328,9 +331,6 @@
     "color_presets": "色のプリセット",
     "padding": "余白",
     "no_shape": "シェイプなし",
-    "export": "エクスポート",
-    "copy_svg_code": "SVGコードをコピー",
-    "copy_completed": "コピー完了",
     "standard_fonts": "標準フォント",
     "custom_fonts": "カスタムフォント",
     "open_advanced_shape_gallery": "高度なシェイプギャラリーを開く",

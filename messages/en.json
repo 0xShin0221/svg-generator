@@ -23,7 +23,10 @@
       "template": "Templates"
     },
     "actions": {
-      "saveLoad": "Save/Load"
+      "saveLoad": "Save/Load",
+      "export": "Export",
+      "copySvg": "Copy SVG Code",
+      "copyComplete": "Copy Completed"
     },
     "errors": {
       "loadingFailed": "Failed to load editor"
@@ -328,9 +331,6 @@
     "color_presets": "Color Presets",
     "padding": "Padding",
     "no_shape": "No Shape",
-    "export": "Export",
-    "copy_svg_code": "Copy SVG Code",
-    "copy_completed": "Copy Completed",
     "standard_fonts": "Standard Fonts",
     "custom_fonts": "Custom Fonts",
     "open_advanced_shape_gallery": "Open Advanced Shape Gallery",
