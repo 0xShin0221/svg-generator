@@ -10,6 +10,7 @@
     "i18next-extract": "babel 'app/**/*.{js,jsx,ts,tsx}' --config-file ./babel.config.cts --extensions '.js,.jsx,.ts,.tsx' --out-file /dev/null"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "^2.13.0",
     "@babel/cli": "^7.25.9",
     "@babel/core": "^7.26.0",
     "@babel/plugin-syntax-jsx": "^7.25.9",

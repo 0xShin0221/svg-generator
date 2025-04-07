@@ -4,6 +4,7 @@ import "./globals.css";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { metadata } from "@/i18n/seo";
+import AmplitudeProvider from "@/analytics/amplitude";
 
 export async function generateMetadata({
   params,
@@ -40,7 +41,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <AmplitudeProvider>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </AmplitudeProvider>
       </body>
     </html>
   );
