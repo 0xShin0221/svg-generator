@@ -1148,23 +1148,47 @@ export default function LogoCreator({
 
       {/* テンプレートモードの場合はLogoTemplatesを表示 */}
       {creationMode === "template" && (
-        <Card className="border border-white/10 bg-black/40 backdrop-blur-sm">
-          <CardContent className="p-6">
-            <div className="space-y-6">
-              <div className="flex items-center gap-2">
-                <Sparkles className="h-5 w-5 text-pink-400" />
-                <h2 className="text-xl font-semibold text-white">
-                  {t("template_gallery")}
-                </h2>
+        <div className="grid gap-8 lg:grid-cols-2">
+          <Card className="border border-white/10 bg-black/40 backdrop-blur-sm">
+            <CardContent className="p-6">
+              <div className="space-y-6">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="h-5 w-5 text-pink-400" />
+                  <h2 className="text-xl font-semibold text-white">
+                    {t("template_gallery")}
+                  </h2>
+                </div>
+                <LogoTemplates
+                  onSelectTemplate={(templateSettings) => {
+                    selectTemplate(templateSettings);
+                  }}
+                />
               </div>
-              <LogoTemplates
-                onSelectTemplate={(templateSettings) => {
-                  selectTemplate(templateSettings);
-                }}
-              />
+            </CardContent>
+          </Card>
+
+          {/* プレビュー部分 */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex flex-col items-center gap-6"
+          >
+            <div className="w-full aspect-square flex items-center justify-center bg-gradient-to-br from-gray-900 to-black rounded-lg overflow-hidden border border-white/10 shadow-xl">
+              <div className="relative w-full h-full flex items-center justify-center">
+                {/* 背景グリッド */}
+                <div className="absolute inset-0 bg-[#111] opacity-50" />
+
+                {/* プレビュー */}
+                <LogoPreview
+                  settings={settings}
+                  isPlaying={isPreviewPlaying}
+                  customFonts={customFonts}
+                />
+              </div>
             </div>
-          </CardContent>
-        </Card>
+          </motion.div>
+        </div>
       )}
     </div>
   );
