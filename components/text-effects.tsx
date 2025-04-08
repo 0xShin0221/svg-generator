@@ -1,111 +1,114 @@
-"use client"
+"use client";
 
-import { Card, CardContent } from "@/components/ui/card"
-import type { TextLayoutOptions } from "@/types"
-import { motion } from "framer-motion"
+import { Card, CardContent } from "@/components/ui/card";
+import type { TextLayoutOptions } from "@/types";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface TextEffectsProps {
-  onApply: (layoutOptions: TextLayoutOptions) => void
+  onApply: (layoutOptions: TextLayoutOptions) => void;
 }
 
-// テキスト効果プリセット
-const textEffects = [
-  {
-    id: "normal",
-    name: "ノーマル",
-    description: "標準テキスト",
-    layout: {
-      alignment: "center" as const,
-      rotation: 0,
-      letterSpacing: 0,
-      lineHeight: 1.2,
-    },
-  },
-  {
-    id: "stretched",
-    name: "ストレッチ",
-    description: "文字間隔を広げる",
-    layout: {
-      alignment: "center" as const,
-      rotation: 0,
-      letterSpacing: 8,
-      lineHeight: 1.2,
-    },
-  },
-  {
-    id: "rotated",
-    name: "回転",
-    description: "テキストを回転",
-    layout: {
-      alignment: "center" as const,
-      rotation: 15,
-      letterSpacing: 0,
-      lineHeight: 1.2,
-    },
-  },
-  {
-    id: "diagonal",
-    name: "斜め",
-    description: "斜めに配置",
-    layout: {
-      alignment: "center" as const,
-      rotation: -20,
-      letterSpacing: 2,
-      lineHeight: 1.2,
-    },
-  },
-  {
-    id: "compact",
-    name: "コンパクト",
-    description: "文字間隔を狭める",
-    layout: {
-      alignment: "center" as const,
-      rotation: 0,
-      letterSpacing: -2,
-      lineHeight: 1.2,
-    },
-  },
-  {
-    id: "left-aligned",
-    name: "左揃え",
-    description: "テキストを左揃え",
-    layout: {
-      alignment: "left" as const,
-      rotation: 0,
-      letterSpacing: 1,
-      lineHeight: 1.2,
-    },
-  },
-  {
-    id: "right-aligned",
-    name: "右揃え",
-    description: "テキストを右揃え",
-    layout: {
-      alignment: "right" as const,
-      rotation: 0,
-      letterSpacing: 1,
-      lineHeight: 1.2,
-    },
-  },
-  {
-    id: "stylish",
-    name: "スタイリッシュ",
-    description: "モダンなスタイル",
-    layout: {
-      alignment: "center" as const,
-      rotation: 0,
-      letterSpacing: 5,
-      lineHeight: 1.5,
-    },
-  },
-]
-
 export function TextEffects({ onApply }: TextEffectsProps) {
+  const t = useTranslations("LogoCreator");
+
+  // Text effect presets
+  const textEffects = [
+    {
+      id: "normal",
+      nameKey: "effect_normal",
+      descriptionKey: "effect_normal_desc",
+      layout: {
+        alignment: "center" as const,
+        rotation: 0,
+        letterSpacing: 0,
+        lineHeight: 1.2,
+      },
+    },
+    {
+      id: "stretched",
+      nameKey: "effect_stretched",
+      descriptionKey: "effect_stretched_desc",
+      layout: {
+        alignment: "center" as const,
+        rotation: 0,
+        letterSpacing: 8,
+        lineHeight: 1.2,
+      },
+    },
+    {
+      id: "rotated",
+      nameKey: "effect_rotated",
+      descriptionKey: "effect_rotated_desc",
+      layout: {
+        alignment: "center" as const,
+        rotation: 15,
+        letterSpacing: 0,
+        lineHeight: 1.2,
+      },
+    },
+    {
+      id: "diagonal",
+      nameKey: "effect_diagonal",
+      descriptionKey: "effect_diagonal_desc",
+      layout: {
+        alignment: "center" as const,
+        rotation: -20,
+        letterSpacing: 2,
+        lineHeight: 1.2,
+      },
+    },
+    {
+      id: "compact",
+      nameKey: "effect_compact",
+      descriptionKey: "effect_compact_desc",
+      layout: {
+        alignment: "center" as const,
+        rotation: 0,
+        letterSpacing: -2,
+        lineHeight: 1.2,
+      },
+    },
+    {
+      id: "left-aligned",
+      nameKey: "effect_left_aligned",
+      descriptionKey: "effect_left_aligned_desc",
+      layout: {
+        alignment: "left" as const,
+        rotation: 0,
+        letterSpacing: 1,
+        lineHeight: 1.2,
+      },
+    },
+    {
+      id: "right-aligned",
+      nameKey: "effect_right_aligned",
+      descriptionKey: "effect_right_aligned_desc",
+      layout: {
+        alignment: "right" as const,
+        rotation: 0,
+        letterSpacing: 1,
+        lineHeight: 1.2,
+      },
+    },
+    {
+      id: "stylish",
+      nameKey: "effect_stylish",
+      descriptionKey: "effect_stylish_desc",
+      layout: {
+        alignment: "center" as const,
+        rotation: 0,
+        letterSpacing: 5,
+        lineHeight: 1.5,
+      },
+    },
+  ];
+
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-medium text-white">テキスト効果</h3>
+      <h3 className="text-lg font-medium text-white">{t("text_effects")}</h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {textEffects.map((effect, index) => (
+        {textEffects.map((effect) => (
           <Card
             key={effect.id}
             className="overflow-hidden border border-gray-700 bg-gray-800/50 hover:bg-gray-800/80 transition-all hover:shadow-lg hover:shadow-blue-500/10 group cursor-pointer"
@@ -127,14 +130,15 @@ export function TextEffects({ onApply }: TextEffectsProps) {
                 </motion.div>
               </div>
               <div className="text-center">
-                <h4 className="font-medium text-white">{effect.name}</h4>
-                <p className="text-xs text-gray-400">{effect.description}</p>
+                <h4 className="font-medium text-white">{t(effect.nameKey)}</h4>
+                <p className="text-xs text-gray-400">
+                  {t(effect.descriptionKey)}
+                </p>
               </div>
             </CardContent>
           </Card>
         ))}
       </div>
     </div>
-  )
+  );
 }
-

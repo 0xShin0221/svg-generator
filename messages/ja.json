@@ -303,6 +303,22 @@
     }
   },
   "LogoCreator": {
+    "effect_normal": "ノーマル",
+    "effect_normal_desc": "標準テキスト",
+    "effect_stretched": "ストレッチ",
+    "effect_stretched_desc": "文字間隔を広げる",
+    "effect_rotated": "回転",
+    "effect_rotated_desc": "テキストを回転",
+    "effect_diagonal": "斜め",
+    "effect_diagonal_desc": "斜めに配置",
+    "effect_compact": "コンパクト",
+    "effect_compact_desc": "文字間隔を狭める",
+    "effect_left_aligned": "左揃え",
+    "effect_left_aligned_desc": "テキストを左揃え",
+    "effect_right_aligned": "右揃え",
+    "effect_right_aligned_desc": "テキストを右揃え",
+    "effect_stylish": "スタイリッシュ",
+    "effect_stylish_desc": "モダンなスタイル",
     "manual_creation": "手動作成",
     "ai_generation": "AI生成",
     "template": "テンプレート",
@@ -466,6 +482,18 @@
     "六角形": "六角形",
     "三角形": "三角形",
     "星": "星",
-    "シールド": "シールド"
+    "シールド": "シールド",
+
+    "font_name_optional": "フォント名（任意）",
+    "font_name_empty_notice": "空白の場合はファイル名が使用されます",
+    "font_file": "フォントファイル",
+    "click_to_upload_font": "クリックしてフォントをアップロード",
+    "supported_font_formats": ".ttf, .otf, .woff, .woff2 形式をサポート (最大5MB)",
+    "font_format_error": "サポートされているフォント形式は .ttf, .otf, .woff, .woff2 のみです",
+    "font_size_error": "フォントファイルは5MB以下である必要があります",
+    "font_load_error": "フォントの読み込みに失敗しました。有効なフォントファイルか確認してください。",
+    "file_read_error": "ファイルの読み込み中にエラーが発生しました",
+    "font_upload_error": "フォントのアップロード中にエラーが発生しました",
+    "font_upload_success": "フォントが正常にアップロードされました"
   }
 }

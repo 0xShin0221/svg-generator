@@ -457,6 +457,23 @@
     "upload_success": "Upload Success",
     "upload_error": "Upload Error",
 
+    "effect_normal": "Normal",
+    "effect_normal_desc": "Standard text",
+    "effect_stretched": "Stretched",
+    "effect_stretched_desc": "Wider letter spacing",
+    "effect_rotated": "Rotated",
+    "effect_rotated_desc": "Rotated text",
+    "effect_diagonal": "Diagonal",
+    "effect_diagonal_desc": "Diagonally positioned",
+    "effect_compact": "Compact",
+    "effect_compact_desc": "Narrower letter spacing",
+    "effect_left_aligned": "Left Aligned",
+    "effect_left_aligned_desc": "Text aligned to left",
+    "effect_right_aligned": "Right Aligned",
+    "effect_right_aligned_desc": "Text aligned to right",
+    "effect_stylish": "Stylish",
+    "effect_stylish_desc": "Modern style",
+
     "text_layout": "Text Layout",
     "apply": "Apply",
     "高度なシェイプ": "Advanced Shape",
@@ -466,6 +483,18 @@
     "六角形": "Hexagon",
     "三角形": "Triangle",
     "星": "Star",
-    "シールド": "Shield"
+    "シールド": "Shield",
+
+    "font_name_optional": "Font Name (Optional)",
+    "font_name_empty_notice": "Filename will be used if left empty",
+    "font_file": "Font File",
+    "click_to_upload_font": "Click to upload font",
+    "supported_font_formats": "Supports .ttf, .otf, .woff, .woff2 formats (5MB max)",
+    "font_format_error": "Only .ttf, .otf, .woff, .woff2 font formats are supported",
+    "font_size_error": "Font file must be less than 5MB",
+    "font_load_error": "Failed to load the font. Please check if it's a valid font file.",
+    "file_read_error": "An error occurred while reading the file",
+    "font_upload_error": "An error occurred while uploading the font",
+    "font_upload_success": "Font successfully uploaded"
   }
 }
