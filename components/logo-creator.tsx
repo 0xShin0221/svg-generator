@@ -210,6 +210,12 @@ export default function LogoCreator({
     };
   }, []);
 
+  useEffect(() => {
+    if (onSelectLogo && settings) {
+      onSelectLogo(settings);
+    }
+  }, [settings, onSelectLogo]);
+
   // テンプレート選択ハンドラー
   const selectTemplate = (templateSettings: LogoSettings) => {
     // アニメーション設定がない場合はデフォルト設定を追加
@@ -346,11 +352,6 @@ export default function LogoCreator({
         updatedSettings = { ...prev, [key]: value };
       }
 
-      // 親コンポーネントに更新を通知
-      if (onSelectLogo) {
-        onSelectLogo(updatedSettings);
-      }
-
       return updatedSettings;
     });
   };
@@ -364,7 +365,7 @@ export default function LogoCreator({
       color: "#ffffff",
       fontSize: 24,
       fontFamily: "Arial",
-      offsetY: 60,
+      offsetY: 20,
       animation: { ...defaultAnimationSettings },
     };
 
