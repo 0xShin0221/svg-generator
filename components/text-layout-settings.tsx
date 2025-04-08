@@ -1,55 +1,99 @@
-"use client"
-import { Label } from "@/components/ui/label"
-import { Slider } from "@/components/ui/slider"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Button } from "@/components/ui/button"
-import { AlignLeft, AlignCenter, AlignRight, AlignJustify, RotateCcw } from "lucide-react"
-import type { TextElement, TextLayoutOptions } from "@/types"
+"use client";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Button } from "@/components/ui/button";
+import {
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+  AlignJustify,
+  RotateCcw,
+} from "lucide-react";
+import type { TextElement, TextLayoutOptions } from "@/types";
+import { useTranslations } from "next-intl";
 
 interface TextLayoutSettingsProps {
-  activeText: TextElement
-  onLayoutChange: (options: Partial<TextLayoutOptions>) => void
+  activeText: TextElement;
+  onLayoutChange: (options: Partial<TextLayoutOptions>) => void;
 }
 
-export function TextLayoutSettings({ activeText, onLayoutChange }: TextLayoutSettingsProps) {
-  // 現在のレイアウト設定を取得
+export function TextLayoutSettings({
+  activeText,
+  onLayoutChange,
+}: TextLayoutSettingsProps) {
+  const t = useTranslations("LogoCreator");
+
+  // Get current layout settings
   const layout = activeText.layout || {
     alignment: "center",
     rotation: 0,
     letterSpacing: 0,
     lineHeight: 1.2,
-  }
+  };
 
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        <Label className="text-gray-300">テキスト配置</Label>
+        <Label className="text-gray-300">{t("alignment")}</Label>
         <RadioGroup
           value={layout.alignment}
-          onValueChange={(value) => onLayoutChange({ alignment: value as "left" | "center" | "right" | "justify" })}
+          onValueChange={(value) =>
+            onLayoutChange({
+              alignment: value as "left" | "center" | "right" | "justify",
+            })
+          }
           className="flex items-center space-x-2"
         >
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="left" id="align-left" className="border-gray-600 text-blue-400" />
-            <Label htmlFor="align-left" className="cursor-pointer">
+            <RadioGroupItem
+              value="left"
+              id="align-left"
+              className="border-gray-600 text-blue-400"
+            />
+            <Label
+              htmlFor="align-left"
+              className="cursor-pointer　text-gray-300"
+            >
               <AlignLeft className="h-5 w-5" />
             </Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="center" id="align-center" className="border-gray-600 text-blue-400" />
-            <Label htmlFor="align-center" className="cursor-pointer">
+            <RadioGroupItem
+              value="center"
+              id="align-center"
+              className="border-gray-600 text-blue-400"
+            />
+            <Label
+              htmlFor="align-center"
+              className="cursor-pointer　text-gray-300"
+            >
               <AlignCenter className="h-5 w-5" />
             </Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="right" id="align-right" className="border-gray-600 text-blue-400" />
-            <Label htmlFor="align-right" className="cursor-pointer">
+            <RadioGroupItem
+              value="right"
+              id="align-right"
+              className="border-gray-600 text-blue-400"
+            />
+            <Label
+              htmlFor="align-right"
+              className="cursor-pointer　text-gray-300"
+            >
               <AlignRight className="h-5 w-5" />
             </Label>
           </div>
           <div className="flex items-center space-x-2">
-            <RadioGroupItem value="justify" id="align-justify" className="border-gray-600 text-blue-400" />
-            <Label htmlFor="align-justify" className="cursor-pointer">
+            <RadioGroupItem
+              value="justify"
+              id="align-justify"
+              className="border-gray-600 text-blue-400"
+            />
+            <Label
+              htmlFor="align-justify"
+              className="cursor-pointer　text-gray-300"
+            >
               <AlignJustify className="h-5 w-5" />
             </Label>
           </div>
@@ -59,7 +103,7 @@ export function TextLayoutSettings({ activeText, onLayoutChange }: TextLayoutSet
       <div className="space-y-2">
         <div className="flex justify-between items-center">
           <Label htmlFor="text-rotation" className="text-gray-300">
-            回転: {layout.rotation}°
+            {t("rotation")}: {layout.rotation}°
           </Label>
           <Button
             variant="ghost"
@@ -83,7 +127,7 @@ export function TextLayoutSettings({ activeText, onLayoutChange }: TextLayoutSet
 
       <div className="space-y-2">
         <Label htmlFor="letter-spacing" className="text-gray-300">
-          文字間隔: {layout.letterSpacing}px
+          {t("letter_spacing")}: {layout.letterSpacing}px
         </Label>
         <Slider
           id="letter-spacing"
@@ -98,7 +142,7 @@ export function TextLayoutSettings({ activeText, onLayoutChange }: TextLayoutSet
 
       <div className="space-y-2">
         <Label htmlFor="line-height" className="text-gray-300">
-          行の高さ: {layout.lineHeight}
+          {t("line_height")}: {layout.lineHeight}
         </Label>
         <Slider
           id="line-height"
@@ -111,6 +155,5 @@ export function TextLayoutSettings({ activeText, onLayoutChange }: TextLayoutSet
         />
       </div>
     </div>
-  )
+  );
 }
-
