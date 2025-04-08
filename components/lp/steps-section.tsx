@@ -6,9 +6,9 @@ import { useTranslations } from "next-intl";
 
 interface StepsSectionProps {
   steps: {
-    title: string;
-    description: string;
-    iconName: string; // Changed from icon to iconName
+    titleKey: string;
+    descriptionKey: string;
+    iconName: string;
   }[];
 }
 
@@ -37,10 +37,12 @@ const StepsSection = ({ steps }: StepsSectionProps) => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {steps.map((step, index) => {
           const Icon = getIcon(step.iconName);
+          const title = t(step.titleKey);
+          const description = t(step.descriptionKey);
 
           return (
             <motion.div
-              key={step.title}
+              key={step.titleKey} // Using titleKey as the unique key
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 + 0.3 }}
@@ -54,10 +56,8 @@ const StepsSection = ({ steps }: StepsSectionProps) => {
                   <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-blue-500/50 to-transparent" />
                 )}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">
-                {step.title}
-              </h3>
-              <p className="text-gray-300">{step.description}</p>
+              <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+              <p className="text-gray-300">{description}</p>
               <div className="mt-4 p-4 rounded-lg bg-black/30 border border-blue-500/10">
                 <Icon className="h-12 w-12 mx-auto text-blue-400" />
               </div>

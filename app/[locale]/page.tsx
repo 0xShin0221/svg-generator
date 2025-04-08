@@ -2,14 +2,14 @@
 import { UILayout } from "@/components/ui-layout";
 import EditorHero from "@/components/editor-hero";
 import {
-  featuresData,
-  steps,
-  freePlanFeatures,
-  proPlanFeatures1,
-  proPlanFeatures2,
-  testimonials,
-  faqs,
-} from "@/components/lp/ja/data";
+  getFeaturesData,
+  getSteps,
+  getFreePlanFeatures,
+  getProPlanFeatures1,
+  getProPlanFeatures2,
+  getTestimonials,
+  getFaqs,
+} from "@/components/features-data";
 import StepsSection from "@/components/lp/steps-section";
 import PricingSection from "@/components/lp/pricing-section";
 import TestimonialsSection from "@/components/lp/testimonials-section";
@@ -19,6 +19,15 @@ import AdBanner from "@/components/google-adsense";
 import FeaturesSection from "@/components/lp/feature-section";
 
 export default function Home() {
+  // Get data with translation keys
+  const featuresData = getFeaturesData();
+  const steps = getSteps();
+  const freePlanFeatures = getFreePlanFeatures();
+  const proPlanFeatures1 = getProPlanFeatures1();
+  const proPlanFeatures2 = getProPlanFeatures2();
+  const testimonials = getTestimonials();
+  const faqs = getFaqs();
+
   return (
     <>
       <UILayout>
@@ -30,17 +39,17 @@ export default function Home() {
           <AdBanner />
         </section>
 
-        {/* 特徴セクション */}
+        {/* Features section */}
         <section id="features" className="mb-24">
           <FeaturesSection featuresData={featuresData} />
         </section>
 
-        {/* 使い方ステップ */}
+        {/* Steps section */}
         <section id="steps">
           <StepsSection steps={steps} />
         </section>
 
-        {/* 料金プラン */}
+        {/* Pricing section */}
         <section id="pricing">
           <PricingSection
             freePlanFeatures={freePlanFeatures}
@@ -49,17 +58,17 @@ export default function Home() {
           />
         </section>
 
-        {/* ユーザーの声 */}
+        {/* Testimonials section */}
         <section id="testimonials">
           <TestimonialsSection testimonials={testimonials} />
         </section>
 
-        {/* よくある質問 */}
+        {/* FAQ section */}
         <section id="faq">
           <FAQSection faqs={faqs} />
         </section>
 
-        {/* CTA */}
+        {/* CTA section */}
         <section id="cta">
           <CTASection />
         </section>

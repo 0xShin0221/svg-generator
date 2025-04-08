@@ -7,9 +7,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 
 interface PricingSectionProps {
-  freePlanFeatures: string[];
-  proPlanFeatures1: string[];
-  proPlanFeatures2: string[];
+  freePlanFeatures: string[]; // Now contains translation keys
+  proPlanFeatures1: string[]; // Now contains translation keys
+  proPlanFeatures2: string[]; // Now contains translation keys
 }
 
 const PricingSection = ({
@@ -49,10 +49,10 @@ const PricingSection = ({
                 </span>
               </div>
               <ul className="space-y-3 mb-8">
-                {freePlanFeatures.map((feature) => (
-                  <li key={feature} className="flex items-start">
+                {freePlanFeatures.map((featureKey) => (
+                  <li key={featureKey} className="flex items-start">
                     <Check className="h-5 w-5 text-blue-300 mr-2 mt-0.5 flex-shrink-0" />
-                    <span className="text-blue-100">{feature}</span>
+                    <span className="text-blue-100">{t(featureKey)}</span>
                   </li>
                 ))}
               </ul>
@@ -91,10 +91,10 @@ const PricingSection = ({
                     {t("proPlan.featuresTitle1")}
                   </h4>
                   <ul className="space-y-3">
-                    {proPlanFeatures1.map((feature, index) => (
-                      <li key={index} className="flex items-start">
+                    {proPlanFeatures1.map((featureKey) => (
+                      <li key={featureKey} className="flex items-start">
                         <Check className="h-5 w-5 text-purple-300 mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-purple-100">{feature}</span>
+                        <span className="text-purple-100">{t(featureKey)}</span>
                       </li>
                     ))}
                   </ul>
@@ -104,10 +104,10 @@ const PricingSection = ({
                     {t("proPlan.featuresTitle2")}
                   </h4>
                   <ul className="space-y-3">
-                    {proPlanFeatures2.map((feature, index) => (
-                      <li key={index} className="flex items-start">
+                    {proPlanFeatures2.map((featureKey) => (
+                      <li key={featureKey} className="flex items-start">
                         <Check className="h-5 w-5 text-purple-300 mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-purple-100">{feature}</span>
+                        <span className="text-purple-100">{t(featureKey)}</span>
                       </li>
                     ))}
                   </ul>

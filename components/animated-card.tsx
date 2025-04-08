@@ -1,29 +1,16 @@
 "use client";
 
+import type React from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Check,
-  PenTool,
-  Wand2,
-  Zap,
-  Download,
-  Share2,
-  Monitor,
-} from "lucide-react";
+import { PenTool, Zap, Wand2, Download, Share2, Monitor } from "lucide-react";
 
-// Define types for the features
 interface Feature {
   title: string;
   description: string;
 }
 
-// Define available icon names
-type IconName = "PenTool" | "Wand2" | "Zap" | "Download" | "Share2" | "Monitor";
-
-// Define props for the component
 interface AnimatedCardProps {
-  iconName: IconName;
+  iconName: "PenTool" | "Wand2" | "Zap" | "Download" | "Share2" | "Monitor";
   iconColor: string;
   borderColor: string;
   hoverBorderColor: string;
@@ -31,10 +18,10 @@ interface AnimatedCardProps {
   gradientTo: string;
   title: string;
   features: Feature[];
-  delay?: number;
+  delay: number;
 }
 
-const AnimatedCard = ({
+const AnimatedCard: React.FC<AnimatedCardProps> = ({
   iconName,
   iconColor,
   borderColor,
@@ -43,65 +30,50 @@ const AnimatedCard = ({
   gradientTo,
   title,
   features,
-  delay = 0,
-}: AnimatedCardProps) => {
-  // Function to get the icon component based on name
-  const getIcon = (name: IconName) => {
-    switch (name) {
-      case "PenTool":
-        return PenTool;
-      case "Wand2":
-        return Wand2;
-      case "Zap":
-        return Zap;
-      case "Download":
-        return Download;
-      case "Share2":
-        return Share2;
-      case "Monitor":
-        return Monitor;
-      default:
-        return PenTool; // Default icon as a fallback
-    }
-  };
-
-  // Get the icon component
-  const Icon = getIcon(iconName);
+  delay,
+}) => {
+  // Map icon name to component
+  const IconComponent = {
+    PenTool,
+    Wand2,
+    Zap,
+    Download,
+    Share2,
+    Monitor,
+  }[iconName];
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
+      className={`p-6 rounded-xl border border-${borderColor} hover:border-${hoverBorderColor} bg-gradient-to-br from-${gradientFrom}/5 to-${gradientTo}/5 hover:from-${gradientFrom}/10 hover:to-${gradientTo}/10 transition-all duration-300 h-full`}
     >
-      <Card
-        className={`h-full border-${borderColor} bg-black/40 backdrop-blur-sm hover:bg-black/60 transition-all duration-300 hover:border-${hoverBorderColor} hover:shadow-lg hover:shadow-${borderColor}/10`}
-      >
-        <CardContent className="p-6">
-          <div
-            className={`rounded-full w-12 h-12 flex items-center justify-center bg-gradient-to-br from-${gradientFrom} to-${gradientTo} mb-4`}
+      <div className="flex items-center mb-4">
+        <div className={`p-2 rounded-lg bg-${gradientFrom} mr-3`}>
+          <IconComponent className={`h-5 w-5 text-${iconColor}`} />
+        </div>
+        <h3 className="text-xl font-semibold text-white">{title}</h3>
+      </div>
+      <ul className="space-y-3">
+        {features.map((feature, index) => (
+          <motion.li
+            key={index}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: delay + 0.1 * (index + 1) }}
+            className="flex items-start"
           >
-            <Icon className={`h-6 w-6 text-${iconColor}`} />
-          </div>
-          <h3 className="text-xl font-semibold text-white mb-4">{title}</h3>
-
-          <ul className="space-y-3">
-            {features.map((feature, index) => (
-              <li key={index} className="flex items-start">
-                <Check
-                  className={`h-5 w-5 text-${iconColor} mr-2 mt-0.5 flex-shrink-0`}
-                />
-                <div>
-                  <span className="font-medium text-white">
-                    {feature.title}
-                  </span>
-                  <p className="text-sm text-gray-400">{feature.description}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
+            <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center">
+              <div className={`w-1.5 h-1.5 rounded-full bg-${iconColor}`}></div>
+            </div>
+            <div>
+              <p className="font-medium text-white">{feature.title}</p>
+              <p className="text-sm text-gray-400">{feature.description}</p>
+            </div>
+          </motion.li>
+        ))}
+      </ul>
     </motion.div>
   );
 };

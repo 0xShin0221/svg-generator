@@ -11,10 +11,65 @@
     "viewFeatures": "View Features"
   },
   "Steps": {
-    "title": "Create Your Logo in 3 Easy Steps"
+    "title": "Create Your Logo in 3 Easy Steps",
+    "step_select_template": "Choose a Template",
+    "step_select_template_desc": "Select from a variety of templates for your industry or use AI to generate a logo.",
+    "step_customize": "Customize",
+    "step_customize_desc": "Freely customize text, colors, shapes, and fonts to create your unique logo.",
+    "step_download": "Download",
+    "step_download_desc": "Download your finished logo in SVG, PNG, or JPG format. Ready to use immediately."
   },
   "Features": {
-    "title": "Key Features"
+    "title": "Key Features",
+
+    "design_features": "Design Features",
+    "ai_features": "AI Features",
+    "animation_features": "Animation Features",
+    "export_features": "Export Features",
+    "sharing_features": "Sharing Features",
+    "usability_features": "Usability",
+
+    "design_templates_title": "Rich Templates",
+    "design_templates_desc": "Hundreds of templates categorized by industry and style",
+    "design_customization_title": "Advanced Customization",
+    "design_customization_desc": "Freely adjust text, shapes, colors, and gradients",
+    "design_custom_fonts_title": "Custom Fonts",
+    "design_custom_fonts_desc": "Upload and use your own fonts",
+
+    "ai_logo_generation_title": "AI Logo Generation",
+    "ai_logo_generation_desc": "Automatically generate perfect logos for your brand in seconds",
+    "ai_style_suggestions_title": "Style Suggestions",
+    "ai_style_suggestions_desc": "Automatically suggest optimal design styles for your industry",
+    "ai_color_palette_title": "Color Palette Generation",
+    "ai_color_palette_desc": "Automatically suggest color schemes that match your brand image",
+
+    "animation_effects_title": "20+ Effects",
+    "animation_effects_desc": "Various animations including rotation, fade, bounce, and more",
+    "animation_customization_title": "Customizable",
+    "animation_customization_desc": "Freely adjust speed, delay, repeat count, and more",
+    "animation_multiple_elements_title": "Multiple Element Animation",
+    "animation_multiple_elements_desc": "Apply separate animations to text and shapes",
+
+    "export_formats_title": "Multiple Formats",
+    "export_formats_desc": "Export in SVG, PNG, and JPG formats",
+    "export_high_resolution_title": "High Resolution Output",
+    "export_high_resolution_desc": "High quality output ideal for print and digital media",
+    "export_transparent_background_title": "Transparent Background",
+    "export_transparent_background_desc": "Export with transparent background in PNG and SVG",
+
+    "sharing_save_projects_title": "Project Saving",
+    "sharing_save_projects_desc": "Save created logos for later editing",
+    "sharing_team_sharing_title": "Team Sharing",
+    "sharing_team_sharing_desc": "Share projects with colleagues and clients",
+    "sharing_version_history_title": "Version History",
+    "sharing_version_history_desc": "Save and restore past versions",
+
+    "usability_interface_title": "Intuitive Interface",
+    "usability_interface_desc": "Easy to operate even without design knowledge",
+    "usability_languages_title": "Multilingual",
+    "usability_languages_desc": "Supports 20+ languages for worldwide use",
+    "usability_free_title": "Free to Use",
+    "usability_free_desc": "Use all basic functions without registration"
   },
   "EditorHero": {
     "modes": {
@@ -35,6 +90,7 @@
   "Pricing": {
     "title": "Simple Pricing",
     "subtitle": "Only pay for what you need, when you need it. No subscriptions or hidden fees.",
+
     "freePlan": {
       "badge": "Free Plan",
       "name": "Free",
@@ -42,6 +98,7 @@
       "period": "/ forever",
       "ctaButton": "Get Started"
     },
+
     "proPlan": {
       "comingSoon": "Coming Soon",
       "badge": "Premium Plan",
@@ -51,14 +108,71 @@
       "featuresTitle1": "Everything in Free, plus:",
       "featuresTitle2": "Additionally:",
       "ctaButton": "Notify Me on Release"
-    }
+    },
+
+    "free_feature_templates": "Basic templates (50+)",
+    "free_feature_text": "Custom text editing",
+    "free_feature_colors": "Color palette changes",
+    "free_feature_svg": "Export as SVG",
+    "free_feature_transparent": "Transparent background support",
+    "free_feature_commercial": "Commercial use allowed",
+
+    "pro_feature_templates": "Premium templates (200+)",
+    "pro_feature_customization": "Advanced customization options",
+    "pro_feature_fonts": "Custom font uploads",
+    "pro_feature_projects": "Unlimited project saving",
+    "pro_feature_ai": "AI logo generation",
+    "pro_feature_animation": "Animated SVG creation",
+    "pro_feature_team": "Team sharing features",
+    "pro_feature_support": "Priority support"
   },
   "Testimonials": {
-    "title": "Testimonials"
+    "title": "Testimonials",
+    "testimonial_1_name": "Kenta Tanaka",
+    "testimonial_1_title": "Startup Founder",
+    "testimonial_1_text": "In just 10 minutes, I had a perfect logo for our brand. It was faster and more cost-effective than hiring a designer.",
+
+    "testimonial_2_name": "Ai Sato",
+    "testimonial_2_title": "Freelance Designer",
+    "testimonial_2_text": "This tool is perfect for quickly presenting initial logo concepts to clients. It has significantly reduced the time I spend turning ideas into visuals.",
+
+    "testimonial_3_name": "Makoto Kimura",
+    "testimonial_3_title": "Web Developer",
+    "testimonial_3_text": "I used this to create an icon set for our website. The SVG export is perfect for responsive design.",
+
+    "testimonial_4_name": "Sakiko Yamada",
+    "testimonial_4_title": "Marketing Manager",
+    "testimonial_4_text": "I use this tool for creating visual assets for marketing campaigns. The variety of templates helps me create cohesive designs quickly.",
+
+    "testimonial_5_name": "Daisuke Suzuki",
+    "testimonial_5_title": "Web Designer",
+    "testimonial_5_text": "The animation features are amazing. Creating animated logos is easy and has significantly improved the impression of our website.",
+
+    "testimonial_6_name": "Misaki Takahashi",
+    "testimonial_6_title": "Brand Manager",
+    "testimonial_6_text": "I manage logos for multiple brands, and this tool helps me maintain design consistency. The balance of usability and functionality is perfect."
   },
   "FAQ": {
     "title": "Frequently Asked Questions",
-    "viewAllButton": "View All Questions"
+    "viewAllButton": "View All Questions",
+
+    "faq_1_question": "Is SVG Generator completely free?",
+    "faq_1_answer": "Yes, all basic features are available for free. You can start using it immediately without registration. Premium features will be available in the future.",
+
+    "faq_2_question": "Can I use the created logos commercially?",
+    "faq_2_answer": "Yes, you can freely use logos created with SVG Generator for both personal and commercial purposes. There are no copyright concerns.",
+
+    "faq_3_question": "Do I need to create an account?",
+    "faq_3_answer": "No, you can use all basic features without account registration. However, some features like cloud storage will require account registration in the future.",
+
+    "faq_4_question": "What are the benefits of SVG format?",
+    "faq_4_answer": "SVG is a vector format, so it doesn't lose quality when resized. It also has small file sizes and can include animation and interactive elements.",
+
+    "faq_5_question": "Can I upload custom fonts?",
+    "faq_5_answer": "Yes, you can upload font files in TTF, OTF, WOFF, and WOFF2 formats to use in your logo design.",
+
+    "faq_6_question": "Can I use it on mobile devices?",
+    "faq_6_answer": "Yes, SVG Generator uses responsive design and can be comfortably used on mobile devices like smartphones and tablets."
   },
   "CTA": {
     "title": "Create Your Logo Now",

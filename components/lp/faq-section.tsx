@@ -7,8 +7,8 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 interface FAQ {
-  question: string;
-  answer: string;
+  questionKey: string;
+  answerKey: string;
 }
 
 interface FAQSectionProps {
@@ -24,23 +24,28 @@ const FAQSection = ({ faqs }: FAQSectionProps) => {
         {t("title")}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-        {faqs.map((faq, index) => (
-          <motion.div
-            key={faq.question}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.05 }}
-          >
-            <Card className="h-full border-blue-500/20 bg-black/40 backdrop-blur-sm">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-300">{faq.answer}</p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+        {faqs.map((faq, index) => {
+          const question = t(faq.questionKey);
+          const answer = t(faq.answerKey);
+
+          return (
+            <motion.div
+              key={faq.questionKey} // Using questionKey as the unique key
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+            >
+              <Card className="h-full border-blue-500/20 bg-black/40 backdrop-blur-sm">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold text-white mb-2">
+                    {question}
+                  </h3>
+                  <p className="text-gray-300">{answer}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          );
+        })}
       </div>
       <div className="text-center mt-8">
         <Link

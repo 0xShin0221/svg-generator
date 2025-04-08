@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import AnimatedCard from "@/components/animated-card";
 import { useTranslations } from "next-intl";
-import type { FeatureData } from "@/components/lp/ja/data";
+import AnimatedCard from "@/components/animated-card";
+import type { FeatureData } from "@/components/features-data";
 
 interface FeaturesSectionProps {
   featuresData: FeatureData[];
@@ -20,12 +20,26 @@ const FeaturesSection = ({ featuresData }: FeaturesSectionProps) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {featuresData.map((feature, index) => (
           <motion.div
-            key={feature.title}
+            key={feature.titleKey}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.05 }}
           >
-            <AnimatedCard key={feature.title} {...feature} />
+            <AnimatedCard
+              key={feature.titleKey}
+              iconName={feature.iconName}
+              iconColor={feature.iconColor}
+              borderColor={feature.borderColor}
+              hoverBorderColor={feature.hoverBorderColor}
+              gradientFrom={feature.gradientFrom}
+              gradientTo={feature.gradientTo}
+              title={t(feature.titleKey)}
+              features={feature.featureKeys.map((key: string) => ({
+                title: t(`${key}_title`),
+                description: t(`${key}_desc`),
+              }))}
+              delay={feature.delay}
+            />
           </motion.div>
         ))}
       </div>

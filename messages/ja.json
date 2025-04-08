@@ -11,10 +11,65 @@
     "viewFeatures": "機能を見る"
   },
   "Features": {
-    "title": "主な機能"
+    "title": "主な機能",
+
+    "design_features": "デザイン機能",
+    "ai_features": "AI機能",
+    "animation_features": "アニメーション機能",
+    "export_features": "エクスポート機能",
+    "sharing_features": "共有・保存機能",
+    "usability_features": "使いやすさ",
+
+    "design_templates_title": "豊富なテンプレート",
+    "design_templates_desc": "業種別、スタイル別に分類された数百種類のテンプレート",
+    "design_customization_title": "高度なカスタマイズ",
+    "design_customization_desc": "テキスト、シェイプ、色、グラデーションを自由に調整",
+    "design_custom_fonts_title": "カスタムフォント",
+    "design_custom_fonts_desc": "独自のフォントをアップロードして使用可能",
+
+    "ai_logo_generation_title": "AIロゴ生成",
+    "ai_logo_generation_desc": "ブランドに合ったロゴを数秒で自動生成",
+    "ai_style_suggestions_title": "スタイル提案",
+    "ai_style_suggestions_desc": "業種に最適なデザインスタイルを自動提案",
+    "ai_color_palette_title": "カラーパレット生成",
+    "ai_color_palette_desc": "ブランドイメージに合った配色を自動提案",
+
+    "animation_effects_title": "20種類以上のエフェクト",
+    "animation_effects_desc": "回転、フェード、バウンスなど多彩なアニメーション",
+    "animation_customization_title": "カスタマイズ可能",
+    "animation_customization_desc": "速度、遅延、繰り返し回数などを自由に調整",
+    "animation_multiple_elements_title": "複数要素のアニメーション",
+    "animation_multiple_elements_desc": "テキストとシェイプに個別のアニメーションを適用可能",
+
+    "export_formats_title": "複数形式に対応",
+    "export_formats_desc": "SVG、PNG、JPG形式でエクスポート可能",
+    "export_high_resolution_title": "高解像度出力",
+    "export_high_resolution_desc": "印刷やデジタルメディアに最適な高品質出力",
+    "export_transparent_background_title": "透過背景対応",
+    "export_transparent_background_desc": "背景透過のPNGやSVGでエクスポート可能",
+
+    "sharing_save_projects_title": "プロジェクト保存",
+    "sharing_save_projects_desc": "作成したロゴを保存して後で編集可能",
+    "sharing_team_sharing_title": "チーム共有",
+    "sharing_team_sharing_desc": "同僚やクライアントとプロジェクトを共有",
+    "sharing_version_history_title": "バージョン履歴",
+    "sharing_version_history_desc": "過去のバージョンを保存・復元可能",
+
+    "usability_interface_title": "直感的なインターフェース",
+    "usability_interface_desc": "デザイン知識がなくても簡単に操作可能",
+    "usability_languages_title": "多言語対応",
+    "usability_languages_desc": "20以上の言語に対応し、世界中で利用可能",
+    "usability_free_title": "無料で使える",
+    "usability_free_desc": "登録不要で基本機能をすべて利用可能"
   },
   "Steps": {
-    "title": "簡単3ステップでロゴを作成"
+    "title": "簡単3ステップでロゴを作成",
+    "step_select_template": "テンプレートを選択",
+    "step_select_template_desc": "業種やスタイルに合ったテンプレートを選ぶか、AIにロゴを生成してもらいます。",
+    "step_customize": "カスタマイズ",
+    "step_customize_desc": "テキスト、色、シェイプ、フォントなどを自由にカスタマイズして、あなただけのロゴに仕上げます。",
+    "step_download": "ダウンロード",
+    "step_download_desc": "完成したロゴをSVG、PNG、JPG形式でダウンロード。すぐに使用できます。"
   },
   "EditorHero": {
     "modes": {
@@ -35,6 +90,7 @@
   "Pricing": {
     "title": "シンプルな料金プラン",
     "subtitle": "必要な機能だけを、必要なときに。サブスクリプションや隠れた料金は一切ありません。",
+
     "freePlan": {
       "badge": "無料プラン",
       "name": "Free",
@@ -42,6 +98,7 @@
       "period": "/ 永久無料",
       "ctaButton": "今すぐ始める"
     },
+
     "proPlan": {
       "comingSoon": "近日公開",
       "badge": "プレミアムプラン",
@@ -51,14 +108,71 @@
       "featuresTitle1": "すべての無料機能に加えて:",
       "featuresTitle2": "さらに:",
       "ctaButton": "リリース時にお知らせ"
-    }
+    },
+
+    "free_feature_templates": "基本テンプレート（50種類以上）",
+    "free_feature_text": "カスタムテキスト編集",
+    "free_feature_colors": "カラーパレット変更",
+    "free_feature_svg": "SVG形式でエクスポート",
+    "free_feature_transparent": "透過背景対応",
+    "free_feature_commercial": "商用利用可能",
+
+    "pro_feature_templates": "プレミアムテンプレート（200種以上）",
+    "pro_feature_customization": "高度なカスタマイズオプション",
+    "pro_feature_fonts": "カスタムフォントのアップロード",
+    "pro_feature_projects": "プロジェクト保存（無制限）",
+    "pro_feature_ai": "AIロゴ生成",
+    "pro_feature_animation": "アニメーションSVG作成",
+    "pro_feature_team": "チーム共有機能",
+    "pro_feature_support": "優先サポート"
   },
   "Testimonials": {
-    "title": "ユーザーの評価"
+    "title": "ユーザーの声",
+    "testimonial_1_name": "田中 健太",
+    "testimonial_1_title": "スタートアップ創業者",
+    "testimonial_1_text": "わずか10分で、私たちのブランドにぴったりのロゴが完成しました。デザイナーに依頼するよりも早く、コストも抑えられて大満足です。",
+
+    "testimonial_2_name": "佐藤 愛",
+    "testimonial_2_title": "フリーランスデザイナー",
+    "testimonial_2_text": "クライアントにロゴの初期案を素早く提示するのに最適なツールです。アイデアを形にする時間が大幅に短縮され、作業効率が向上しました。",
+
+    "testimonial_3_name": "木村 誠",
+    "testimonial_3_title": "ウェブ開発者",
+    "testimonial_3_text": "ウェブサイト用のアイコンセットを作成するのに使用しました。SVG形式でエクスポートできるため、レスポンシブデザインに最適です。",
+
+    "testimonial_4_name": "山田 咲子",
+    "testimonial_4_title": "マーケティングマネージャー",
+    "testimonial_4_text": "マーケティングキャンペーン用のビジュアル素材を作成するのに活用しています。テンプレートが豊富で、短時間で統一感のあるデザインを作成できるのが魅力です。",
+
+    "testimonial_5_name": "鈴木 大輔",
+    "testimonial_5_title": "ウェブデザイナー",
+    "testimonial_5_text": "アニメーション機能が素晴らしいです。動きのあるロゴを簡単に作成でき、ウェブサイトの印象が格段に良くなりました。",
+
+    "testimonial_6_name": "高橋 美咲",
+    "testimonial_6_title": "ブランドマネージャー",
+    "testimonial_6_text": "複数のブランドのロゴを管理していますが、このツールのおかげで一貫性のあるデザインを維持できています。使いやすさと機能性のバランスが絶妙です。"
   },
   "FAQ": {
     "title": "よくある質問",
-    "viewAllButton": "すべての質問を見る"
+    "viewAllButton": "すべての質問を見る",
+
+    "faq_1_question": "SVG Generatorは完全に無料ですか？",
+    "faq_1_answer": "はい、基本機能はすべて無料でご利用いただけます。登録不要で、すぐに使い始めることができます。将来的にはプレミアム機能も提供予定です。",
+
+    "faq_2_question": "作成したロゴは商用利用できますか？",
+    "faq_2_answer": "はい、SVG Generatorで作成したロゴは、個人利用でも商用利用でも自由にお使いいただけます。著作権の心配はありません。",
+
+    "faq_3_question": "アカウント登録は必要ですか？",
+    "faq_3_answer": "いいえ、アカウント登録なしで基本機能をすべて利用できます。ただし、クラウド保存などの一部機能は将来的にアカウント登録が必要になる予定です。",
+
+    "faq_4_question": "SVG形式のメリットは何ですか？",
+    "faq_4_answer": "SVGはベクター形式のため、拡大縮小しても画質が劣化しません。また、ファイルサイズが小さく、アニメーションやインタラクティブな要素を追加できます。",
+
+    "faq_5_question": "カスタムフォントをアップロードできますか？",
+    "faq_5_answer": "はい、TTF、OTF、WOFF、WOFF2形式のフォントファイルをアップロードして、ロゴデザインに使用できます。",
+
+    "faq_6_question": "モバイルデバイスでも使用できますか？",
+    "faq_6_answer": "はい、SVG Generatorはレスポンシブデザインを採用しており、スマートフォンやタブレットなどのモバイルデバイスでも快適に使用できます。"
   },
   "CTA": {
     "title": "今すぐロゴを作成しましょう",

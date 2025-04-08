@@ -6,11 +6,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
 
 interface Testimonial {
-  name: string;
+  nameKey: string;
   initials: string;
-  title: string;
+  titleKey: string;
   rating: number;
-  text: string;
+  textKey: string;
 }
 
 interface TestimonialsSectionProps {
@@ -26,47 +26,49 @@ const TestimonialsSection = ({ testimonials }: TestimonialsSectionProps) => {
         {t("title")}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {testimonials.map((testimonial, index) => (
-          <motion.div
-            key={testimonial.name}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <Card className="h-full border-blue-500/20 bg-black/40 backdrop-blur-sm">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={`${testimonial.name}-star-${i}`}
-                        className={`h-5 w-5 ${
-                          i < testimonial.rating
-                            ? "text-yellow-400 fill-yellow-400"
-                            : "text-gray-600"
-                        }`}
-                      />
-                    ))}
+        {testimonials.map((testimonial, index) => {
+          const name = t(testimonial.nameKey);
+          const title = t(testimonial.titleKey);
+          const text = t(testimonial.textKey);
+
+          return (
+            <motion.div
+              key={testimonial.nameKey} // Using nameKey as the unique key
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card className="h-full border-blue-500/20 bg-black/40 backdrop-blur-sm">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={`${testimonial.nameKey}-star-${i}`}
+                          className={`h-5 w-5 ${
+                            i < testimonial.rating
+                              ? "text-yellow-400 fill-yellow-400"
+                              : "text-gray-600"
+                          }`}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <p className="text-gray-300 mb-6 italic">
-                  "{testimonial.text}"
-                </p>
-                <div className="flex items-center">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center text-blue-400 font-bold mr-3">
-                    {testimonial.initials}
+                  <p className="text-gray-300 mb-6 italic">"{text}"</p>
+                  <div className="flex items-center">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center text-blue-400 font-bold mr-3">
+                      {testimonial.initials}
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">{name}</h5>
+                      <p className="text-xs text-gray-400">{title}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h5 className="font-semibold text-white">
-                      {testimonial.name}
-                    </h5>
-                    <p className="text-xs text-gray-400">{testimonial.title}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
+                </CardContent>
+              </Card>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
