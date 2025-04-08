@@ -178,15 +178,18 @@ export default function LogoCreator({
 
   // プレビューの開始/停止
   const togglePreview = () => {
-    setIsPreviewPlaying(!isPreviewPlaying);
-
+    // 既に実行中のタイマーがあればクリア
     if (previewTimerRef.current) {
       clearTimeout(previewTimerRef.current);
       previewTimerRef.current = null;
     }
 
-    if (!isPreviewPlaying) {
-      // プレビューが終了したら自動的に停止する
+    // 現在の状態の反対に設定（状態更新を一回だけ行う）
+    const newState = !isPreviewPlaying;
+    setIsPreviewPlaying(newState);
+
+    // 新しい状態がプレイ中の場合のみタイマーを設定
+    if (newState) {
       const maxDuration =
         Math.max(
           settings.animation?.duration || 0,
@@ -1026,45 +1029,35 @@ export default function LogoCreator({
                     {/* アニメーションプリセット */}
                     <AnimationPresets
                       onSelect={(shapeAnimation, textAnimations) => {
+                        // バッチ処理で一度にすべての状態を更新
+                        const updatedSettings = { ...settings };
+
                         // シェイプアニメーションを適用
-                        handleAnimationChange(shapeAnimation);
+                        updatedSettings.animation = shapeAnimation;
 
                         // テキストアニメーションを適用（テキスト数に合わせて）
-                        settings.texts.forEach((text, index) => {
-                          if (index < textAnimations.length) {
-                            setSettings((prev) => {
-                              const updatedTexts = [...prev.texts];
-                              updatedTexts[index] = {
-                                ...updatedTexts[index],
+                        updatedSettings.texts = updatedSettings.texts.map(
+                          (text, index) => {
+                            if (index < textAnimations.length) {
+                              return {
+                                ...text,
                                 animation: textAnimations[index],
                               };
-                              return {
-                                ...prev,
-                                texts: updatedTexts,
-                              };
-                            });
+                            }
+                            return text;
                           }
-                        });
+                        );
 
-                        // プレビューを開始
-                        setIsPreviewPlaying(true);
+                        // 一度の setState 呼び出しですべての変更を適用
+                        setSettings(updatedSettings);
 
-                        if (previewTimerRef.current) {
-                          clearTimeout(previewTimerRef.current);
+                        // 親コンポーネントに更新を通知（必要な場合）
+                        if (onSelectLogo) {
+                          onSelectLogo(updatedSettings);
                         }
 
-                        // 最大持続時間の2倍の時間後に停止
-                        const maxDuration =
-                          Math.max(
-                            shapeAnimation.duration,
-                            ...textAnimations.map((a) => a.duration)
-                          ) *
-                          1000 *
-                          2;
-
-                        previewTimerRef.current = setTimeout(() => {
-                          setIsPreviewPlaying(false);
-                        }, maxDuration + 1000);
+                        // プレビューを開始
+                        togglePreview();
                       }}
                     />
 

@@ -565,6 +565,24 @@
     "swing": "Swing",
     "vibrate": "Vibrate",
     "typewriter": "Typewriter",
-    "spotlight": "Spotlight"
+    "spotlight": "Spotlight",
+
+    "ai_generator": "AI Logo Generator",
+    "coming_soon": "Coming Soon",
+    "ai_generator_coming_soon_message": "Our AI logo generation feature is currently in development. Click the button below to be notified when it's released.",
+    "simple_mode": "Simple Mode",
+    "advanced_mode": "Advanced Mode",
+    "brand_name": "Brand Name",
+    "industry": "Industry",
+    "brand_name_placeholder": "e.g. Nova",
+    "industry_placeholder": "e.g. Technology, Food, Fashion",
+    "detailed_prompt": "Detailed Prompt",
+    "prompt_placeholder": "e.g. A modern, minimal logo for a tech company with blue and purple gradient...",
+    "prompt_description": "Describe the style, colors, shapes, and other details for your logo",
+    "generating": "Generating...",
+    "generate_logo_with_ai": "Generate Logo with AI",
+    "generated_logos": "Generated Logos",
+    "clear": "Clear",
+    "generated_logo_alt": "Generated logo"
   }
 }

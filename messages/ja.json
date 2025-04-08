@@ -564,6 +564,24 @@
     "swing": "スイング",
     "vibrate": "バイブレーション",
     "typewriter": "タイプライター",
-    "spotlight": "スポットライト"
+    "spotlight": "スポットライト",
+    "ai_generator": "AIロゴジェネレーター",
+    "coming_soon": "近日公開",
+    "ai_generator_coming_soon_message": "AIによるロゴ生成機能は現在開発中です。リリース時にお知らせをご希望の方は、下のボタンをクリックしてください。",
+
+    "simple_mode": "シンプルモード",
+    "advanced_mode": "詳細モード",
+    "brand_name": "ブランド名",
+    "industry": "業種",
+    "brand_name_placeholder": "例: Nova",
+    "industry_placeholder": "例: テクノロジー、飲食、ファッション",
+    "detailed_prompt": "詳細プロンプト",
+    "prompt_placeholder": "例: モダンでミニマルなテクノロジー企業のロゴ、青と紫のグラデーション...",
+    "prompt_description": "ロゴのスタイル、色、形状などの詳細を記述してください",
+    "generating": "生成中...",
+    "generate_logo_with_ai": "AIでロゴを生成",
+    "generated_logos": "生成されたロゴ",
+    "clear": "クリア",
+    "generated_logo_alt": "生成されたロゴ"
   }
 }
