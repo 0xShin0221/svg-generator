@@ -1,223 +1,231 @@
-"use client"
-import { Card, CardContent } from "@/components/ui/card"
-import type { AnimationSettings } from "@/types"
-import { motion } from "framer-motion"
+"use client";
+import { Card, CardContent } from "@/components/ui/card";
+import type { AnimationSettings } from "@/types";
+import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface AnimationPresetProps {
-  onSelect: (shapeAnimation: AnimationSettings, textAnimations: AnimationSettings[]) => void
+  onSelect: (
+    shapeAnimation: AnimationSettings,
+    textAnimations: AnimationSettings[]
+  ) => void;
 }
 
-// アニメーションプリセット
-const animationPresets = [
-  {
-    id: "bounce-in",
-    name: "バウンスイン",
-    description: "要素が弾むように登場",
-    shape: {
-      type: "bounce" as const,
-      duration: 2,
-      delay: 0,
-      easing: "elastic" as const,
-      direction: "normal" as const,
-      iterations: 1,
+export function AnimationPresets({ onSelect }: AnimationPresetProps) {
+  const t = useTranslations("LogoCreator");
+
+  // Animation presets
+  const animationPresets = [
+    {
+      id: "bounce-in",
+      nameKey: "preset_bounce_in",
+      descriptionKey: "preset_bounce_in_desc",
+      shape: {
+        type: "bounce" as const,
+        duration: 2,
+        delay: 0,
+        easing: "elastic" as const,
+        direction: "normal" as const,
+        iterations: 1,
+      },
+      texts: [
+        {
+          type: "fade" as const,
+          duration: 1.5,
+          delay: 0.5,
+          easing: "ease-out" as const,
+          direction: "normal" as const,
+          iterations: 1,
+        },
+      ],
     },
-    texts: [
-      {
-        type: "fade" as const,
-        duration: 1.5,
-        delay: 0.5,
+    {
+      id: "spin-reveal",
+      nameKey: "preset_spin_reveal",
+      descriptionKey: "preset_spin_reveal_desc",
+      shape: {
+        type: "rotate" as const,
+        duration: 2,
+        delay: 0,
         easing: "ease-out" as const,
         direction: "normal" as const,
         iterations: 1,
       },
-    ],
-  },
-  {
-    id: "spin-reveal",
-    name: "スピンリビール",
-    description: "回転しながら表示",
-    shape: {
-      type: "rotate" as const,
-      duration: 2,
-      delay: 0,
-      easing: "ease-out" as const,
-      direction: "normal" as const,
-      iterations: 1,
+      texts: [
+        {
+          type: "fade" as const,
+          duration: 1,
+          delay: 0.8,
+          easing: "ease-in" as const,
+          direction: "normal" as const,
+          iterations: 1,
+        },
+      ],
     },
-    texts: [
-      {
-        type: "fade" as const,
-        duration: 1,
-        delay: 0.8,
-        easing: "ease-in" as const,
-        direction: "normal" as const,
-        iterations: 1,
-      },
-    ],
-  },
-  {
-    id: "pulse-sequence",
-    name: "パルスシーケンス",
-    description: "順番に拡大縮小",
-    shape: {
-      type: "pulse" as const,
-      duration: 2,
-      delay: 0,
-      easing: "ease-in-out" as const,
-      direction: "alternate" as const,
-      iterations: "infinite",
-    },
-    texts: [
-      {
+    {
+      id: "pulse-sequence",
+      nameKey: "preset_pulse_sequence",
+      descriptionKey: "preset_pulse_sequence_desc",
+      shape: {
         type: "pulse" as const,
-        duration: 2,
-        delay: 0.5,
-        easing: "ease-in-out" as const,
-        direction: "alternate" as const,
-        iterations: "infinite",
-      },
-      {
-        type: "pulse" as const,
-        duration: 2,
-        delay: 1,
-        easing: "ease-in-out" as const,
-        direction: "alternate" as const,
-        iterations: "infinite",
-        sequence: "after-previous" as const,
-      },
-    ],
-  },
-  {
-    id: "typewriter-effect",
-    name: "タイプライター",
-    description: "テキストが打ち込まれるように表示",
-    shape: {
-      type: "fade" as const,
-      duration: 1,
-      delay: 0,
-      easing: "ease" as const,
-      direction: "normal" as const,
-      iterations: 1,
-    },
-    texts: [
-      {
-        type: "typewriter" as const,
-        duration: 2,
-        delay: 0.5,
-        easing: "linear" as const,
-        direction: "normal" as const,
-        iterations: 1,
-      },
-      {
-        type: "typewriter" as const,
-        duration: 1.5,
-        delay: 2.5,
-        easing: "linear" as const,
-        direction: "normal" as const,
-        iterations: 1,
-        sequence: "after-previous" as const,
-      },
-    ],
-  },
-  {
-    id: "spotlight-morph",
-    name: "スポットライトモーフ",
-    description: "形状が変化しながら光る",
-    shape: {
-      type: "morph" as const,
-      duration: 3,
-      delay: 0,
-      easing: "ease-in-out" as const,
-      direction: "alternate" as const,
-      iterations: "infinite",
-    },
-    texts: [
-      {
-        type: "spotlight" as const,
         duration: 2,
         delay: 0,
         easing: "ease-in-out" as const,
         direction: "alternate" as const,
         iterations: "infinite",
       },
-    ],
-  },
-  {
-    id: "draw-and-swing",
-    name: "ドロー＆スイング",
-    description: "線が描かれた後に揺れる",
-    shape: {
-      type: "draw" as const,
-      duration: 2,
-      delay: 0,
-      easing: "ease-out" as const,
-      direction: "normal" as const,
-      iterations: 1,
+      texts: [
+        {
+          type: "pulse" as const,
+          duration: 2,
+          delay: 0.5,
+          easing: "ease-in-out" as const,
+          direction: "alternate" as const,
+          iterations: "infinite",
+        },
+        {
+          type: "pulse" as const,
+          duration: 2,
+          delay: 1,
+          easing: "ease-in-out" as const,
+          direction: "alternate" as const,
+          iterations: "infinite",
+          sequence: "after-previous" as const,
+        },
+      ],
     },
-    texts: [
-      {
-        type: "swing" as const,
-        duration: 1.5,
-        delay: 2,
-        easing: "ease-in-out" as const,
-        direction: "alternate" as const,
-        iterations: 3,
-        sequence: "after-previous" as const,
+    {
+      id: "typewriter-effect",
+      nameKey: "preset_typewriter",
+      descriptionKey: "preset_typewriter_desc",
+      shape: {
+        type: "fade" as const,
+        duration: 1,
+        delay: 0,
+        easing: "ease" as const,
+        direction: "normal" as const,
+        iterations: 1,
       },
-    ],
-  },
-  {
-    id: "zoom-blur",
-    name: "ズームブラー",
-    description: "ズームしながらぼかす",
-    shape: {
-      type: "zoom" as const,
-      duration: 3,
-      delay: 0,
-      easing: "ease-in-out" as const,
-      direction: "alternate" as const,
-      iterations: "infinite",
+      texts: [
+        {
+          type: "typewriter" as const,
+          duration: 2,
+          delay: 0.5,
+          easing: "linear" as const,
+          direction: "normal" as const,
+          iterations: 1,
+        },
+        {
+          type: "typewriter" as const,
+          duration: 1.5,
+          delay: 2.5,
+          easing: "linear" as const,
+          direction: "normal" as const,
+          iterations: 1,
+          sequence: "after-previous" as const,
+        },
+      ],
     },
-    texts: [
-      {
-        type: "blur" as const,
+    {
+      id: "spotlight-morph",
+      nameKey: "preset_spotlight_morph",
+      descriptionKey: "preset_spotlight_morph_desc",
+      shape: {
+        type: "morph" as const,
         duration: 3,
         delay: 0,
         easing: "ease-in-out" as const,
         direction: "alternate" as const,
         iterations: "infinite",
       },
-    ],
-  },
-  {
-    id: "vibrate-glitch",
-    name: "バイブレートグリッチ",
-    description: "振動とグリッチ効果",
-    shape: {
-      type: "vibrate" as const,
-      duration: 0.5,
-      delay: 0,
-      easing: "linear" as const,
-      direction: "normal" as const,
-      iterations: "infinite",
+      texts: [
+        {
+          type: "spotlight" as const,
+          duration: 2,
+          delay: 0,
+          easing: "ease-in-out" as const,
+          direction: "alternate" as const,
+          iterations: "infinite",
+        },
+      ],
     },
-    texts: [
-      {
-        type: "glitch" as const,
-        duration: 1,
+    {
+      id: "draw-and-swing",
+      nameKey: "preset_draw_and_swing",
+      descriptionKey: "preset_draw_and_swing_desc",
+      shape: {
+        type: "draw" as const,
+        duration: 2,
+        delay: 0,
+        easing: "ease-out" as const,
+        direction: "normal" as const,
+        iterations: 1,
+      },
+      texts: [
+        {
+          type: "swing" as const,
+          duration: 1.5,
+          delay: 2,
+          easing: "ease-in-out" as const,
+          direction: "alternate" as const,
+          iterations: 3,
+          sequence: "after-previous" as const,
+        },
+      ],
+    },
+    {
+      id: "zoom-blur",
+      nameKey: "preset_zoom_blur",
+      descriptionKey: "preset_zoom_blur_desc",
+      shape: {
+        type: "zoom" as const,
+        duration: 3,
+        delay: 0,
+        easing: "ease-in-out" as const,
+        direction: "alternate" as const,
+        iterations: "infinite",
+      },
+      texts: [
+        {
+          type: "blur" as const,
+          duration: 3,
+          delay: 0,
+          easing: "ease-in-out" as const,
+          direction: "alternate" as const,
+          iterations: "infinite",
+        },
+      ],
+    },
+    {
+      id: "vibrate-glitch",
+      nameKey: "preset_vibrate_glitch",
+      descriptionKey: "preset_vibrate_glitch_desc",
+      shape: {
+        type: "vibrate" as const,
+        duration: 0.5,
         delay: 0,
         easing: "linear" as const,
         direction: "normal" as const,
         iterations: "infinite",
       },
-    ],
-  },
-]
+      texts: [
+        {
+          type: "glitch" as const,
+          duration: 1,
+          delay: 0,
+          easing: "linear" as const,
+          direction: "normal" as const,
+          iterations: "infinite",
+        },
+      ],
+    },
+  ];
 
-export function AnimationPresets({ onSelect }: AnimationPresetProps) {
   return (
     <div className="space-y-4">
-      <h3 className="text-lg font-medium text-white">アニメーションプリセット</h3>
+      <h3 className="text-lg font-medium text-white">
+        {t("animation_presets")}
+      </h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {animationPresets.map((preset) => (
           <Card
@@ -243,14 +251,15 @@ export function AnimationPresets({ onSelect }: AnimationPresetProps) {
                 />
               </div>
               <div className="text-center">
-                <h4 className="font-medium text-white">{preset.name}</h4>
-                <p className="text-xs text-gray-400">{preset.description}</p>
+                <h4 className="font-medium text-white">{t(preset.nameKey)}</h4>
+                <p className="text-xs text-gray-400">
+                  {t(preset.descriptionKey)}
+                </p>
               </div>
             </CardContent>
           </Card>
         ))}
       </div>
     </div>
-  )
+  );
 }
-
