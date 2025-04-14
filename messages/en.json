@@ -417,6 +417,7 @@
     }
   },
   "LogoCreator": {
+    "export": "Export",
     "manual_creation": "Manual Creation",
     "ai_generation": "AI Generation",
     "template": "Template",

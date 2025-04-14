@@ -10,7 +10,7 @@ import {
   Copy,
   Check,
 } from "lucide-react";
-import LogoCreator from "@/components/logo-creator";
+import LogoCreator from "@/components/logo-creator/index";
 import ErrorBoundary from "@/components/error-boundary";
 import { useTranslations } from "next-intl";
 import type { LogoSettings } from "@/types";

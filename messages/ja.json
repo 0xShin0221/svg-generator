@@ -417,6 +417,7 @@
     }
   },
   "LogoCreator": {
+    "export": "エクスポート",
     "effect_normal": "ノーマル",
     "effect_normal_desc": "標準テキスト",
     "effect_stretched": "ストレッチ",
