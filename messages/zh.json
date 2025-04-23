@@ -1,7 +1,205 @@
 {
   "Home": {
-    "title": "SVG生成器",
-    "subtitle": "免费SVG标志和图标生成器"
+    "title": "免费SVG生成器",
+    "subtitle": "免费创建SVG标志和图标。自定义形状、文字、颜色和动画。",
+    "features": "主要功能",
+    "steps": "使用指南",
+    "pricing": "价格",
+    "testimonials": "用户评价",
+    "faq": "常见问题",
+    "getStarted": "免费开始",
+    "viewFeatures": "查看功能"
+  },
+  "Features": {
+    "title": "主要功能",
+    "design_features": "设计功能",
+    "ai_features": "AI功能",
+    "animation_features": "动画功能",
+    "export_features": "导出功能",
+    "sharing_features": "分享和保存",
+    "usability_features": "易用性",
+
+    "design_templates_title": "丰富的模板",
+    "design_templates_desc": "按行业和风格分类的数百个模板",
+    "design_customization_title": "高级定制",
+    "design_customization_desc": "自由定制文字、形状、颜色和渐变",
+    "design_custom_fonts_title": "自定义字体",
+    "design_custom_fonts_desc": "上传您的自定义字体",
+
+    "ai_logo_generation_title": "AI标志生成",
+    "ai_logo_generation_desc": "几秒钟内自动生成标志",
+    "ai_style_suggestions_title": "风格建议",
+    "ai_style_suggestions_desc": "为您的行业自动设计建议",
+    "ai_color_palette_title": "调色板生成",
+    "ai_color_palette_desc": "为您的品牌自动配色建议",
+
+    "animation_effects_title": "20多种效果",
+    "animation_effects_desc": "旋转、淡入淡出、弹跳等",
+    "animation_customization_title": "自定义动画",
+    "animation_customization_desc": "调整速度、延迟和重复次数",
+    "animation_multiple_elements_title": "多元素动画",
+    "animation_multiple_elements_desc": "文字和形状的独立动画",
+
+    "export_formats_title": "多种格式",
+    "export_formats_desc": "导出为SVG、PNG和JPG",
+    "export_high_resolution_title": "高分辨率",
+    "export_high_resolution_desc": "适用于印刷和数字的高质量输出",
+    "export_transparent_background_title": "透明背景",
+    "export_transparent_background_desc": "导出时支持透明背景",
+
+    "sharing_save_projects_title": "保存项目",
+    "sharing_save_projects_desc": "保存标志以便后续编辑",
+    "sharing_team_sharing_title": "团队共享",
+    "sharing_team_sharing_desc": "与同事共享项目",
+    "sharing_version_history_title": "版本历史",
+    "sharing_version_history_desc": "恢复之前的版本",
+
+    "usability_interface_title": "直观界面",
+    "usability_interface_desc": "无需设计知识即可轻松使用",
+    "usability_languages_title": "多语言",
+    "usability_languages_desc": "支持20多种语言",
+    "usability_free_title": "免费使用",
+    "usability_free_desc": "无需注册即可使用所有基本功能"
+  },
+  "Steps": {
+    "title": "3步创建标志",
+    "step_select_template": "选择模板",
+    "step_select_template_desc": "选择适合您行业的模板或让AI生成标志。",
+    "step_customize": "自定义",
+    "step_customize_desc": "调整文字、颜色、形状和字体，创建独特的标志。",
+    "step_download": "下载",
+    "step_download_desc": "将完成的标志下载为SVG、PNG或JPG格式并立即使用。"
+  },
+  "EditorHero": {
+    "modes": {
+      "manual": "手动创建",
+      "ai": "AI生成",
+      "template": "模板"
+    },
+    "actions": {
+      "saveLoad": "保存/加载",
+      "export": "导出",
+      "copySvg": "复制SVG",
+      "copyComplete": "复制完成"
+    },
+    "errors": {
+      "loadingFailed": "编辑器加载失败"
+    }
+  },
+  "Pricing": {
+    "title": "简单定价",
+    "subtitle": "按需付费，无订阅，无隐藏费用。",
+
+    "freePlan": {
+      "badge": "免费",
+      "name": "免费版",
+      "price": "¥0",
+      "period": "/ 永久免费",
+      "ctaButton": "立即开始"
+    },
+
+    "proPlan": {
+      "comingSoon": "即将推出",
+      "badge": "高级版",
+      "name": "专业版",
+      "price": "¥139",
+      "period": "/ 月",
+      "featuresTitle1": "包含所有免费功能，外加：",
+      "featuresTitle2": "此外还有：",
+      "ctaButton": "发布时通知我"
+    },
+
+    "free_feature_templates": "基础模板（50+）",
+    "free_feature_text": "文字编辑",
+    "free_feature_colors": "调色板更改",
+    "free_feature_svg": "SVG导出",
+    "free_feature_transparent": "透明背景",
+    "free_feature_commercial": "商业使用",
+
+    "pro_feature_templates": "高级模板（200+）",
+    "pro_feature_customization": "高级自定义选项",
+    "pro_feature_fonts": "上传自定义字体",
+    "pro_feature_projects": "无限项目保存",
+    "pro_feature_ai": "AI标志生成",
+    "pro_feature_animation": "创建动画SVG",
+    "pro_feature_team": "团队共享",
+    "pro_feature_support": "优先支持"
+  },
+  "Testimonials": {
+    "title": "用户评价",
+    "testimonial_1_name": "王小明",
+    "testimonial_1_title": "创业者",
+    "testimonial_1_text": "10分钟内就为我的品牌创建了完美的标志。比找设计师更快更经济。",
+
+    "testimonial_2_name": "李梅",
+    "testimonial_2_title": "自由设计师",
+    "testimonial_2_text": "完美的工具，可以快速为客户展示标志设计概念。在创意阶段节省了大量时间。",
+
+    "testimonial_3_name": "张伟",
+    "testimonial_3_title": "网页开发者",
+    "testimonial_3_text": "我用它为我的网站创建了一套图标。SVG格式非常适合响应式设计。",
+
+    "testimonial_4_name": "陈静",
+    "testimonial_4_title": "市场营销经理",
+    "testimonial_4_text": "我们在营销活动中使用它。模板多样，能快速创建统一的设计。",
+
+    "testimonial_5_name": "刘强",
+    "testimonial_5_title": "网页设计师",
+    "testimonial_5_text": "动画功能非常棒。我们可以轻松创建动画标志来增强网站效果。",
+
+    "testimonial_6_name": "吴婷",
+    "testimonial_6_title": "品牌经理",
+    "testimonial_6_text": "完美的多品牌标志管理工具。用户友好性和功能性完美平衡。"
+  },
+  "FAQ": {
+    "title": "常见问题",
+    "viewAllButton": "查看所有问题",
+
+    "faq_1_question": "SVG生成器完全免费吗？",
+    "faq_1_answer": "是的，所有基本功能都是免费的。无需注册。高级功能计划在未来推出。",
+
+    "faq_2_question": "我可以将标志用于商业用途吗？",
+    "faq_2_answer": "是的，使用SVG生成器创建的所有标志都可以用于个人和商业用途。您无需担心版权问题。",
+
+    "faq_3_question": "需要注册吗？",
+    "faq_3_answer": "不需要，您可以无需注册即可使用所有基本功能。某些未来功能如云存储可能需要注册。",
+
+    "faq_4_question": "SVG格式有什么优势？",
+    "faq_4_answer": "SVG是矢量图形格式，可以无损放大。文件小，支持动画和交互元素。",
+
+    "faq_5_question": "我可以上传自己的字体吗？",
+    "faq_5_answer": "是的，您可以上传TTF、OTF、WOFF和WOFF2格式的字体用于标志设计。",
+
+    "faq_6_question": "在移动设备上可以使用吗？",
+    "faq_6_answer": "是的，SVG生成器采用响应式设计，可以在智能手机和平板电脑上轻松使用。"
+  },
+  "CTA": {
+    "title": "立即创建您的标志",
+    "description": "几分钟内创建专业标志 - 免费且无需注册。现在就为您的品牌设计完美标志。",
+    "buttonText": "免费创建标志"
+  },
+  "Navigation": {
+    "features": "功能",
+    "steps": "步骤",
+    "pricing": "价格",
+    "testimonials": "评价",
+    "faq": "常见问题",
+    "createLogo": "创建标志",
+    "getStarted": "免费开始",
+    "viewFeatures": "查看功能"
+  },
+  "ExportDialog": {
+    "title": "导出标志",
+    "description": "以不同格式导出您的标志",
+    "svgDescription": "SVG是一种矢量格式，可以无损缩放。适用于网页和数字媒体。",
+    "pngDescription": "PNG是一种支持透明背景的光栅图形格式。适用于网页和数字媒体。",
+    "jpgDescription": "JPG是一种光栅图形格式，适用于照片和渐变。不支持透明度。",
+    "quality": "质量",
+    "scale": "缩放",
+    "backgroundColor": "背景颜色",
+    "preview": "预览",
+    "cancel": "取消",
+    "downloadAs": "下载为"
   },
   "LogoCreator": {
     "manual_creation": "手动创建",
@@ -10,7 +208,7 @@
     "template_gallery": "模板库",
     "close": "关闭",
     "advanced_shape_gallery": "高级形状库",
-    "choose_from_template": "从模板中选择",
+    "choose_from_template": "从模板选择",
     "generate_with_ai": "使用AI生成",
     "save_load": "保存/加载",
     "text": "文字",
@@ -48,9 +246,9 @@
     "white": "白色",
     "indigo": "靛蓝色",
 
-    "alignment": "对齐方式",
+    "alignment": "对齐",
     "left": "左对齐",
-    "center": "居中对齐",
+    "center": "居中",
     "right": "右对齐",
     "rotation": "旋转",
     "letter_spacing": "字间距",
@@ -68,28 +266,28 @@
     "delay": "延迟",
     "easing": "缓动",
     "linear": "线性",
-    "ease": "缓和",
-    "ease_in": "缓入",
-    "ease_out": "缓出",
-    "ease_in_out": "缓入缓出",
+    "ease": "平滑",
+    "ease_in": "渐入",
+    "ease_out": "渐出",
+    "ease_in_out": "渐入渐出",
     "direction": "方向",
     "normal": "正常",
     "reverse": "反向",
     "alternate": "交替",
-    "alternate_reverse": "交替反向",
+    "alternate_reverse": "反向交替",
     "iterations": "重复次数",
     "infinite": "无限",
-    "once": "1次",
-    "twice": "2次",
-    "thrice": "3次",
+    "once": "一次",
+    "twice": "两次",
+    "thrice": "三次",
 
     "preview_animation": "预览动画",
     "stop_preview": "停止预览",
 
     "animation_presets": "动画预设",
     "preset_subtle": "微妙",
-    "preset_energetic": "充满活力",
-    "preset_attention": "引人注目",
+    "preset_energetic": "活力",
+    "preset_attention": "吸引注意",
     "preset_professional": "专业",
     "preset_playful": "俏皮",
 
@@ -114,23 +312,23 @@
     "italics_effect": "斜体",
     "uppercase_effect": "大写",
     "shadow_effect": "阴影",
-    "spaced_effect": "间隔",
-    "circular_effect": "圆形排列",
+    "spaced_effect": "间距",
+    "circular_effect": "圆形",
     "wave_effect": "波浪",
 
-    "history": "历史记录",
+    "history": "历史",
     "undo": "撤销",
     "redo": "重做",
 
     "export_options": "导出选项",
     "file_format": "文件格式",
-    "svg": "SVG (矢量)",
-    "png": "PNG (透明背景)",
-    "jpg": "JPG (白色背景)",
-    "size": "尺寸",
-    "small": "小 (256px)",
-    "medium": "中 (512px)",
-    "large": "大 (1024px)",
+    "svg": "SVG（矢量）",
+    "png": "PNG（透明）",
+    "jpg": "JPG（白色背景）",
+    "size": "大小",
+    "small": "小（256px）",
+    "medium": "中（512px）",
+    "large": "大（1024px）",
     "custom": "自定义",
     "width": "宽度",
     "height": "高度",
@@ -146,22 +344,22 @@
     "confirm_delete": "确认删除",
     "cancel": "取消",
 
-    "ai_prompt_label": "向AI描述您的标志创意",
+    "ai_prompt_label": "向AI描述您的标志想法",
     "generate_logo": "生成标志",
-    "ai_generating": "生成中...",
-    "ai_placeholder": "示例：一个现代简约的科技公司标志，带有蓝色和紫色渐变",
+    "ai_generating": "正在生成...",
+    "ai_placeholder": "示例：为一家科技公司设计一个现代简约的标志，使用蓝紫色渐变",
     "select_this_logo": "选择此标志",
     "generate_more": "生成更多",
 
     "font_name": "字体名称",
     "upload_font": "上传字体",
-    "upload_font_file": "上传字体文件 (.ttf, .otf, .woff, .woff2)",
+    "upload_font_file": "上传字体文件（.ttf、.otf、.woff、.woff2）",
     "drag_drop": "拖放文件到此处或点击",
     "uploading": "上传中...",
     "upload_success": "上传成功",
-    "upload_error": "上传错误",
+    "upload_error": "上传失败",
 
-    "text_layout": "文本布局",
+    "text_layout": "文字布局",
     "apply": "应用",
     "高度なシェイプ": "高级形状",
     "円": "圆形",
@@ -171,5 +369,26 @@
     "三角形": "三角形",
     "星": "星形",
     "シールド": "盾牌"
+  },
+  "Footer": {
+    "company": "公司",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "resources": "资源",
+    "blog": "博客",
+    "help": "帮助",
+    "tutorials": "教程",
+    "api": "API",
+    "social": "社交媒体",
+    "twitter": "Twitter",
+    "github": "GitHub",
+    "discord": "Discord",
+    "copyright": "© 2024 SVG Generator。保留所有权利。",
+    "allRightsReserved": "保留所有权利",
+    "termsOfService": "服务条款",
+    "privacyPolicy": "隐私政策",
+    "commercialTransactionsAct": "商业交易法"
   }
 }

@@ -1,7 +1,206 @@
 {
   "Home": {
-    "title": "SVG-Generator",
-    "subtitle": "Kostenloser SVG-Logo- und Icon-Generator"
+    "title": "Free SVG Generator",
+    "subtitle": "Erstellen Sie kostenlos SVG-Logos und -Icons. Passen Sie Formen, Text, Farben und Animationen an.",
+    "features": "Hauptfunktionen",
+    "steps": "Anleitung",
+    "pricing": "Preise",
+    "testimonials": "Kundenstimmen",
+    "faq": "Häufige Fragen",
+    "getStarted": "Kostenlos starten",
+    "viewFeatures": "Funktionen ansehen"
+  },
+  "Features": {
+    "title": "Hauptfunktionen",
+
+    "design_features": "Design-Funktionen",
+    "ai_features": "KI-Funktionen",
+    "animation_features": "Animations-Funktionen",
+    "export_features": "Export-Funktionen",
+    "sharing_features": "Teilen & Speichern",
+    "usability_features": "Benutzerfreundlichkeit",
+
+    "design_templates_title": "Umfangreiche Vorlagen",
+    "design_templates_desc": "Hunderte von Vorlagen nach Branchen und Stilen sortiert",
+    "design_customization_title": "Erweiterte Anpassung",
+    "design_customization_desc": "Text, Formen, Farben und Farbverläufe frei anpassen",
+    "design_custom_fonts_title": "Eigene Schriftarten",
+    "design_custom_fonts_desc": "Laden Sie Ihre eigenen Schriftarten hoch",
+
+    "ai_logo_generation_title": "KI-Logo-Generierung",
+    "ai_logo_generation_desc": "Automatische Logo-Generierung in Sekunden",
+    "ai_style_suggestions_title": "Stil-Vorschläge",
+    "ai_style_suggestions_desc": "Automatische Design-Vorschläge für Ihre Branche",
+    "ai_color_palette_title": "Farbpaletten-Generierung",
+    "ai_color_palette_desc": "Automatische Farbvorschläge für Ihr Branding",
+
+    "animation_effects_title": "Über 20 Effekte",
+    "animation_effects_desc": "Rotation, Verblassen, Springen und mehr",
+    "animation_customization_title": "Anpassbare Animationen",
+    "animation_customization_desc": "Geschwindigkeit, Verzögerung und Wiederholungen anpassen",
+    "animation_multiple_elements_title": "Multi-Element-Animation",
+    "animation_multiple_elements_desc": "Separate Animationen für Text und Formen",
+
+    "export_formats_title": "Mehrere Formate",
+    "export_formats_desc": "Export als SVG, PNG und JPG",
+    "export_high_resolution_title": "Hohe Auflösung",
+    "export_high_resolution_desc": "Hochwertige Ausgabe für Print und Digital",
+    "export_transparent_background_title": "Transparenter Hintergrund",
+    "export_transparent_background_desc": "Export mit transparentem Hintergrund",
+
+    "sharing_save_projects_title": "Projekte speichern",
+    "sharing_save_projects_desc": "Logos speichern und später bearbeiten",
+    "sharing_team_sharing_title": "Team-Sharing",
+    "sharing_team_sharing_desc": "Projekte mit Kollegen teilen",
+    "sharing_version_history_title": "Versionsverlauf",
+    "sharing_version_history_desc": "Frühere Versionen wiederherstellen",
+
+    "usability_interface_title": "Intuitive Oberfläche",
+    "usability_interface_desc": "Einfache Bedienung ohne Design-Kenntnisse",
+    "usability_languages_title": "Mehrsprachig",
+    "usability_languages_desc": "In über 20 Sprachen verfügbar",
+    "usability_free_title": "Kostenlos nutzbar",
+    "usability_free_desc": "Alle Grundfunktionen ohne Registrierung"
+  },
+  "Steps": {
+    "title": "Logo in 3 einfachen Schritten erstellen",
+    "step_select_template": "Vorlage auswählen",
+    "step_select_template_desc": "Wählen Sie eine Vorlage für Ihre Branche oder lassen Sie die KI ein Logo generieren.",
+    "step_customize": "Anpassen",
+    "step_customize_desc": "Passen Sie Text, Farben, Formen und Schriftarten an, um Ihr einzigartiges Logo zu erstellen.",
+    "step_download": "Herunterladen",
+    "step_download_desc": "Laden Sie Ihr fertiges Logo als SVG, PNG oder JPG herunter und verwenden Sie es sofort."
+  },
+  "EditorHero": {
+    "modes": {
+      "manual": "Manuelle Erstellung",
+      "ai": "KI-Generierung",
+      "template": "Vorlage"
+    },
+    "actions": {
+      "saveLoad": "Speichern/Laden",
+      "export": "Exportieren",
+      "copySvg": "SVG kopieren",
+      "copyComplete": "Kopieren abgeschlossen"
+    },
+    "errors": {
+      "loadingFailed": "Editor konnte nicht geladen werden"
+    }
+  },
+  "Pricing": {
+    "title": "Einfache Preisgestaltung",
+    "subtitle": "Nur die Funktionen, die Sie brauchen, wenn Sie sie brauchen. Keine Abonnements oder versteckten Kosten.",
+
+    "freePlan": {
+      "badge": "Kostenlos",
+      "name": "Free",
+      "price": "€0",
+      "period": "/ Für immer kostenlos",
+      "ctaButton": "Jetzt starten"
+    },
+
+    "proPlan": {
+      "comingSoon": "Demnächst verfügbar",
+      "badge": "Premium",
+      "name": "Pro",
+      "price": "€19,80",
+      "period": "/ Monat",
+      "featuresTitle1": "Alle kostenlosen Funktionen plus:",
+      "featuresTitle2": "Außerdem:",
+      "ctaButton": "Bei Veröffentlichung benachrichtigen"
+    },
+
+    "free_feature_templates": "Basis-Vorlagen (50+)",
+    "free_feature_text": "Textbearbeitung",
+    "free_feature_colors": "Farbpaletten-Änderung",
+    "free_feature_svg": "SVG-Export",
+    "free_feature_transparent": "Transparenter Hintergrund",
+    "free_feature_commercial": "Kommerzielle Nutzung",
+
+    "pro_feature_templates": "Premium-Vorlagen (200+)",
+    "pro_feature_customization": "Erweiterte Anpassungsoptionen",
+    "pro_feature_fonts": "Eigene Schriftarten hochladen",
+    "pro_feature_projects": "Unbegrenzte Projekte speichern",
+    "pro_feature_ai": "KI-Logo-Generierung",
+    "pro_feature_animation": "Animierte SVGs erstellen",
+    "pro_feature_team": "Team-Sharing",
+    "pro_feature_support": "Prioritäts-Support"
+  },
+  "Testimonials": {
+    "title": "Kundenstimmen",
+    "testimonial_1_name": "Thomas Weber",
+    "testimonial_1_title": "Startup-Gründer",
+    "testimonial_1_text": "In nur 10 Minuten hatte ich das perfekte Logo für meine Marke. Schneller und kostengünstiger als mit einem Designer.",
+
+    "testimonial_2_name": "Anna Schmidt",
+    "testimonial_2_title": "Freiberufliche Designerin",
+    "testimonial_2_text": "Perfekt, um Kunden schnell erste Logo-Entwürfe zu präsentieren. Spart enorm viel Zeit bei der Ideenfindung.",
+
+    "testimonial_3_name": "Michael Müller",
+    "testimonial_3_title": "Webentwickler",
+    "testimonial_3_text": "Ich habe damit ein Icon-Set für meine Website erstellt. Das SVG-Format ist ideal für responsive Designs.",
+
+    "testimonial_4_name": "Sarah Fischer",
+    "testimonial_4_title": "Marketing Managerin",
+    "testimonial_4_text": "Wir nutzen es für Marketing-Kampagnen. Die Vorlagen sind vielfältig und ermöglichen schnell konsistente Designs.",
+
+    "testimonial_5_name": "David Koch",
+    "testimonial_5_title": "Webdesigner",
+    "testimonial_5_text": "Die Animationsfunktionen sind großartig. Damit können wir einfach animierte Logos erstellen, die unsere Websites aufwerten.",
+
+    "testimonial_6_name": "Lisa Wagner",
+    "testimonial_6_title": "Brand Managerin",
+    "testimonial_6_text": "Perfekt für die Verwaltung mehrerer Markenlogos. Die Benutzerfreundlichkeit und Funktionalität sind hervorragend ausbalanciert."
+  },
+  "FAQ": {
+    "title": "Häufige Fragen",
+    "viewAllButton": "Alle Fragen anzeigen",
+
+    "faq_1_question": "Ist der SVG Generator komplett kostenlos?",
+    "faq_1_answer": "Ja, alle Grundfunktionen sind kostenlos nutzbar. Keine Registrierung erforderlich. Premium-Funktionen sind für die Zukunft geplant.",
+
+    "faq_2_question": "Kann ich die Logos kommerziell nutzen?",
+    "faq_2_answer": "Ja, alle mit dem SVG Generator erstellten Logos können sowohl privat als auch kommerziell genutzt werden. Sie müssen sich keine Sorgen um Urheberrechte machen.",
+
+    "faq_3_question": "Muss ich mich registrieren?",
+    "faq_3_answer": "Nein, Sie können alle Grundfunktionen ohne Registrierung nutzen. Für einige zukünftige Funktionen wie Cloud-Speicherung wird eine Registrierung erforderlich sein.",
+
+    "faq_4_question": "Was sind die Vorteile des SVG-Formats?",
+    "faq_4_answer": "SVGs sind Vektorgrafiken, die ohne Qualitätsverlust skaliert werden können. Sie haben kleine Dateigröße und unterstützen Animationen und interaktive Elemente.",
+
+    "faq_5_question": "Kann ich eigene Schriftarten hochladen?",
+    "faq_5_answer": "Ja, Sie können Schriftarten im TTF-, OTF-, WOFF- und WOFF2-Format hochladen und für Ihre Logo-Designs verwenden.",
+
+    "faq_6_question": "Funktioniert es auch auf mobilen Geräten?",
+    "faq_6_answer": "Ja, der SVG Generator ist responsiv gestaltet und kann problemlos auf Smartphones und Tablets genutzt werden."
+  },
+  "CTA": {
+    "title": "Erstellen Sie jetzt Ihr Logo",
+    "description": "Erstellen Sie in wenigen Minuten ein professionelles Logo - kostenlos und ohne Registrierung. Gestalten Sie jetzt das perfekte Logo für Ihre Marke.",
+    "buttonText": "Kostenloses Logo erstellen"
+  },
+  "Navigation": {
+    "features": "Funktionen",
+    "steps": "Anleitung",
+    "pricing": "Preise",
+    "testimonials": "Kundenstimmen",
+    "faq": "FAQ",
+    "createLogo": "Logo erstellen",
+    "getStarted": "Kostenlos starten",
+    "viewFeatures": "Funktionen ansehen"
+  },
+  "ExportDialog": {
+    "title": "Logo exportieren",
+    "description": "Exportieren Sie Ihr Logo in verschiedenen Formaten",
+    "svgDescription": "SVG ist ein Vektorformat, das ohne Qualitätsverlust skaliert werden kann. Ideal für Web und digitale Medien.",
+    "pngDescription": "PNG ist ein Rastergrafik-Format mit Unterstützung für transparente Hintergründe. Gut für Web und digitale Medien.",
+    "jpgDescription": "JPG ist ein Rastergrafik-Format, optimal für Fotos und Farbverläufe. Unterstützt keine Transparenz.",
+    "quality": "Qualität",
+    "scale": "Skalierung",
+    "backgroundColor": "Hintergrundfarbe",
+    "preview": "Vorschau",
+    "cancel": "Abbrechen",
+    "downloadAs": "Herunterladen als"
   },
   "LogoCreator": {
     "manual_creation": "Manuelle Erstellung",
@@ -171,5 +370,26 @@
     "三角形": "Dreieck",
     "星": "Stern",
     "シールド": "Schild"
+  },
+  "Footer": {
+    "company": "Unternehmen",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "resources": "Ressourcen",
+    "blog": "Blog",
+    "help": "Hilfe",
+    "tutorials": "Tutorials",
+    "api": "API",
+    "social": "Social Media",
+    "twitter": "Twitter",
+    "github": "GitHub",
+    "discord": "Discord",
+    "copyright": "© 2024 SVG Generator. Alle Rechte vorbehalten.",
+    "allRightsReserved": "Alle Rechte vorbehalten",
+    "termsOfService": "Nutzungsbedingungen",
+    "privacyPolicy": "Datenschutzerklärung",
+    "commercialTransactionsAct": "Handelsgesetz"
   }
 }

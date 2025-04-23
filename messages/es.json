@@ -1,16 +1,214 @@
 {
   "Home": {
-    "title": "Generador de SVG",
-    "subtitle": "Generador gratuito de logos e iconos SVG"
+    "title": "Generador SVG Gratuito",
+    "subtitle": "Crea logotipos e iconos SVG gratis. Personaliza formas, texto, colores y animaciones.",
+    "features": "Características",
+    "steps": "Pasos",
+    "pricing": "Precios",
+    "testimonials": "Testimonios",
+    "faq": "Preguntas Frecuentes",
+    "getStarted": "Empezar Gratis",
+    "viewFeatures": "Ver Características"
+  },
+  "Features": {
+    "title": "Características Principales",
+    "design_features": "Características de Diseño",
+    "ai_features": "Características de IA",
+    "animation_features": "Características de Animación",
+    "export_features": "Características de Exportación",
+    "sharing_features": "Compartir y Guardar",
+    "usability_features": "Usabilidad",
+
+    "design_templates_title": "Plantillas Abundantes",
+    "design_templates_desc": "Cientos de plantillas clasificadas por industria y estilo",
+    "design_customization_title": "Personalización Avanzada",
+    "design_customization_desc": "Personaliza libremente texto, formas, colores y degradados",
+    "design_custom_fonts_title": "Fuentes Personalizadas",
+    "design_custom_fonts_desc": "Sube tus propias fuentes",
+
+    "ai_logo_generation_title": "Generación de Logos con IA",
+    "ai_logo_generation_desc": "Genera logos automáticamente en segundos",
+    "ai_style_suggestions_title": "Sugerencias de Estilo",
+    "ai_style_suggestions_desc": "Sugerencias de diseño automáticas para tu industria",
+    "ai_color_palette_title": "Generación de Paletas",
+    "ai_color_palette_desc": "Sugerencias automáticas de color para tu marca",
+
+    "animation_effects_title": "Más de 20 Efectos",
+    "animation_effects_desc": "Rotación, fundido, rebote y más",
+    "animation_customization_title": "Animación Personalizada",
+    "animation_customization_desc": "Ajusta velocidad, retraso y repeticiones",
+    "animation_multiple_elements_title": "Animación Múltiple",
+    "animation_multiple_elements_desc": "Anima texto y formas independientemente",
+
+    "export_formats_title": "Múltiples Formatos",
+    "export_formats_desc": "Exporta como SVG, PNG y JPG",
+    "export_high_resolution_title": "Alta Resolución",
+    "export_high_resolution_desc": "Salida de alta calidad para impresión y digital",
+    "export_transparent_background_title": "Fondo Transparente",
+    "export_transparent_background_desc": "Soporte para fondos transparentes en exportación",
+
+    "sharing_save_projects_title": "Guardar Proyectos",
+    "sharing_save_projects_desc": "Guarda logos para edición posterior",
+    "sharing_team_sharing_title": "Compartir en Equipo",
+    "sharing_team_sharing_desc": "Comparte proyectos con colegas",
+    "sharing_version_history_title": "Historial de Versiones",
+    "sharing_version_history_desc": "Restaura versiones anteriores",
+
+    "usability_interface_title": "Interfaz Intuitiva",
+    "usability_interface_desc": "Fácil de usar sin conocimientos de diseño",
+    "usability_languages_title": "Multilingüe",
+    "usability_languages_desc": "Soporte para más de 20 idiomas",
+    "usability_free_title": "Uso Gratuito",
+    "usability_free_desc": "Usa todas las funciones básicas sin registro"
+  },
+  "Steps": {
+    "title": "Crea tu Logo en 3 Pasos",
+    "step_select_template": "Selecciona una Plantilla",
+    "step_select_template_desc": "Elige una plantilla para tu industria o genera con IA.",
+    "step_customize": "Personaliza",
+    "step_customize_desc": "Ajusta texto, colores, formas y fuentes para crear un logo único.",
+    "step_download": "Descarga",
+    "step_download_desc": "Descarga tu logo terminado en SVG, PNG o JPG y úsalo inmediatamente."
+  },
+  "EditorHero": {
+    "modes": {
+      "manual": "Creación Manual",
+      "ai": "Generación IA",
+      "template": "Plantilla"
+    },
+    "actions": {
+      "saveLoad": "Guardar/Cargar",
+      "export": "Exportar",
+      "copySvg": "Copiar SVG",
+      "copyComplete": "Copiado"
+    },
+    "errors": {
+      "loadingFailed": "Error al cargar el editor"
+    }
+  },
+  "Pricing": {
+    "title": "Precios Simples",
+    "subtitle": "Paga según uses, sin suscripciones, sin costos ocultos.",
+
+    "freePlan": {
+      "badge": "Gratis",
+      "name": "Plan Gratuito",
+      "price": "€0",
+      "period": "/ para siempre",
+      "ctaButton": "Empezar Ahora"
+    },
+
+    "proPlan": {
+      "comingSoon": "Próximamente",
+      "badge": "Pro",
+      "name": "Plan Profesional",
+      "price": "€49",
+      "period": "/ mes",
+      "featuresTitle1": "Incluye todas las funciones gratuitas, más:",
+      "featuresTitle2": "Y también:",
+      "ctaButton": "Notifícame cuando esté disponible"
+    },
+
+    "free_feature_templates": "Plantillas básicas (50+)",
+    "free_feature_text": "Edición de texto",
+    "free_feature_colors": "Cambios de paleta",
+    "free_feature_svg": "Exportación SVG",
+    "free_feature_transparent": "Fondo transparente",
+    "free_feature_commercial": "Uso comercial",
+
+    "pro_feature_templates": "Plantillas premium (200+)",
+    "pro_feature_customization": "Opciones avanzadas de personalización",
+    "pro_feature_fonts": "Subida de fuentes personalizadas",
+    "pro_feature_projects": "Almacenamiento ilimitado de proyectos",
+    "pro_feature_ai": "Generación de logos con IA",
+    "pro_feature_animation": "Creación de SVG animados",
+    "pro_feature_team": "Compartir en equipo",
+    "pro_feature_support": "Soporte prioritario"
+  },
+  "Testimonials": {
+    "title": "Testimonios",
+    "testimonial_1_name": "Carlos Rodríguez",
+    "testimonial_1_title": "Emprendedor",
+    "testimonial_1_text": "Creé un logo perfecto para mi marca en 10 minutos. Más rápido y económico que contratar un diseñador.",
+
+    "testimonial_2_name": "María González",
+    "testimonial_2_title": "Diseñadora Freelance",
+    "testimonial_2_text": "Herramienta perfecta para mostrar conceptos de logo a clientes rápidamente. Ahorra mucho tiempo en la fase creativa.",
+
+    "testimonial_3_name": "Juan Pérez",
+    "testimonial_3_title": "Desarrollador Web",
+    "testimonial_3_text": "Lo usé para crear un conjunto de iconos para mi sitio web. El formato SVG es perfecto para diseño responsivo.",
+
+    "testimonial_4_name": "Ana Martínez",
+    "testimonial_4_title": "Gerente de Marketing",
+    "testimonial_4_text": "Lo usamos en nuestras campañas de marketing. Gran variedad de plantillas para crear diseños consistentes rápidamente.",
+
+    "testimonial_5_name": "Diego Sánchez",
+    "testimonial_5_title": "Diseñador Web",
+    "testimonial_5_text": "Las funciones de animación son geniales. Podemos crear logos animados fácilmente para mejorar nuestros sitios web.",
+
+    "testimonial_6_name": "Laura Torres",
+    "testimonial_6_title": "Gerente de Marca",
+    "testimonial_6_text": "Perfecta herramienta para gestionar logos de múltiples marcas. Buen equilibrio entre facilidad de uso y funcionalidad."
+  },
+  "FAQ": {
+    "title": "Preguntas Frecuentes",
+    "viewAllButton": "Ver Todas las Preguntas",
+
+    "faq_1_question": "¿El Generador SVG es completamente gratuito?",
+    "faq_1_answer": "Sí, todas las funciones básicas son gratuitas. No se requiere registro. Las funciones premium estarán disponibles en el futuro.",
+
+    "faq_2_question": "¿Puedo usar los logos comercialmente?",
+    "faq_2_answer": "Sí, todos los logos creados con el Generador SVG se pueden usar tanto para fines personales como comerciales. No hay que preocuparse por derechos de autor.",
+
+    "faq_3_question": "¿Necesito registrarme?",
+    "faq_3_answer": "No, puedes usar todas las funciones básicas sin registro. Algunas funciones futuras como el almacenamiento en la nube podrían requerir registro.",
+
+    "faq_4_question": "¿Cuáles son las ventajas del formato SVG?",
+    "faq_4_answer": "SVG es un formato vectorial que se puede escalar sin pérdida de calidad. Los archivos son pequeños y soportan animación y elementos interactivos.",
+
+    "faq_5_question": "¿Puedo subir mis propias fuentes?",
+    "faq_5_answer": "Sí, puedes subir fuentes en formato TTF, OTF, WOFF y WOFF2 para usar en tus diseños de logos.",
+
+    "faq_6_question": "¿Funciona en dispositivos móviles?",
+    "faq_6_answer": "Sí, el Generador SVG tiene un diseño responsivo y se puede usar fácilmente en smartphones y tablets."
+  },
+  "CTA": {
+    "title": "Crea tu Logo Ahora",
+    "description": "Crea un logo profesional en minutos - gratis y sin registro. Diseña el logo perfecto para tu marca hoy.",
+    "buttonText": "Crear Logo Gratis"
+  },
+  "Navigation": {
+    "features": "Características",
+    "steps": "Pasos",
+    "pricing": "Precios",
+    "testimonials": "Testimonios",
+    "faq": "FAQ",
+    "createLogo": "Crear Logo",
+    "getStarted": "Empezar Gratis",
+    "viewFeatures": "Ver Características"
+  },
+  "ExportDialog": {
+    "title": "Exportar Logo",
+    "description": "Exporta tu logo en diferentes formatos",
+    "svgDescription": "SVG es un formato vectorial que se puede escalar sin pérdida. Ideal para web y medios digitales.",
+    "pngDescription": "PNG es un formato de imagen con soporte para transparencia. Ideal para web y medios digitales.",
+    "jpgDescription": "JPG es un formato de imagen ideal para fotos y degradados. No soporta transparencia.",
+    "quality": "Calidad",
+    "scale": "Escala",
+    "backgroundColor": "Color de Fondo",
+    "preview": "Vista Previa",
+    "cancel": "Cancelar",
+    "downloadAs": "Descargar como"
   },
   "LogoCreator": {
     "manual_creation": "Creación Manual",
-    "ai_generation": "Generación por IA",
+    "ai_generation": "Generación IA",
     "template": "Plantilla",
     "template_gallery": "Galería de Plantillas",
     "close": "Cerrar",
     "advanced_shape_gallery": "Galería de Formas Avanzadas",
-    "choose_from_template": "Elegir de Plantilla",
+    "choose_from_template": "Elegir de Plantillas",
     "generate_with_ai": "Generar con IA",
     "save_load": "Guardar/Cargar",
     "text": "Texto",
@@ -34,7 +232,7 @@
     "no_shape": "Sin Forma",
     "export": "Exportar",
     "copy_svg_code": "Copiar Código SVG",
-    "copy_completed": "Copia Completada",
+    "copy_completed": "Copiado",
     "standard_fonts": "Fuentes Estándar",
     "custom_fonts": "Fuentes Personalizadas",
     "open_advanced_shape_gallery": "Abrir Galería de Formas Avanzadas",
@@ -42,7 +240,7 @@
     "blue": "Azul",
     "green": "Verde",
     "red": "Rojo",
-    "purple": "Púrpura",
+    "purple": "Morado",
     "orange": "Naranja",
     "black": "Negro",
     "white": "Blanco",
@@ -69,27 +267,27 @@
     "easing": "Suavizado",
     "linear": "Lineal",
     "ease": "Suave",
-    "ease_in": "Suave al Inicio",
-    "ease_out": "Suave al Final",
-    "ease_in_out": "Suave al Inicio y Final",
+    "ease_in": "Suave Entrada",
+    "ease_out": "Suave Salida",
+    "ease_in_out": "Suave Entrada/Salida",
     "direction": "Dirección",
     "normal": "Normal",
     "reverse": "Inversa",
-    "alternate": "Alternada",
-    "alternate_reverse": "Alternada Inversa",
-    "iterations": "Iteraciones",
-    "infinite": "Infinitas",
+    "alternate": "Alterna",
+    "alternate_reverse": "Alterna Inversa",
+    "iterations": "Repeticiones",
+    "infinite": "Infinito",
     "once": "Una vez",
     "twice": "Dos veces",
     "thrice": "Tres veces",
 
-    "preview_animation": "Previsualizar Animación",
-    "stop_preview": "Detener Previsualización",
+    "preview_animation": "Vista Previa de Animación",
+    "stop_preview": "Detener Vista Previa",
 
     "animation_presets": "Preajustes de Animación",
     "preset_subtle": "Sutil",
     "preset_energetic": "Enérgico",
-    "preset_attention": "Atención",
+    "preset_attention": "Llamativo",
     "preset_professional": "Profesional",
     "preset_playful": "Juguetón",
 
@@ -97,15 +295,15 @@
     "linear_gradient": "Degradado Lineal",
     "radial_gradient": "Degradado Radial",
     "gradient_direction": "Dirección del Degradado",
-    "to_right": "Hacia la Derecha",
-    "to_left": "Hacia la Izquierda",
+    "to_right": "Hacia Derecha",
+    "to_left": "Hacia Izquierda",
     "to_bottom": "Hacia Abajo",
     "to_top": "Hacia Arriba",
-    "to_bottom_right": "Hacia Abajo-Derecha",
-    "to_bottom_left": "Hacia Abajo-Izquierda",
-    "to_top_right": "Hacia Arriba-Derecha",
-    "to_top_left": "Hacia Arriba-Izquierda",
-    "start_color": "Color de Inicio",
+    "to_bottom_right": "Hacia Abajo Derecha",
+    "to_bottom_left": "Hacia Abajo Izquierda",
+    "to_top_right": "Hacia Arriba Derecha",
+    "to_top_left": "Hacia Arriba Izquierda",
+    "start_color": "Color Inicial",
     "end_color": "Color Final",
 
     "text_effects": "Efectos de Texto",
@@ -141,7 +339,7 @@
     "logo_name": "Nombre del Logo",
     "save": "Guardar",
     "saved_logos": "Logos Guardados",
-    "no_saved_logos": "No hay Logos Guardados",
+    "no_saved_logos": "No hay logos guardados",
     "delete": "Eliminar",
     "confirm_delete": "Confirmar Eliminación",
     "cancel": "Cancelar",
@@ -149,21 +347,21 @@
     "ai_prompt_label": "Describe tu idea de logo a la IA",
     "generate_logo": "Generar Logo",
     "ai_generating": "Generando...",
-    "ai_placeholder": "Ejemplo: Un logo moderno y simple para una empresa tecnológica con degradado azul y púrpura",
-    "select_this_logo": "Seleccionar Este Logo",
+    "ai_placeholder": "Ejemplo: Un logo moderno y minimalista para una empresa de tecnología con degradado azul y morado",
+    "select_this_logo": "Seleccionar este Logo",
     "generate_more": "Generar Más",
 
     "font_name": "Nombre de Fuente",
     "upload_font": "Subir Fuente",
-    "upload_font_file": "Subir Archivo de Fuente (.ttf, .otf, .woff, .woff2)",
-    "drag_drop": "Arrastra y suelta el archivo aquí o haz clic",
+    "upload_font_file": "Subir archivo de fuente (.ttf, .otf, .woff, .woff2)",
+    "drag_drop": "Arrastra y suelta archivos aquí o haz clic",
     "uploading": "Subiendo...",
     "upload_success": "Subida Exitosa",
     "upload_error": "Error de Subida",
 
     "text_layout": "Diseño de Texto",
     "apply": "Aplicar",
-    "高度なシェイプ": "Forma Avanzada",
+    "高度なシェイプ": "Formas Avanzadas",
     "円": "Círculo",
     "正方形": "Cuadrado",
     "角丸正方形": "Cuadrado Redondeado",
@@ -171,5 +369,26 @@
     "三角形": "Triángulo",
     "星": "Estrella",
     "シールド": "Escudo"
+  },
+  "Footer": {
+    "company": "Empresa",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "resources": "Recursos",
+    "blog": "Blog",
+    "help": "Ayuda",
+    "tutorials": "Tutoriales",
+    "api": "API",
+    "social": "Redes Sociales",
+    "twitter": "Twitter",
+    "github": "GitHub",
+    "discord": "Discord",
+    "copyright": "© 2024 SVG Generator. Todos los derechos reservados.",
+    "allRightsReserved": "Todos los derechos reservados",
+    "termsOfService": "Términos de Servicio",
+    "privacyPolicy": "Política de Privacidad",
+    "commercialTransactionsAct": "Ley de Transacciones Comerciales"
   }
 }
