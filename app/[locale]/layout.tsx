@@ -6,6 +6,7 @@ import { routing } from "@/i18n/routing";
 import { metadata } from "@/i18n/seo";
 import AmplitudeProvider from "@/analytics/amplitude";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import MonetagScript from "@/components/MonetagScript";
 
 export async function generateMetadata({
   params,
@@ -48,6 +49,7 @@ export default async function LocaleLayout({
         <AmplitudeProvider>
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </AmplitudeProvider>
+        <MonetagScript />
         {process.env.NEXT_PUBLIC_GA4_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA4_ID} />
         )}
