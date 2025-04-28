@@ -6,7 +6,6 @@ import { routing } from "@/i18n/routing";
 import { metadata } from "@/i18n/seo";
 import AmplitudeProvider from "@/analytics/amplitude";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import MonetagScript from "@/components/MonetagScript";
 
 export async function generateMetadata({
   params,
@@ -44,12 +43,16 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <meta name="monetag" content="1c06e6b2b860d4cc68c684cbf126c869" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9269689,document.createElement('script'))`,
+          }}
+        />
       </head>
       <body suppressHydrationWarning>
         <AmplitudeProvider>
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </AmplitudeProvider>
-        <MonetagScript />
         {process.env.NEXT_PUBLIC_GA4_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA4_ID} />
         )}
