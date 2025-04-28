@@ -41,6 +41,9 @@ export default async function LocaleLayout({
   }
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <meta name="monetag" content="1c06e6b2b860d4cc68c684cbf126c869" />
+      </head>
       <body suppressHydrationWarning>
         <AmplitudeProvider>
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
