@@ -15,7 +15,7 @@ import PricingSection from "@/components/lp/pricing-section";
 import TestimonialsSection from "@/components/lp/testimonials-section";
 import FAQSection from "@/components/lp/faq-section";
 import CTASection from "@/components/lp/cta-section";
-import AdBanner from "@/components/google-adsense";
+import MonetagInPagePush from "@/components/MonetagInPagePush";
 import FeaturesSection from "@/components/lp/feature-section";
 
 export default function Home() {
@@ -36,7 +36,7 @@ export default function Home() {
         </section>
 
         <section className="mb-12">
-          <AdBanner />
+          <MonetagInPagePush />
         </section>
 
         {/* Features section */}
