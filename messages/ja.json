@@ -698,5 +698,11 @@
     "generated_logos": "生成されたロゴ",
     "clear": "クリア",
     "generated_logo_alt": "生成されたロゴ"
+  },
+  "NotifyModal": {
+    "title": "AI機能リリース通知＆応援メッセージ",
+    "description": "AIロゴ自動生成機能のリリース時に通知を受け取りたい方、または開発者への応援メッセージを送りたい方は、下記ボタンからGoogleフォームへご記入ください。",
+    "form_button": "通知希望・応援",
+    "close": "閉じる"
   }
 }

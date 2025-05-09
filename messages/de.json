@@ -391,5 +391,11 @@
     "termsOfService": "Nutzungsbedingungen",
     "privacyPolicy": "Datenschutzerklärung",
     "commercialTransactionsAct": "Handelsgesetz"
+  },
+  "NotifyModal": {
+    "title": "Benachrichtigung zur KI-Freigabe & Unterstützungsnachricht",
+    "description": "Wenn Sie benachrichtigt werden möchten, wenn das KI-Logo-Feature veröffentlicht wird, oder dem Entwickler eine Unterstützungsnachricht senden möchten, nutzen Sie bitte das folgende Google-Formular.",
+    "form_button": "Benachrichtigen / Unterstützen",
+    "close": "Schließen"
   }
 }

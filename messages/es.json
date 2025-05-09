@@ -390,5 +390,11 @@
     "termsOfService": "Términos de Servicio",
     "privacyPolicy": "Política de Privacidad",
     "commercialTransactionsAct": "Ley de Transacciones Comerciales"
+  },
+  "NotifyModal": {
+    "title": "Notificación de lanzamiento de IA y mensaje de apoyo",
+    "description": "Si deseas ser notificado cuando se lance la función de generación de logos con IA o enviar un mensaje de apoyo al desarrollador, utiliza el siguiente formulario de Google.",
+    "form_button": "Avisar / Apoyar",
+    "close": "Cerrar"
   }
 }

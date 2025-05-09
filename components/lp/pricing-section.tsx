@@ -5,6 +5,8 @@ import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { NotifyModal } from "@/components/NotifyModal";
 
 interface PricingSectionProps {
   freePlanFeatures: string[]; // Now contains translation keys
@@ -18,6 +20,9 @@ const PricingSection = ({
   proPlanFeatures2,
 }: PricingSectionProps) => {
   const t = useTranslations("Pricing");
+  const tNotify = useTranslations("NotifyModal");
+  const [modalOpen, setModalOpen] = useState(false);
+  const googleFormUrl = "#"; // 後で本物のURLに差し替え
 
   return (
     <section className="mb-24">
@@ -116,6 +121,7 @@ const PricingSection = ({
               <Button
                 variant="outline"
                 className="w-full border-2 border-purple-400 bg-purple-400/10 text-purple-200 hover:bg-purple-400/20 hover:text-white font-medium transition-all duration-300"
+                onClick={() => setModalOpen(true)}
               >
                 {t("proPlan.ctaButton")}
               </Button>
@@ -123,6 +129,7 @@ const PricingSection = ({
           </Card>
         </motion.div>
       </div>
+      <NotifyModal open={modalOpen} onOpenChange={setModalOpen} />
     </section>
   );
 };

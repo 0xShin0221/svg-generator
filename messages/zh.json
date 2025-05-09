@@ -390,5 +390,11 @@
     "termsOfService": "服务条款",
     "privacyPolicy": "隐私政策",
     "commercialTransactionsAct": "商业交易法"
+  },
+  "NotifyModal": {
+    "title": "AI功能发布通知与支持消息",
+    "description": "如果您希望在AI标志生成功能发布时收到通知，或想给开发者加油，请使用下方Google表单。",
+    "form_button": "通知我 / 支持",
+    "close": "关闭"
   }
 }

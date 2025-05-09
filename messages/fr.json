@@ -390,5 +390,11 @@
     "termsOfService": "Conditions d'Utilisation",
     "privacyPolicy": "Politique de Confidentialité",
     "commercialTransactionsAct": "Loi sur les Transactions Commerciales"
+  },
+  "NotifyModal": {
+    "title": "Notification de sortie de la fonctionnalité IA & Message de soutien",
+    "description": "Si vous souhaitez être prévenu lors de la sortie de la génération de logo IA ou envoyer un message de soutien au développeur, veuillez utiliser le formulaire Google ci-dessous.",
+    "form_button": "Prévenir / Soutenir",
+    "close": "Fermer"
   }
 }

@@ -10,6 +10,7 @@ import { Sparkles, Loader2, ArrowRight, Wand2, Clock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { LogoSettings } from "@/types";
 import { useTranslations } from "next-intl";
+import { NotifyModal } from "@/components/NotifyModal";
 
 // Mock AI logo generation results
 const mockGeneratedLogos = [
@@ -97,6 +98,9 @@ interface AILogoGeneratorProps {
 
 export function AILogoGenerator({ onSelectLogo }: AILogoGeneratorProps) {
   const t = useTranslations("LogoCreator");
+  const tNotify = useTranslations("NotifyModal");
+  const [modalOpen, setModalOpen] = useState(false);
+  const googleFormUrl = "#"; // 後で本物のURLに差し替え
 
   // Show Coming Soon message instead of the actual functionality
   return (
@@ -118,13 +122,14 @@ export function AILogoGenerator({ onSelectLogo }: AILogoGeneratorProps) {
             <p className="text-gray-400 max-w-md">
               {t("ai_generator_coming_soon_message")}
             </p>
-
-            {/* <Button
+            <Button
               variant="outline"
               className="mt-4 border-white/10 bg-white/5 hover:bg-white/10 text-blue-400"
+              onClick={() => setModalOpen(true)}
             >
-              {t("notify_on_release")}
-            </Button> */}
+              {tNotify("form_button")}
+            </Button>
+            <NotifyModal open={modalOpen} onOpenChange={setModalOpen} />
           </div>
         </div>
       </CardContent>

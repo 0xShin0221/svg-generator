@@ -699,5 +699,11 @@
     "generated_logos": "Generated Logos",
     "clear": "Clear",
     "generated_logo_alt": "Generated logo"
+  },
+  "NotifyModal": {
+    "title": "AI Feature Release Notification & Support Message",
+    "description": "If you would like to be notified when the AI logo generation feature is released, or want to send an encouraging message to the developer, please use the Google Form below.",
+    "form_button": "Notify / Support",
+    "close": "Close"
   }
 }
