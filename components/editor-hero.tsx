@@ -115,10 +115,13 @@ export default function EditorHero() {
     <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
       {/* モード選択タブ */}
       <div className="w-full max-w-3xl mx-auto mb-8">
-        <div className="flex gap-2 p-1 bg-slate-800/80 border border-slate-600 rounded-md">
+        <div
+          className="flex gap-2 p-1 bg-slate-800/80 border border-slate-600 rounded-md \
+          overflow-x-auto sm:overflow-x-visible min-w-0"
+        >
           <Button
             variant={creationMode === "manual" ? "default" : "ghost"}
-            className={`flex-1 ${
+            className={`flex-1 min-w-[100px] text-xs px-2 py-1 sm:text-sm sm:px-0 sm:py-0 ${
               creationMode === "manual"
                 ? "bg-gradient-to-r from-blue-500/20 to-blue-500/10 text-blue-300"
                 : "text-gray-400 hover:text-gray-200"
@@ -130,7 +133,7 @@ export default function EditorHero() {
           </Button>
           <Button
             variant={creationMode === "ai" ? "default" : "ghost"}
-            className={`flex-1 ${
+            className={`flex-1 min-w-[100px] text-xs px-2 py-1 sm:text-sm sm:px-0 sm:py-0 ${
               creationMode === "ai"
                 ? "bg-gradient-to-r from-purple-500/20 to-purple-500/10 text-purple-300"
                 : "text-gray-400 hover:text-gray-200"
@@ -142,7 +145,7 @@ export default function EditorHero() {
           </Button>
           <Button
             variant={creationMode === "template" ? "default" : "ghost"}
-            className={`flex-1 ${
+            className={`flex-1 min-w-[100px] text-xs px-2 py-1 sm:text-sm sm:px-0 sm:py-0 ${
               creationMode === "template"
                 ? "bg-gradient-to-r from-pink-500/20 to-pink-500/10 text-pink-300"
                 : "text-gray-400 hover:text-gray-200"
