@@ -1,7 +1,7 @@
 {
   "Home": {
-    "title": "免費SVG產生器",
-    "subtitle": "免費建立SVG標誌和圖示。自訂形狀、文字、顏色和動畫。",
+    "title": "免費線上SVG產生器",
+    "subtitle": "即時建立、編輯與轉換SVG向量圖形，適用於Logo、圖示、插畫、網頁設計、UI元件、橫幅、圖表與範本。高品質、可自訂、可動畫、支援透明的SVG，免費下載，無需設計經驗。",
     "features": "主要功能",
     "steps": "使用指南",
     "pricing": "價格",
@@ -71,6 +71,8 @@
     "step_download_desc": "將完成的標誌下載為SVG、PNG或JPG格式並立即使用。"
   },
   "EditorHero": {
+    "title": "免費線上SVG產生器",
+    "subtitle": "即時建立、編輯與轉換SVG向量圖形，適用於Logo、圖示、插畫、網頁設計、UI元件、橫幅、圖表與範本。高品質、可自訂、可動畫、支援透明的SVG，免費下載，無需設計經驗。",
     "modes": {
       "manual": "手動建立",
       "ai": "AI產生",

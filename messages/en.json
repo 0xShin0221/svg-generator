@@ -1,7 +1,7 @@
 {
   "Home": {
-    "title": "Professional Logo Creator",
-    "subtitle": "Create beautiful logos in minutes without design skills. Customize shapes, text, colors, and animations.",
+    "title": "Free Online SVG Generator",
+    "subtitle": "Instantly create, edit, and convert SVG vector graphics for logos, icons, illustrations, web design, UI components, banners, diagrams, and templates. High-quality, customizable, animated, and transparent SVGs—download for free, no design skills needed.",
     "features": "Features",
     "steps": "How to Use",
     "pricing": "Pricing",
@@ -72,6 +72,8 @@
     "usability_free_desc": "Use all basic functions without registration"
   },
   "EditorHero": {
+    "title": "Free Online SVG Generator",
+    "subtitle": "Instantly create, edit, and convert SVG vector graphics for logos, icons, illustrations, web design, UI components, banners, diagrams, and templates. High-quality, customizable, animated, and transparent SVGs—download for free, no design skills needed.",
     "modes": {
       "manual": "Manual Creation",
       "ai": "AI Generation",

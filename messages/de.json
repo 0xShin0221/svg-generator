@@ -1,7 +1,7 @@
 {
   "Home": {
-    "title": "Free SVG Generator",
-    "subtitle": "Erstellen Sie kostenlos SVG-Logos und -Icons. Passen Sie Formen, Text, Farben und Animationen an.",
+    "title": "Kostenloser Online-SVG-Generator",
+    "subtitle": "Erstellen, bearbeiten und konvertieren Sie SVG-Vektorgrafiken für Logos, Icons, Illustrationen, Webdesign, UI-Komponenten, Banner, Diagramme und Vorlagen. Hochwertige, anpassbare, animierte und transparente SVGs – kostenlos herunterladen, keine Designkenntnisse erforderlich.",
     "features": "Hauptfunktionen",
     "steps": "Anleitung",
     "pricing": "Preise",
@@ -72,6 +72,8 @@
     "step_download_desc": "Laden Sie Ihr fertiges Logo als SVG, PNG oder JPG herunter und verwenden Sie es sofort."
   },
   "EditorHero": {
+    "title": "Kostenloser Online-SVG-Generator",
+    "subtitle": "Erstellen, bearbeiten und konvertieren Sie SVG-Vektorgrafiken für Logos, Icons, Illustrationen, Webdesign, UI-Komponenten, Banner, Diagramme und Vorlagen – alles online, kostenlos und ohne Designkenntnisse.",
     "modes": {
       "manual": "Manuelle Erstellung",
       "ai": "KI-Generierung",

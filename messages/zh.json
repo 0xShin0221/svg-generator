@@ -1,7 +1,7 @@
 {
   "Home": {
-    "title": "免费SVG生成器",
-    "subtitle": "免费创建SVG标志和图标。自定义形状、文字、颜色和动画。",
+    "title": "免费在线SVG生成器",
+    "subtitle": "即时创建、编辑和转换SVG矢量图形，适用于Logo、图标、插画、网页设计、UI组件、横幅、图表和模板。高质量、可自定义、可动画、支持透明的SVG，免费下载，无需设计经验。",
     "features": "主要功能",
     "steps": "使用指南",
     "pricing": "价格",
@@ -71,6 +71,8 @@
     "step_download_desc": "将完成的标志下载为SVG、PNG或JPG格式并立即使用。"
   },
   "EditorHero": {
+    "title": "免费在线SVG生成器",
+    "subtitle": "即时创建、编辑和转换SVG矢量图形，适用于Logo、图标、插画、网页设计、UI组件、横幅、图表和模板。高质量、可自定义、可动画、支持透明的SVG，免费下载，无需设计经验。",
     "modes": {
       "manual": "手动创建",
       "ai": "AI生成",
