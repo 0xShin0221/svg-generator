@@ -25,11 +25,12 @@ const FeedbackModal: FC = () => {
     setError("");
     try {
       const payload = {
-        text: `*Feedback from ${site}*\n*Type:* ${category}\n*Message:* ${message}\n*Email:* ${
-          email || "(not provided)"
-        }`,
+        category,
+        message,
+        email,
+        site,
       };
-      const res = await fetch(SLACK_WEBHOOK_URL, {
+      const res = await fetch("/api/feedback", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
