@@ -37,6 +37,9 @@ export default function PrivacyPage({
           <h2>{t("sections.contact.title")}</h2>
           <p>{t("sections.contact.content")}</p>
 
+          <h2>{t("sections.ads.title")}</h2>
+          <p>{t("sections.ads.content")}</p>
+
           <p className="text-sm text-gray-400 mt-8">
             {t("lastUpdated")}: {t("lastUpdatedDate")}
           </p>

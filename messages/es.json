@@ -375,7 +375,14 @@
   "Footer": {
     "company": "Empresa",
     "about": "Acerca de",
-    "contact": "Contacto",
+    "contact": {
+      "title": "8. Contáctenos",
+      "content": "Si tiene alguna pregunta sobre esta Política de Privacidad o nuestras prácticas de datos, contáctenos en support@svg-generator.com"
+    },
+    "ads": {
+      "title": "9. About Advertising Services",
+      "content": "This site displays advertisements using the Google AdSense service.\n\nGoogle and its partners may store and read cookies on your browser. Advertisements may be displayed based on your past visits to this site and other sites. Information may also be collected using technologies such as web beacons and IP addresses.\n\nFor more details, please see \"[How Google uses information from sites or apps that use our services](https://policies.google.com/technologies/partner-sites)\".\n\nWe do not pass to Google any information that could be used or recognized by Google as personally identifiable information.\n\nGoogle AdSense may deliver personalized ads based on your interests to provide more relevant advertising."
+    },
     "privacy": "Privacidad",
     "terms": "Términos",
     "resources": "Recursos",

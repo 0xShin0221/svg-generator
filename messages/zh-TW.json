@@ -398,5 +398,17 @@
     "description": "如果您希望在AI標誌生成功能發布時收到通知，或想給開發者加油，請使用下方Google表單。",
     "form_button": "通知我 / 支持",
     "close": "關閉"
+  },
+  "Privacy": {
+    "sections": {
+      "contact": {
+        "title": "8. 聯絡我們",
+        "content": "如果您對本隱私政策或我們的數據處理有任何疑問，請通過 support@svg-generator.com 與我們聯繫。"
+      },
+      "ads": {
+        "title": "9. About Advertising Services",
+        "content": "This site displays advertisements using the Google AdSense service.\n\nGoogle and its partners may store and read cookies on your browser. Advertisements may be displayed based on your past visits to this site and other sites. Information may also be collected using technologies such as web beacons and IP addresses.\n\nFor more details, please see \"[How Google uses information from sites or apps that use our services](https://policies.google.com/technologies/partner-sites)\".\n\nWe do not pass to Google any information that could be used or recognized by Google as personally identifiable information.\n\nGoogle AdSense may deliver personalized ads based on your interests to provide more relevant advertising."
+      }
+    }
   }
 }

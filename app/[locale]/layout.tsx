@@ -7,6 +7,7 @@ import { metadata } from "@/i18n/seo";
 import AmplitudeProvider from "@/analytics/amplitude";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import FeedbackModal from "@/components/feedback-modal";
+import Script from "next/script";
 
 export async function generateMetadata({
   params,
@@ -48,6 +49,12 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{
             __html: `(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('vemtoutcheeg.com',9269689,document.createElement('script'))`,
           }}
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5763552958838701"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
         />
       </head>
       <body suppressHydrationWarning>
